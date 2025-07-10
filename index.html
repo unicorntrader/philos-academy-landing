@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philo's Academy</title>
+  <title>Philo's Academy - Learn Investing. Better.</title>
 
   <!-- ✅ Open Graph Metadata -->
   <meta property="og:title" content="Philo's Academy" />
   <meta property="og:description" content="Learn Investing. Better." />
-  <meta property="og:image" content="https://philomastery.com/Philo%27s%20Academy%20-%20Share%20Image.png" />
+  <meta property="og:image" content="https://philomastery.com/philo-academy-intro-banner.png" />
   <meta property="og:url" content="https://philomastery.com" />
   <meta property="og:type" content="website" />
 
@@ -17,14 +17,13 @@
   <meta name="twitter:site" content="@philoinvestor" />
   <meta name="twitter:title" content="Philo's Academy" />
   <meta name="twitter:description" content="Learn Investing. Better." />
-  <meta name="twitter:image" content="https://philomastery.com/Philo%27s%20Academy%20-%20Share%20Image.png" />
+  <meta name="twitter:image" content="https://philomastery.com/philo-academy-intro-banner.png" />
 
   <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-  <!-- ✅ Stylesheet -->
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -35,19 +34,23 @@
       padding: 0;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+    header {
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: #FFF8E7;
+      border-bottom: 2px solid #fff;
+      z-index: 1000;
     }
 
-    header {
-      background: #FFF8E7;
-      padding: 20px 0;
-      border-bottom: 2px solid #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .logo {
@@ -66,61 +69,120 @@
       text-decoration: none;
       border: none;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .cta-button:hover {
       background: #E67A35;
+      transform: translateY(-2px);
     }
 
     .hero {
-      min-height: 80vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
+      padding: 120px 20px 60px;
     }
 
-    .hero h1 {
-      font-size: 3rem;
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-content img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 30px;
+      display: block;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #2C3E4A;
       margin-bottom: 20px;
+      line-height: 1.2;
     }
 
     .tagline {
       font-size: 1.5rem;
       font-weight: bold;
       color: #FF8C42;
+      margin-bottom: 20px;
+    }
+
+    .cta-button-large {
+      background: #FF8C42;
+      color: white;
+      padding: 20px 50px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button-large:hover {
+      background: #E67A35;
+      transform: translateY(-3px);
     }
 
     footer {
       background: #2C3E4A;
-      color: #fff;
-      text-align: center;
       padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- ===== HEADER ===== -->
   <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <nav>
       <a href="#" class="logo">Philo's Academy</a>
       <a href="https://whop.com/philosacademy" class="cta-button">Start Learning</a>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero">
-    <div>
-      <h1>Philo's Academy</h1>
-      <p class="tagline">Learn Investing. Better.</p>
-      <a href="https://whop.com/philosacademy" class="cta-button" style="margin-top: 20px;">Begin Your Journey</a>
+    <div class="hero-content">
+      <!-- ✅ Hero Image -->
+      <img 
+        src="philo-academy-intro-banner.png" 
+        alt="Philo's Academy Banner"
+      />
+
+      <!-- Hero Text -->
+      <div class="hero-text">
+        <h1>Philo's Academy</h1>
+        <p class="tagline">Learn Investing. Better.</p>
+        <a href="https://whop.com/philosacademy" class="cta-button-large">Begin Your Journey</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2025 Philo's Academy. Learn Investing. Better.</p>
+    <div class="container">
+      <p>&copy; 2025 Philo's Academy. Learn Investing. Better.</p>
+    </div>
   </footer>
+
 </body>
 </html>

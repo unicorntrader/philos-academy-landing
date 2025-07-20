@@ -243,7 +243,26 @@
             margin-top: 5px;
         }
 
-        /* BIG ENROLLMENT BUTTON - Delete to remove main enrollment button */
+        /* SECONDARY CTA BUTTON - for curriculum link */
+        .cta-button-secondary {
+            background: transparent;
+            color: #FF8C42;
+            padding: 15px 35px;
+            border: 2px solid #FF8C42;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button-secondary:hover {
+            background: #FF8C42;
+            color: white;
+            transform: translateY(-2px);
+        }
         .cta-button-large {
             background: #FF8C42;
             color: white;
@@ -480,6 +499,99 @@
             left: 0;
         }
 
+        /* ===== CURRICULUM SECTION ===== */
+        /* Delete this entire section to remove curriculum */
+        .curriculum {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .curriculum-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .curriculum h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2C3E4A;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .curriculum-part {
+            margin-bottom: 60px;
+        }
+
+        .part-header {
+            background: #2C3E4A;
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .part-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FF8C42;
+            margin-bottom: 10px;
+        }
+
+        .part-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .modules-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .module-item {
+            background: #FFF8E7;
+            border: 2px solid #FF8C42;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .case-study {
+            background: #fff;
+            border: 3px solid #FF8C42;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.2);
+            position: relative;
+        }
+
+        .case-study::before {
+            content: "CASE STUDY";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #FF8C42;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .module-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2C3E4A;
+            margin-bottom: 10px;
+        }
+
+        .module-description {
+            font-size: 1rem;
+            color: #2C3E4A;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
         /* ===== CTA SECTION ("Ready to Transform") ===== */
         /* Delete this entire section to remove the enrollment call-to-action */
         .cta-section {
@@ -639,14 +751,61 @@
             .hero-stats {
                 justify-content: center;
                 gap: 20px;
-            }
-
-            .nav-links {
-                display: none;
+                flex-wrap: wrap;
             }
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            /* Curriculum mobile styles */
+            .curriculum h2 {
+                font-size: 2rem;
+            }
+
+            .part-title {
+                font-size: 1.4rem;
+            }
+
+            .module-title {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+
+            .module-item {
+                padding: 20px;
+            }
+
+            .part-header {
+                padding: 20px;
+            }
+
+            /* Navigation mobile */
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo .brand-name {
+                font-size: 20px;
+            }
+
+            .logo .brand-tagline {
+                font-size: 12px;
+            }
+
+            .cta-button {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+
+            .cta-button-large {
+                padding: 16px 30px;
+                font-size: 1rem;
+            }
+
+            .cta-button-secondary {
+                padding: 12px 25px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -680,6 +839,10 @@
                     <!-- MAIN CTA BUTTON -->
                     <!-- Delete this <a> tag to remove "Begin Your Journey" button -->
                     <a href="https://whop.com/philosacademy" class="cta-button-large">Begin Your Journey</a>
+                    
+                    <!-- SECONDARY CTA BUTTON - View Curriculum -->
+                    <br>
+                    <a href="#curriculum" onclick="scrollToSection('curriculum'); return false;" class="cta-button-secondary">Inside the Course</a>
                 </div>
             </div>
         </div>
@@ -730,6 +893,196 @@
                     <div class="stat">
                         <span class="stat-number">4</span>
                         <span class="stat-label">Core Parts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CURRICULUM SECTION ===== -->
+    <!-- Delete this entire section to remove curriculum -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="curriculum-content">
+                <h2>Course Contents by Module</h2>
+                
+                <!-- PART 1 -->
+                <div class="curriculum-part">
+                    <div class="part-header">
+                        <h3 class="part-title">PART 1 — Foundational Concepts & Value Investing</h3>
+                    </div>
+                    
+                    <div class="modules-list">
+                        <div class="module-item">
+                            <h4 class="module-title">Introduction to Investing</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Value Investing 101</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Building Blocks to Value</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">What Drives Value?</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Next-Level Thinking</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Where Investors Go Wrong</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Investing Where You Have an Edge</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Psychology of Investing</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Major Investing Mistakes</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Psychology of Markets & Herd Behavior</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PART 2 -->
+                <div class="curriculum-part">
+                    <div class="part-header">
+                        <h3 class="part-title">PART 2 — Advanced Investment Concepts</h3>
+                    </div>
+                    
+                    <div class="modules-list">
+                        <div class="module-item">
+                            <h4 class="module-title">Understanding Market Dimensions: Price, Value & Liquidity</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Differentiating Business Models</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Netflix vs Legacy Media</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Banking vs Software</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Unlocking Optionality in Investing</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Duolingo & Moderna</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Research & Idea Sourcing</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Avoiding Bad Companies & Value Traps</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Range of Outcomes</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Management, Governance & Ethics</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Teledyne vs Snapchat</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Technological Disruption & Innovation</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Not All Business Is Made the Same</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Life Cycles</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PART 3 -->
+                <div class="curriculum-part">
+                    <div class="part-header">
+                        <h3 class="part-title">PART 3 — Mastery & Strategy</h3>
+                    </div>
+                    
+                    <div class="modules-list">
+                        <div class="module-item">
+                            <h4 class="module-title">Simplicity vs Complexity</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Domino's vs Nvidia</h4>
+                        </div>
+                        
+                        <div class="module-item case-study">
+                            <h4 class="module-title">Starbucks vs Google</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Becoming a Master Investor</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">High Efficiency Frameworks: Cheat Codes & Convex Heuristics</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Macro Investing: Playing the Big Trends</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Using Edges to Source Opportunities</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PART 4 -->
+                <div class="curriculum-part">
+                    <div class="part-header">
+                        <h3 class="part-title">PART 4 — Managing Risk & Portfolio Management</h3>
+                    </div>
+                    
+                    <div class="modules-list">
+                        <div class="module-item">
+                            <h4 class="module-title">Surviving Market Shifts: Disruption, De-Globalization & Business Model Risks</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Portfolio Management & Construction</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Thriving in Uncertainty: Risk Management & Decision Making</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">Reflexivity, Boom/Bust Cycles & Micro-Bubbles</h4>
+                        </div>
+                        
+                        <div class="module-item">
+                            <h4 class="module-title">You Are the Edge (and Other Intangible Angles)</h4>
+                        </div>
                     </div>
                 </div>
             </div>

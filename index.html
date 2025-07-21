@@ -1,7 +1,7 @@
-<a href="https://whop.com/philosacademy" class="cta-button" target="_blank" onclick="plausible('WhopClick')">Begin your journey</a>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
+        <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philo's Academy - Learn Investing. Better.</title>
@@ -20,10 +20,11 @@
     <meta property="twitter:description" content="Zero to Hero in Investing: 28 modules, 8 case studies, 4 core parts. For beginners and professionals re-discovering their edge.">
     <meta property="twitter:image" content="https://philomastery.com/philosacademy-share-image.png">
     
-    <!-- FAVICON (Browser Tab Icon) - Save your logo as these files in root folder -->
+    <!-- FAVICON (Browser Tab Icon) -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
     <style>
         /* ===== BASIC SETUP ===== */
         * {
@@ -32,12 +33,11 @@
             box-sizing: border-box;
         }
 
-        /* MAIN SITE STYLING - Delete this section to break entire site */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #2C3E4A;
-            background: #FFF8E7; /* Change this color to change entire site background */
+            background: #FFF8E7;
             overflow-x: hidden;
         }
 
@@ -47,8 +47,7 @@
             padding: 0 20px;
         }
 
-        /* ===== HEADER/NAVIGATION BAR ===== */
-        /* Delete this entire section to remove the top navigation bar */
+        /* ===== HEADER/NAVIGATION ===== */
         header {
             padding: 20px 0;
             position: fixed;
@@ -66,7 +65,6 @@
             align-items: center;
         }
 
-        /* LOGO STYLING - Delete to remove logo */
         .logo {
             font-size: 24px;
             font-weight: bold;
@@ -88,28 +86,24 @@
             margin-top: 2px;
         }
 
-        /* HEADER BUTTONS - Delete to remove "Start Learning" button */
-    cta-button-large {
+        .cta-button {
             background: #FF8C42;
             color: white;
-            padding: 20px 50px;
-            border-radius: 12px;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
             transition: all 0.3s ease;
-            display: inline-block;
             border: none;
             cursor: pointer;
-    }
+        }
 
         .cta-button:hover {
             background: #E67A35;
             transform: translateY(-2px);
         }
 
-        /* ===== HERO SECTION (TOP OF PAGE) ===== */
-        /* Delete this entire section to remove the main hero area */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 80vh;
             display: flex;
@@ -121,7 +115,6 @@
             text-align: center;
         }
 
-        /* HERO TEXT CONTENT */
         .hero-text {
             animation: slideInLeft 1s ease-out;
         }
@@ -130,24 +123,56 @@
             font-size: 3.5rem;
             font-weight: bold;
             color: #2C3E4A;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             line-height: 1.2;
         }
 
-        .tagline {
-            font-size: 1.5rem;
+        .cta-button-large {
+            background: #FF8C42;
+            color: white;
+            padding: 20px 50px;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: bold;
-            color: #FF8C42;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
-        /* HERO COURSE CARD - Full width featured section */
+        .cta-button-large:hover {
+            background: #E67A35;
+            transform: translateY(-3px);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: #FF8C42;
+            padding: 15px 35px;
+            border: 2px solid #FF8C42;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button-secondary:hover {
+            background: #FF8C42;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== COURSE SECTION ===== */
         .hero-course-section {
             padding: 60px 0;
             background: #fff;
         }
 
-        .hero-course-section .course-card {
+        .course-card {
             max-width: 800px;
             margin: 0 auto;
             background: transparent;
@@ -172,7 +197,6 @@
             text-align: center;
         }
 
-        /* "WHO THIS IS FOR" SECTION - Simplified */
         .who-this-is-for {
             margin-bottom: 30px;
         }
@@ -214,8 +238,6 @@
             line-height: 1.5;
         }
 
-        /* STATS BOXES (28 Modules, 8 Case Studies, 4 Core Parts) */
-        /* Delete .hero-stats section to remove all three number boxes */
         .hero-stats {
             display: flex;
             justify-content: center;
@@ -223,7 +245,6 @@
             margin-top: 40px;
         }
 
-        /* INDIVIDUAL STAT BOX - Delete one .stat div in HTML to remove one box */
         .stat {
             text-align: center;
             background: #fff;
@@ -246,47 +267,84 @@
             margin-top: 5px;
         }
 
-        /* SECONDARY CTA BUTTON - for curriculum link */
-        .cta-button-secondary {
-            background: transparent;
+        /* ===== CURRICULUM SECTION ===== */
+        .curriculum {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .curriculum-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .curriculum h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2C3E4A;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .curriculum-part {
+            margin-bottom: 60px;
+        }
+
+        .part-header {
+            background: #2C3E4A;
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .part-title {
+            font-size: 1.8rem;
+            font-weight: bold;
             color: #FF8C42;
-            padding: 15px 35px;
+        }
+
+        .modules-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .module-item {
+            background: #FFF8E7;
             border: 2px solid #FF8C42;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .cta-button-secondary:hover {
-            background: #FF8C42;
-            color: white;
-            transform: translateY(-2px);
-        }
-        .cta-button-large {
-            background: #FF8C42;
-            color: white;
-            padding: 20px 50px;
             border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
+            padding: 25px;
         }
 
-        .cta-button-large:hover {
-            background: #E67A35;
-            transform: translateY(-3px);
+        .case-study {
+            background: #fff;
+            border: 3px solid #FF8C42;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.2);
+            position: relative;
+        }
+
+        .case-study::before {
+            content: "CASE STUDY";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #FF8C42;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .module-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2C3E4A;
         }
 
         /* ===== TESTIMONIALS SECTION ===== */
-        /* Delete this entire section to remove testimonials */
         .testimonials {
             padding: 80px 0;
             background: #FFF8E7;
@@ -312,7 +370,6 @@
             margin-top: 40px;
         }
 
-        /* INDIVIDUAL TESTIMONIAL - Delete one .testimonial div to remove one testimonial */
         .testimonial {
             background: #fff;
             border: 2px solid #FF8C42;
@@ -347,7 +404,6 @@
         }
 
         /* ===== WHO JOINS SECTION ===== */
-        /* Delete this entire section to remove investor types */
         .who-joins {
             padding: 100px 0;
             background: #fff;
@@ -447,7 +503,6 @@
         }
 
         /* ===== PAIN POINTS SECTION ===== */
-        /* Delete this entire section to remove pain points */
         .pain-points {
             padding: 100px 0;
             background: #2C3E4A;
@@ -502,101 +557,7 @@
             left: 0;
         }
 
-        /* ===== CURRICULUM SECTION ===== */
-        /* Delete this entire section to remove curriculum */
-        .curriculum {
-            padding: 100px 0;
-            background: #fff;
-        }
-
-        .curriculum-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .curriculum h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .curriculum-part {
-            margin-bottom: 60px;
-        }
-
-        .part-header {
-            background: #2C3E4A;
-            color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .part-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #FF8C42;
-            margin-bottom: 10px;
-        }
-
-        .part-intro {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-
-        .modules-list {
-            display: grid;
-            gap: 20px;
-        }
-
-        .module-item {
-            background: #FFF8E7;
-            border: 2px solid #FF8C42;
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .case-study {
-            background: #fff;
-            border: 3px solid #FF8C42;
-            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.2);
-            position: relative;
-        }
-
-        .case-study::before {
-            content: "CASE STUDY";
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            background: #FF8C42;
-            color: #fff;
-            padding: 5px 15px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-
-        .module-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 10px;
-        }
-
-        .module-description {
-            font-size: 1rem;
-            color: #2C3E4A;
-            line-height: 1.6;
-            opacity: 0.8;
-        }
-
-        /* ===== CTA SECTION ("Ready to Transform") ===== */
-        /* Delete this entire section to remove the enrollment call-to-action */
+        /* ===== CTA SECTION ===== */
         .cta-section {
             padding: 100px 0;
             background: #fff;
@@ -622,8 +583,7 @@
             opacity: 0.8;
         }
 
-        /* ===== CONTACT SECTION ("Get in Touch") ===== */
-        /* Delete this entire section to remove contact information */
+        /* ===== CONTACT SECTION ===== */
         .contact {
             padding: 100px 0;
             background: #FFF8E7;
@@ -656,7 +616,6 @@
             margin-top: 40px;
         }
 
-        /* INDIVIDUAL CONTACT CARD - Delete one .contact-item div to remove one contact method */
         .contact-item {
             background: #fff;
             border: 3px solid #FF8C42;
@@ -694,7 +653,6 @@
         }
 
         /* ===== FOOTER ===== */
-        /* Delete this section to remove footer */
         footer {
             background: #2C3E4A;
             padding: 40px 0;
@@ -717,18 +675,7 @@
             }
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* MOBILE RESPONSIVE */
+        /* ===== MOBILE RESPONSIVE ===== */
         @media (max-width: 768px) {
             .hero-text h1 {
                 font-size: 2.5rem;
@@ -757,11 +704,6 @@
                 flex-wrap: wrap;
             }
 
-            .section-title {
-                font-size: 2rem;
-            }
-
-            /* Curriculum mobile styles */
             .curriculum h2 {
                 font-size: 2rem;
             }
@@ -783,7 +725,6 @@
                 padding: 20px;
             }
 
-            /* Navigation mobile */
             .logo {
                 font-size: 20px;
             }
@@ -815,35 +756,23 @@
 </head>
 <body>
     <!-- ===== HEADER/NAVIGATION ===== -->
-    <!-- Delete this entire <header> section to remove top navigation bar -->
     <header>
         <nav class="container">
-            <!-- LOGO TEXT - Delete this <a> tag to remove logo -->
             <a href="#" class="logo">
                 <span class="brand-name">Philo's Academy</span>
                 <span class="brand-tagline">Learn Investing. Better.</span>
             </a>
-            
-            <!-- HEADER BUTTON - Delete this <a> tag to remove "Start Learning" button -->
-            <a href="https://whop.com/philosacademy" class="cta-button" target="_blank" onclick="plausible('WhopClick')">Start Learning</a>
+            <a href="https://whop.com/philosacademy" class="cta-button">Start Learning</a>
         </nav>
     </header>
 
-    <!-- ===== HERO SECTION (TOP OF PAGE) ===== -->
-    <!-- Delete this entire <section class="hero"> to remove main hero area -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <!-- HERO TEXT CONTENT -->
                 <div class="hero-text">
-                    <!-- MAIN HEADLINE -->
                     <h1>Master Investing. One Module at a Time.</h1>
-                    
-                    <!-- MAIN CTA BUTTON -->
-                    <!-- Delete this <a> tag to remove "Begin Your Journey" button -->
-                    <a href="https://whop.com/philosacademy" class="cta-button" target="_blank" onclick="plausible('WhopClick')">Begin your journey</a>
-                    
-                    <!-- SECONDARY CTA BUTTON - View Curriculum -->
+                    <a href="https://whop.com/philosacademy" class="cta-button-large">Begin Your Journey</a>
                     <br>
                     <a href="#curriculum" onclick="scrollToSection('curriculum'); return false;" class="cta-button-secondary">Inside the Course</a>
                 </div>
@@ -852,28 +781,19 @@
     </section>
 
     <!-- ===== COURSE SPOTLIGHT SECTION ===== -->
-    <!-- Delete this entire section to remove the course card -->
     <section class="hero-course-section">
         <div class="container">
-            <!-- COURSE CARD CONTAINER -->
             <div class="course-card">
-                <!-- COURSE TITLE -->
                 <h3 class="course-title">Zero to Hero in Investing</h3>
-                
-                <!-- COURSE SUBTITLE -->
                 <p class="course-subtitle">For beginners and professionals re-discovering their edge.</p>
                 
-                <!-- WHO THIS IS FOR SECTION -->
-                <!-- Delete this <div class="who-this-is-for"> to remove "Who This is For" box -->
                 <div class="who-this-is-for">
                     <h4>Who This is For</h4>
-                    
                     <div class="audience-types">
                         <div class="audience-type">
                             <h5>Finding Your Way</h5>
                             <p>You are trying to filter out the noise and complexity, and find your way. You have wasted too much time on the wrong path. You want to become more independent and finally find yourself as an investor.</p>
                         </div>
-                        
                         <div class="audience-type">
                             <h5>Sharpening Your Edge</h5>
                             <p>You've had some hits and misses, and feel that your strategy and edge are getting tired. You want to go back to the drawing board - resharpen your edge and do some work on the margins to become even better. Your specialist path over the years led you to lose opportunities in other areas. This is the place for you.</p>
@@ -881,10 +801,7 @@
                     </div>
                 </div>
                 
-                <!-- COURSE STATS BOXES (28 Modules, 8 Case Studies, 4 Core Parts) -->
-                <!-- Delete this entire <div class="hero-stats"> to remove all stat boxes -->
-                <div class="hero-stats" style="justify-content: center; margin-top: 30px;">
-                    <!-- Delete individual <div class="stat"> to remove specific stat box -->
+                <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-number">28</span>
                         <span class="stat-label">Modules</span>
@@ -903,7 +820,6 @@
     </section>
 
     <!-- ===== CURRICULUM SECTION ===== -->
-    <!-- Delete this entire section to remove curriculum -->
     <section class="curriculum" id="curriculum">
         <div class="container">
             <div class="curriculum-content">
@@ -914,44 +830,34 @@
                     <div class="part-header">
                         <h3 class="part-title">PART 1 — Foundational Concepts & Value Investing</h3>
                     </div>
-                    
                     <div class="modules-list">
                         <div class="module-item">
                             <h4 class="module-title">Introduction to Investing</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Value Investing 101</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Building Blocks to Value</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">What Drives Value?</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Next-Level Thinking</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Where Investors Go Wrong</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Investing Where You Have an Edge</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Psychology of Investing</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Major Investing Mistakes</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Psychology of Markets & Herd Behavior</h4>
                         </div>
@@ -963,60 +869,46 @@
                     <div class="part-header">
                         <h3 class="part-title">PART 2 — Advanced Investment Concepts</h3>
                     </div>
-                    
                     <div class="modules-list">
                         <div class="module-item">
                             <h4 class="module-title">Understanding Market Dimensions: Price, Value & Liquidity</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Differentiating Business Models</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Netflix vs Legacy Media</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Banking vs Software</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Unlocking Optionality in Investing</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Duolingo & Moderna</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Research & Idea Sourcing</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Avoiding Bad Companies & Value Traps</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Range of Outcomes</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Management, Governance & Ethics</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Teledyne vs Snapchat</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Technological Disruption & Innovation</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Not All Business Is Made the Same</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Life Cycles</h4>
                         </div>
@@ -1028,32 +920,25 @@
                     <div class="part-header">
                         <h3 class="part-title">PART 3 — Mastery & Strategy</h3>
                     </div>
-                    
                     <div class="modules-list">
                         <div class="module-item">
                             <h4 class="module-title">Simplicity vs Complexity</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Domino's vs Nvidia</h4>
                         </div>
-                        
                         <div class="module-item case-study">
                             <h4 class="module-title">Starbucks vs Google</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Becoming a Master Investor</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">High Efficiency Frameworks: Cheat Codes & Convex Heuristics</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Macro Investing: Playing the Big Trends</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Using Edges to Source Opportunities</h4>
                         </div>
@@ -1065,24 +950,19 @@
                     <div class="part-header">
                         <h3 class="part-title">PART 4 — Managing Risk & Portfolio Management</h3>
                     </div>
-                    
                     <div class="modules-list">
                         <div class="module-item">
                             <h4 class="module-title">Surviving Market Shifts: Disruption, De-Globalization & Business Model Risks</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Portfolio Management & Construction</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Thriving in Uncertainty: Risk Management & Decision Making</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">Reflexivity, Boom/Bust Cycles & Micro-Bubbles</h4>
                         </div>
-                        
                         <div class="module-item">
                             <h4 class="module-title">You Are the Edge (and Other Intangible Angles)</h4>
                         </div>
@@ -1093,13 +973,11 @@
     </section>
 
     <!-- ===== TESTIMONIALS SECTION ===== -->
-    <!-- Delete this entire section to remove testimonials -->
     <section class="testimonials">
         <div class="container">
             <div class="testimonials-content">
                 <h2>What Investors Are Saying</h2>
                 <div class="testimonials-grid">
-                    <!-- Delete individual testimonials to remove specific ones -->
                     <div class="testimonial">
                         <p class="testimonial-text">"Probably one of the best investment newsletters out there right now. One of the last original thinkers on fintwit? Philo shares a philosophical approach to investing, focusing on high-quality analysis of investment opportunities using a business mindset, simplifying complex concepts, and providing insights on both individual stocks and broader market trends."</p>
                         <p class="testimonial-author">— Polymath Investor</p>
@@ -1135,7 +1013,6 @@
     </section>
 
     <!-- ===== WHO JOINS SECTION ===== -->
-    <!-- Delete this entire section to remove investor types -->
     <section class="who-joins">
         <div class="container">
             <div class="who-joins-content">
@@ -1186,7 +1063,6 @@
     </section>
 
     <!-- ===== PAIN POINTS SECTION ===== -->
-    <!-- Delete this entire section to remove pain points -->
     <section class="pain-points">
         <div class="container">
             <div class="pain-points-content">
@@ -1231,20 +1107,18 @@
         </div>
     </section>
 
-    <!-- ===== CTA SECTION ("Ready to Transform") ===== -->
-    <!-- Delete this entire <section class="cta-section"> to remove enrollment call-to-action -->
+    <!-- ===== CTA SECTION ===== -->
     <section class="cta-section" id="enroll">
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Transform Your Investing?</h2>
                 <p>Join Philo's Academy and learn investing. Better.</p>
-                <a href="https://whop.com/philosacademy" class="cta-button" target="_blank" onclick="plausible('WhopClick')">Enroll in Zero to Hero</a>
+                <a href="https://whop.com/philosacademy" class="cta-button-large">Enroll in Zero to Hero</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ("Get in Touch") ===== -->
-    <!-- Delete this entire section to remove contact section -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content">
@@ -1252,7 +1126,6 @@
                 <p>Have questions about Zero to Hero or want to connect with the Philo community?</p>
                 
                 <div class="contact-grid">
-                    <!-- Delete individual <div class="contact-item"> to remove specific contact method -->
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <h3>Email</h3>
@@ -1282,7 +1155,6 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <!-- Delete this <footer> to remove footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Philo's Academy. Learn Investing. Better.</p>
@@ -1291,7 +1163,6 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // Function to scroll to specific sections
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
@@ -1302,7 +1173,6 @@
             }
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1316,7 +1186,6 @@
             });
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
@@ -1324,17 +1193,6 @@
             } else {
                 header.style.boxShadow = 'none';
             }
-        });
-
-        // Add hover effects to feature cards
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
         });
     </script>
 </body>

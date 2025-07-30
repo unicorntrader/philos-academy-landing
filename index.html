@@ -382,6 +382,30 @@
             color: inherit;
             display: block;
         }
+            /* ===== LIVE WORKSHOP STYLING ===== */
+        .live-workshop {
+            background: #2C3E4A !important;
+            border: 2px solid #FF8C42 !important;
+            position: relative;
+        }
+
+        .live-workshop::before {
+            content: "LIVE WORKSHOP";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #FF8C42;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .live-workshop .module-title {
+            color: #fff !important;
+        }
 
         .testimonial:hover {
             transform: translateY(-5px);
@@ -819,158 +843,7 @@
         </div>
     </section>
 
-    <!-- ===== CURRICULUM SECTION ===== -->
-    <section class="curriculum" id="curriculum">
-        <div class="container">
-            <div class="curriculum-content">
-                <h2>The Journey: 28 Modules & 8 Case Studies</h2>
-                
-                <!-- PART 1 -->
-                <div class="curriculum-part">
-                    <div class="part-header">
-                        <h3 class="part-title">PART 1 — Foundational Concepts & Value Investing</h3>
-                    </div>
-                    <div class="modules-list">
-                        <div class="module-item">
-                            <h4 class="module-title">Introduction to Investing</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Value Investing 101</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Building Blocks to Value</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">What Drives Value?</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Next-Level Thinking</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Where Investors Go Wrong</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Investing Where You Have an Edge</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Psychology of Investing</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Major Investing Mistakes</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Psychology of Markets & Herd Behavior</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- PART 2 -->
-                <div class="curriculum-part">
-                    <div class="part-header">
-                        <h3 class="part-title">PART 2 — Advanced Investment Concepts</h3>
-                    </div>
-                    <div class="modules-list">
-                        <div class="module-item">
-                            <h4 class="module-title">Understanding Market Dimensions: Price, Value & Liquidity</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Differentiating Business Models</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Netflix vs Legacy Media</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Banking vs Software</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Unlocking Optionality in Investing</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Duolingo & Moderna</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Research & Idea Sourcing</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Avoiding Bad Companies & Value Traps</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Range of Outcomes</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Management, Governance & Ethics</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Teledyne vs Snapchat</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Technological Disruption & Innovation</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Not All Business Is Made the Same</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Life Cycles</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- PART 3 -->
-                <div class="curriculum-part">
-                    <div class="part-header">
-                        <h3 class="part-title">PART 3 — Mastery & Strategy</h3>
-                    </div>
-                    <div class="modules-list">
-                        <div class="module-item">
-                            <h4 class="module-title">Simplicity vs Complexity</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Domino's vs Nvidia</h4>
-                        </div>
-                        <div class="module-item case-study">
-                            <h4 class="module-title">Starbucks vs Google</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Becoming a Master Investor</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">High Efficiency Frameworks: Cheat Codes & Convex Heuristics</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Macro Investing: Playing the Big Trends</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Using Edges to Source Opportunities</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- PART 4 -->
-                <div class="curriculum-part">
-                    <div class="part-header">
-                        <h3 class="part-title">PART 4 — Managing Risk & Portfolio Management</h3>
-                    </div>
-                    <div class="modules-list">
-                        <div class="module-item">
-                            <h4 class="module-title">Surviving Market Shifts: Disruption, De-Globalization & Business Model Risks</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Portfolio Management & Construction</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Thriving in Uncertainty: Risk Management & Decision Making</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">Reflexivity, Boom/Bust Cycles & Micro-Bubbles</h4>
-                        </div>
-                        <div class="module-item">
-                            <h4 class="module-title">You Are the Edge (and Other Intangible Angles)</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- ===== TESTIMONIALS SECTION ===== -->
     <section class="testimonials">

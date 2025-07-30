@@ -11,14 +11,14 @@ const curriculumData = {
         { type: "module", title: "Value Investing 101" },
         { type: "module", title: "Building Blocks to Value" },
         { type: "module", title: "What Drives Value?" },
-        { type: "live-workshop", title: "Apply & Practice" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
         { type: "module", title: "Next-Level Thinking" },
         { type: "module", title: "Where Investors Go Wrong" },
         { type: "module", title: "Investing Where You Have an Edge" },
         { type: "module", title: "Psychology of Investing" },
         { type: "case-study", title: "Major Investing Mistakes" },
         { type: "module", title: "Psychology of Markets & Herd Behavior" },
-        { type: "live-workshop", title: "Review & Master" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
       ]
     },
     
@@ -32,7 +32,7 @@ const curriculumData = {
         { type: "case-study", title: "Banking vs Software" },
         { type: "module", title: "Unlocking Optionality in Investing" },
         { type: "case-study", title: "Duolingo & Moderna" },
-        { type: "live-workshop", title: "Apply & Practice" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
         { type: "module", title: "Research & Idea Sourcing" },
         { type: "module", title: "Avoiding Bad Companies & Value Traps" },
         { type: "case-study", title: "Range of Outcomes" },
@@ -41,7 +41,7 @@ const curriculumData = {
         { type: "module", title: "Technological Disruption & Innovation" },
         { type: "module", title: "Not All Business Is Made the Same" },
         { type: "module", title: "Life Cycles" },
-        { type: "live-workshop", title: "Review & Master" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
       ]
     },
     
@@ -51,13 +51,13 @@ const curriculumData = {
       modules: [
         { type: "module", title: "Simplicity vs Complexity" },
         { type: "case-study", title: "Domino's vs Nvidia" },
-        { type: "live-workshop", title: "Apply & Practice" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
         { type: "case-study", title: "Starbucks vs Google" },
         { type: "module", title: "Becoming a Master Investor" },
         { type: "module", title: "High Efficiency Frameworks: Cheat Codes & Convex Heuristics" },
         { type: "module", title: "Macro Investing: Playing the Big Trends" },
         { type: "module", title: "Using Edges to Source Opportunities" },
-        { type: "live-workshop", title: "Review & Master" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
       ]
     },
     
@@ -67,11 +67,11 @@ const curriculumData = {
       modules: [
         { type: "module", title: "Surviving Market Shifts: Disruption, De-Globalization & Business Model Risks" },
         { type: "module", title: "Portfolio Management & Construction" },
-        { type: "live-workshop", title: "Apply & Practice" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
         { type: "module", title: "Thriving in Uncertainty: Risk Management & Decision Making" },
         { type: "module", title: "Reflexivity, Boom/Bust Cycles & Micro-Bubbles" },
         { type: "module", title: "You Are the Edge (and Other Intangible Angles)" },
-        { type: "live-workshop", title: "Review & Master" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
       ]
     }
   ]

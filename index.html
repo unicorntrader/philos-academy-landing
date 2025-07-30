@@ -842,7 +842,8 @@
             </div>
         </div>
     </section>
-
+  <!-- ===== CURRICULUM SECTION ===== -->
+    <div id="curriculum-container"></div>
   
 
     <!-- ===== TESTIMONIALS SECTION ===== -->
@@ -1068,5 +1069,17 @@
             }
         });
     </script>
+        });
+    </script>
+    
+    <script src="curriculum-data.js"></script>
+    <script>
+        // Load curriculum content
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('curriculum-container').innerHTML = generateCurriculumHTML();
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>

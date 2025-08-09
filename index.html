@@ -793,17 +793,26 @@
         }
 
         /* ===== MOBILE RESPONSIVE ===== */
-
-            @media (max-width: 768px) {
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    /* Hero section fixes */
+    .hero {
+        min-height: 70vh;
+        padding: 100px 0 40px; /* More top padding for header */
+    }
+    
     .hero-text h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px; /* Less space below title */
+        font-size: 2rem; /* Smaller on mobile */
+        margin-bottom: 15px;
+        margin-top: 20px; /* Space from header */
+        line-height: 1.1;
     }
 
     /* Fix video on mobile */
     .video-preview {
-        margin: 20px 0;
+        margin: 15px 0;
         max-width: 100%;
+        padding: 0 10px; /* Side padding */
     }
 
     .video-thumbnail {
@@ -826,145 +835,78 @@
         padding: 16px 20px;
     }
 
-    /* Reduce hero padding on mobile */
-    .hero {
-        min-height: 70vh;
-        padding: 60px 0 40px;
-    }
-
+    /* Other layout fixes */
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
+    
     .investor-types {
         grid-template-columns: 1fr;
     }
+    
     .pain-points-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+    
     .audience-types {
         grid-template-columns: 1fr;
     }
+    
     .hero-stats {
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
     }
+    
     .curriculum h2 {
         font-size: 2rem;
     }
+    
     .part-title {
         font-size: 1.4rem;
     }
+    
     .module-title {
         font-size: 1rem;
         line-height: 1.4;
     }
+    
     .module-item {
         padding: 20px;
     }
+    
     .part-header {
         padding: 20px;
     }
+    
     .logo {
         font-size: 20px;
     }
+    
     .logo .brand-name {
         font-size: 20px;
     }
+    
     .logo .brand-tagline {
         font-size: 12px;
     }
+    
     .cta-button {
         padding: 10px 16px;
         font-size: 14px;
     }
+    
     .cta-button-large {
         padding: 16px 30px;
         font-size: 1rem;
     }
+    
     .cta-button-secondary {
         padding: 12px 25px;
         font-size: 0.9rem;
     }
 }
-            
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .investor-types {
-                grid-template-columns: 1fr;
-            }
-
-            .pain-points-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .audience-types {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-stats {
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-
-            .curriculum h2 {
-                font-size: 2rem;
-            }
-
-            .part-title {
-                font-size: 1.4rem;
-            }
-
-            .module-title {
-                font-size: 1rem;
-                line-height: 1.4;
-            }
-
-            .module-item {
-                padding: 20px;
-            }
-
-            .part-header {
-                padding: 20px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .logo .brand-name {
-                font-size: 20px;
-            }
-
-            .logo .brand-tagline {
-                font-size: 12px;
-            }
-
-            .cta-button {
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-
-            .cta-button-large {
-                padding: 16px 30px;
-                font-size: 1rem;
-            }
-
-            .cta-button-secondary {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>

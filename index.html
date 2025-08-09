@@ -1156,9 +1156,9 @@
             }
         });
 
-// YouTube Video Loader Function
+// YouTube Playlist Loader Function
 function loadVideo() {
-    const videoId = 'YOUR_VIDEO_ID'; // Replace with your actual YouTube video ID
+    const playlistId = 'PLy4Lg9OioiDnuSmsf5iFh6JHdUJ2QLfxp';
     const thumbnail = document.querySelector('.video-thumbnail');
     const container = document.getElementById('video-container');
     
@@ -1166,17 +1166,17 @@ function loadVideo() {
     thumbnail.style.display = 'none';
     container.style.display = 'block';
     
-    // Create and insert iframe
+    // Create and insert iframe for playlist
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    iframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`;
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
     
     container.appendChild(iframe);
     
-    // Track the video load event if you have analytics
+    // Track the playlist load event if you have analytics
     if (typeof plausible !== 'undefined') {
-        plausible('VideoLoad');
+        plausible('PlaylistLoad');
     }
 }
     </script>

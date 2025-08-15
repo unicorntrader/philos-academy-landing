@@ -314,31 +314,72 @@
             display: block;
         }
 
-        .play-button {
+        .play-button-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .play-button {
             transition: all 0.3s ease;
         }
 
         .video-thumbnail:hover .play-button {
-            transform: translate(-50%, -50%) scale(1.1);
+            transform: scale(1.1);
         }
 
-        .video-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        .playlist-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 30px 20px 15px;
-            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: bold;
-            text-align: center;
-                display: none; /* Add this line */
+        }
 
+        .playlist-icon {
+            font-size: 14px;
+            color: #FF8C42;
+        }
+
+        .playlist-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 140, 66, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+
+        .video-title-enhanced {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .video-title-enhanced h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2C3E4A;
+            margin-bottom: 5px;
+        }
+
+        .video-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin: 0;
         }
 
         .video-container {
@@ -349,6 +390,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 3px solid #FF8C42;
+            margin-top: 20px;
         }
 
         .video-container iframe {
@@ -793,7 +835,6 @@
         }
 
         /* ===== MOBILE RESPONSIVE ===== */
-/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
     /* Hero section fixes */
     .hero {
@@ -817,6 +858,26 @@
 
     .video-thumbnail {
         border: 2px solid #FF8C42; /* Thinner border */
+    }
+
+    .playlist-badge {
+        top: 5px;
+        right: 5px;
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+    
+    .playlist-indicator {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+    
+    .video-title-enhanced h3 {
+        font-size: 1.1rem;
+    }
+    
+    .video-subtitle {
+        font-size: 0.8rem;
     }
 
     /* Stack buttons vertically on mobile */
@@ -928,22 +989,39 @@
                 <div class="hero-text">
       <h1>Master Investing. One Module at a Time.</h1>
 
-                                        <!-- YouTube Video Preview (Click to Load) -->
+                <!-- Enhanced Video Preview with Playlist Indicators -->
                 <div class="video-preview" id="video-preview">
                     <div class="video-thumbnail" onclick="loadVideo()">
-<img src="https://img.youtube.com/vi/uei1YkI0TMQ/maxresdefault.jpg" alt="Course Preview Playlist" class="thumbnail-image">                            <svg width="68" height="48" viewBox="0 0 68 48" fill="none">
+                        <img src="https://img.youtube.com/vi/uei1YkI0TMQ/maxresdefault.jpg" alt="Course Preview Playlist" class="thumbnail-image">
+                        
+                        <!-- Enhanced play button with playlist indicator -->
+                        <div class="play-button-container">
+                            <svg width="68" height="48" viewBox="0 0 68 48" fill="none" class="play-button">
                                 <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF0000"/>
                                 <path d="M 45,24 27,14 27,34" fill="white"/>
                             </svg>
+                            <!-- Playlist indicator -->
+                            <div class="playlist-indicator">
+                                <div class="playlist-icon">≡</div>
+                                <span class="playlist-count">Multiple videos</span>
+                            </div>
                         </div>
-                        <div class="video-title">Watch Course Preview</div>
+                        
+                        <!-- Playlist badge in corner -->
+                        <div class="playlist-badge">
+                            <span>📺 PLAYLIST</span>
+                        </div>
                     </div>
+                    
+                    <div class="video-title-enhanced">
+                        <h3>Course Preview</h3>
+                        <p class="video-subtitle">See what's inside</p>
+                    </div>
+                    
                     <div class="video-container" id="video-container" style="display: none;">
                         <!-- Video will be loaded here when clicked -->
                     </div>
                 </div>
-
-
 
 <div class="hero-buttons">
     <a href="https://forms.gle/U8Q866U9CfeueKBz5" class="cta-button-large" target="_blank" onclick="plausible('FormClick')">Begin your journey</a>

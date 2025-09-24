@@ -972,15 +972,24 @@
 </head>
 <body>
     <!-- ===== HEADER/NAVIGATION ===== -->
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">
-                <span class="brand-name">Philo's Academy</span>
-                <span class="brand-tagline">Learn Investing. Better.</span>
-            </a>
-<a href="#curriculum" onclick="scrollToSection('curriculum'); plausible('CurriculumClick'); return false;" class="cta-button-secondary">Inside the Course</a>
-        </nav>
-    </header>
+<header>
+  <nav class="container">
+    <a href="#" class="logo">
+      <span class="brand-name">Philo's Academy</span>
+      <span class="brand-tagline">Learn Investing. Better.</span>
+    </a>
+
+    <div class="nav-actions">
+      <a href="#curriculum"
+         onclick="scrollToSection('curriculum'); plausible && plausible('CurriculumClick'); return false;"
+         class="cta-button-secondary">Inside the Course</a>
+
+      <a href="mini-courses.html"
+         class="cta-button-secondary"
+         onclick="plausible && plausible('MiniCoursesNavClick')">Mini Courses</a>
+    </div>
+  </nav>
+</header>
 
     <!-- ===== HERO SECTION ===== -->
     <section class="hero">

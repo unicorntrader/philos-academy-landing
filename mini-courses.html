@@ -23,10 +23,12 @@
       background: #FFF8E7;
       border-bottom: 2px solid #fff;
       position: fixed; top:0; width:100%; z-index:1000;
+      padding: 20px 0;
     }
-    nav { display:flex; justify-content: space-between; align-items:center; padding:18px 0; }
+    nav { display:flex; justify-content: space-between; align-items:center; }
     .logo { font-weight:700; color:#2C3E4A; text-decoration:none; display:flex; flex-direction:column; line-height:1.2 }
-    .logo .brand-tagline { font-size:13px; color:#FF8C42 }
+    .logo .brand-name { font-size:24px; }
+    .logo .brand-tagline { font-size:14px; color:#FF8C42; margin-top:2px; }
     .cta-button {
       background:#FF8C42; color:#fff;
       padding:12px 24px; border-radius:8px;
@@ -34,6 +36,21 @@
       transition:all .2s ease; border:2px solid #FF8C42;
     }
     .cta-button:hover { background:#E67A35; border-color:#E67A35; transform:translateY(-2px); }
+    .cta-button-secondary {
+      background: transparent;
+      color: #FF8C42;
+      padding: 12px 24px;
+      border: 2px solid #FF8C42;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .cta-button-secondary:hover {
+      background: #FF8C42;
+      color: white;
+      transform: translateY(-2px);
+    }
     .hero { text-align:center; padding:60px 20px 40px; }
     .hero h1 { font-size:2.6rem; margin-bottom:15px; }
     .hero p { font-size:1.1rem; opacity:.85; }
@@ -62,7 +79,9 @@
       <span class="brand-name">Philo's Academy</span>
       <span class="brand-tagline">Learn Investing. Better.</span>
     </a>
-    <a href="/index.html" class="cta-button">Flagship Course</a>
+    <div class="nav-actions">
+      <a href="/index.html" class="cta-button-secondary">Flagship Course</a>
+    </div>
   </nav>
 </header>
 

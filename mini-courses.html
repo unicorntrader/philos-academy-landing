@@ -22,7 +22,7 @@
     header {
       background: #FFF8E7;
       border-bottom: 2px solid #fff;
-      position: sticky; top:0; z-index:10;
+      position: fixed; top:0; width:100%; z-index:1000;
     }
     nav { display:flex; justify-content: space-between; align-items:center; padding:18px 0; }
     .logo { font-weight:700; color:#2C3E4A; text-decoration:none; display:flex; flex-direction:column; line-height:1.2 }
@@ -62,63 +62,9 @@
       <span class="brand-name">Philo's Academy</span>
       <span class="brand-tagline">Learn Investing. Better.</span>
     </a>
+    <a href="/index.html" class="cta-button">Flagship Course</a>
   </nav>
 </header>
-
-<style>
-  header {
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: #FFF8E7;
-    border-bottom: 2px solid #fff;
-    z-index: 1000;
-    transition: all 0.3s ease;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center; /* Center the logo since no buttons */
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2C3E4A;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-    text-align: center;
-  }
-
-  .logo .brand-name {
-    font-size: 24px;
-  }
-
-  .logo .brand-tagline {
-    font-size: 14px;
-    font-weight: normal;
-    color: #FF8C42;
-    margin-top: 2px;
-  }
-
-  @media (max-width: 768px) {
-    .logo {
-      font-size: 20px;
-    }
-
-    .logo .brand-name {
-      font-size: 20px;
-    }
-
-    .logo .brand-tagline {
-      font-size: 12px;
-    }
-  }
-</style>
 
   <main class="container" style="padding-top:120px;">
     <section class="hero">
@@ -166,7 +112,7 @@
           <p class="muted">Separate signal from hype (AI/EV/crypto), evaluate adoption, spot traps, avoid FOMO blow-ups.</p>
           <ul>
             <li>Hype cycles vs. life cycles</li>
-            <li>Narrative vs: fundamentals</li>
+            <li>Narrative vs. fundamentals</li>
             <li>Red flags in pitches & filings</li>
           </ul>
         </div>
@@ -192,7 +138,7 @@
       </article>
     </section>
 
-    <!-- YouTube Subscribe CTA (added; reuses your orange button class) -->
+    <!-- YouTube Subscribe CTA -->
     <section aria-labelledby="cta-youtube-title" style="margin:40px auto 0; max-width:960px; background:#fff; border:2px solid #FF8C42; border-radius:12px; padding:24px; text-align:center;">
       <h3 id="cta-youtube-title" style="margin:0 0 8px;">Stay in the loop 🎥</h3>
       <p style="margin:0 0 16px; color:#2C3E4A;">

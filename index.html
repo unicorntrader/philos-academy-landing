@@ -92,6 +92,98 @@
   margin: 8px 0;
   color: #2C3E4A;
 }
+    /* Staircase Outcomes */
+.outcomes-staircase { position: relative; overflow: hidden; }
+.outcomes-staircase .rise-arrow {
+  position: absolute; left: 0; top: 22px; width: 60%; max-width: 640px; opacity: 0.22; pointer-events: none;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: end;
+  margin-top: 22px;
+}
+
+/* Step cards */
+.step {
+  --offset: 0px;        /* per-card vertical offset (stair height) */
+  --delay: 0ms;         /* per-card animation delay */
+  position: relative;
+  background: #fff;
+  border: 2px solid #FF8C42;
+  border-radius: 14px;
+  padding: 20px 20px 18px;
+  box-shadow: 0 6px 18px rgba(255,140,66,0.12);
+  transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+  transform: translateY(calc(var(--offset) + 40px));
+  opacity: 0;
+}
+.step:hover { transform: translateY(calc(var(--offset) - 4px)); box-shadow: 0 10px 28px rgba(255,140,66,0.18); }
+.step.in-view {
+  transform: translateY(var(--offset));
+  opacity: 1;
+  transition-delay: var(--delay);
+}
+
+.part-label {
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: #7A8A96;
+  margin-bottom: 4px;
+}
+
+.step h3 {
+  font-size: 1.08rem;
+  color: #2C3E4A;
+  margin: 4px 0 10px;
+  text-align: left;
+}
+
+.step ul { margin-left: 18px; }
+.step li { margin: 6px 0; font-size: .98rem; line-height: 1.5; position: relative; }
+.step li::marker { color: #FF8C42; }
+
+/* Number badge */
+.step-badge {
+  position: absolute;
+  top: -12px; left: -12px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #FF8C42;
+  color: #fff;
+  font-weight: 800;
+  display: grid; place-items: center;
+  box-shadow: 0 4px 10px rgba(255,140,66,0.35);
+  border: 2px solid #fff;
+}
+
+/* CTA under steps */
+.steps-cta { text-align: center; margin-top: 26px; }
+
+/* Reduced motion: disable animation, keep staircase offsets */
+@media (prefers-reduced-motion: reduce) {
+  .step { transition: none !important; transform: translateY(var(--offset)) !important; opacity: 1 !important; }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .outcomes-staircase .rise-arrow { width: 80%; top: 12px; }
+  /* smaller stair look on tablets */
+  .steps .step[style*="--offset:48px"] { --offset: 24px; }
+  .steps .step[style*="--offset:32px"] { --offset: 12px; }
+  .steps .step[style*="--offset:16px"] { --offset: 6px; }
+}
+@media (max-width: 640px) {
+  .steps { grid-template-columns: 1fr; }
+  .step { --offset: 0px !important; }
+  .outcomes-staircase .rise-arrow { display: none; }
+  .step h3 { font-size: 1rem; }
+  .step li { font-size: .95rem; }
+  .outcomes h2 { font-size: 2rem; }
+}
 
     /* Footer */
     footer{background:#2C3E4A;padding:40px 0;text-align:center}
@@ -168,37 +260,74 @@
   </section>
 
 
-<!-- Outcomes -->
-<section id="outcomes" class="outcomes">
+<!-- Outcomes / Animated Staircase -->
+<section id="outcomes" class="outcomes outcomes-staircase" aria-labelledby="result-title">
   <div class="container">
-    <h2>Who You Will Become</h2>
+    <h2 id="result-title">Who You Will Become</h2>
 
-    <div class="outcome-block">
-      <h3>PART 1 — Build an Unshakable Foundation</h3>
-      <p>✅ Explain what truly drives business value in plain English.</p>
-      <p>✅ Spot and avoid the classic traps most investors fall into.</p>
-      <p>✅ Operate with calm conviction instead of chasing headlines or FOMO.</p>
+    <!-- Decorative rising arrow -->
+    <svg class="rise-arrow" viewBox="0 0 600 140" aria-hidden="true">
+      <path d="M10,120 C140,120 180,100 260,90 C320,82 380,60 450,50 C510,42 560,28 590,20"
+            fill="none" stroke="#FF8C42" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="585,8 598,18 583,22" fill="#FF8C42"/>
+    </svg>
+
+    <div class="steps">
+      <!-- PART 1 -->
+      <article class="step" style="--offset:48px; --delay:0ms;">
+        <div class="step-badge">1</div>
+        <p class="part-label">PART 1 — Foundational Concepts & Value Investing</p>
+        <h3>Build an Unshakable Base</h3>
+        <ul>
+          <li>Explain drivers of business value & investor returns in plain English.</li>
+          <li>Spot the traps (story stocks, fake cheap, narrative FOMO) before they cost you.</li>
+          <li>Define your circle of competence and operate inside it with rules.</li>
+          <li>Shift from headline-reactive to calm, repeatable process.</li>
+        </ul>
+      </article>
+
+      <!-- PART 2 -->
+      <article class="step" style="--offset:32px; --delay:120ms;">
+        <div class="step-badge">2</div>
+        <p class="part-label">PART 2 — Advanced Investment Concepts</p>
+        <h3>Think Like a Professional Analyst</h3>
+        <ul>
+          <li>Break down any business model (banks vs. software, media, platforms) and value it.</li>
+          <li>Identify optionality, disruption & adoption curves early—before consensus.</li>
+          <li>Source ideas systematically; kill value traps fast with disconfirming checks.</li>
+          <li>Map ranges of outcomes and size positions accordingly.</li>
+        </ul>
+      </article>
+
+      <!-- PART 3 -->
+      <article class="step" style="--offset:16px; --delay:240ms;">
+        <div class="step-badge">3</div>
+        <p class="part-label">PART 3 — Mastery & Strategy</p>
+        <h3>Codify Your Edge</h3>
+        <ul>
+          <li>Use high-efficiency frameworks to decide faster with higher hit rates.</li>
+          <li>Integrate macro context without drifting into macro tourism.</li>
+          <li>Systematize adds/trims, catalysts, and review loops to compound learning.</li>
+          <li>Act simple, systematic, decisive—like a master operator.</li>
+        </ul>
+      </article>
+
+      <!-- PART 4 -->
+      <article class="step" style="--offset:0px; --delay:360ms;">
+        <div class="step-badge">4</div>
+        <p class="part-label">PART 4 — Managing Risk & Portfolio Management</p>
+        <h3>Portfolio Mastery & Resilience</h3>
+        <ul>
+          <li>Build a portfolio that survives disruption, de-globalization & business model shocks.</li>
+          <li>Apply real risk rules: sizing, liquidity, reflexivity, boom/bust micro-cycles.</li>
+          <li>Stress-test decisions; pre-mortems, exit rules, and error budgets.</li>
+          <li>Leave with your own decision operating system—repeatable and calm.</li>
+        </ul>
+      </article>
     </div>
 
-    <div class="outcome-block">
-      <h3>PART 2 — Think Like a Professional Analyst</h3>
-      <p>✅ Differentiate business models and value them correctly.</p>
-      <p>✅ Identify optionality and disruption early, before the crowd.</p>
-      <p>✅ Source ideas systematically and filter out value traps fast.</p>
-    </div>
-
-    <div class="outcome-block">
-      <h3>PART 3 — Develop Your Strategy & Edge</h3>
-      <p>✅ Use high-efficiency frameworks to make better, faster decisions.</p>
-      <p>✅ Weave macro context into your edge without becoming a tourist.</p>
-      <p>✅ Act like a master investor: simple, systematic, decisive.</p>
-    </div>
-
-    <div class="outcome-block">
-      <h3>PART 4 — Achieve Resilience & Portfolio Mastery</h3>
-      <p>✅ Build a portfolio that survives disruption and uncertainty.</p>
-      <p>✅ Apply real risk rules: sizing, adds/trims, reflexivity & cycles.</p>
-      <p>✅ Leave with your own operating system for investment decisions.</p>
+    <div class="steps-cta">
+      <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank">Start Your Climb</a>
     </div>
   </div>
 </section>

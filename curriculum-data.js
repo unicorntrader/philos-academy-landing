@@ -1,30 +1,30 @@
-// Curriculum Data Module - All course content organized
+// Curriculum Data Module - Outcome-focused framing
 const curriculumData = {
-  title: "The Journey: 28 Modules & 8 Case Studies",
+  title: "Your Transformation as an Investor",
   
   parts: [
     {
       id: 1,
-      title: "PART 1 — Foundational Concepts & Value Investing",
+      title: "PART 1 — Build Your Foundation: Clear Thinking & Value Investing Discipline",
       modules: [
         { type: "module", title: "Introduction to Investing" },
         { type: "module", title: "Value Investing 101" },
         { type: "module", title: "Building Blocks to Value" },
         { type: "module", title: "What Drives Value?" },
-        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" },
         { type: "module", title: "Next-Level Thinking" },
         { type: "module", title: "Where Investors Go Wrong" },
         { type: "module", title: "Investing Where You Have an Edge" },
         { type: "module", title: "Psychology of Investing" },
         { type: "case-study", title: "Major Investing Mistakes" },
         { type: "module", title: "Psychology of Markets & Herd Behavior" },
-        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" }
       ]
     },
     
     {
       id: 2,
-      title: "PART 2 — Advanced Investment Concepts",
+      title: "PART 2 — Master Advanced Concepts: See Businesses & Markets Differently",
       modules: [
         { type: "module", title: "Understanding Market Dimensions: Price, Value & Liquidity" },
         { type: "module", title: "Differentiating Business Models" },
@@ -32,7 +32,7 @@ const curriculumData = {
         { type: "case-study", title: "Banking vs Software" },
         { type: "module", title: "Unlocking Optionality in Investing" },
         { type: "case-study", title: "Duolingo & Moderna" },
-        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" },
         { type: "module", title: "Research & Idea Sourcing" },
         { type: "module", title: "Avoiding Bad Companies & Value Traps" },
         { type: "case-study", title: "Range of Outcomes" },
@@ -41,37 +41,37 @@ const curriculumData = {
         { type: "module", title: "Technological Disruption & Innovation" },
         { type: "module", title: "Not All Business Is Made the Same" },
         { type: "module", title: "Life Cycles" },
-        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" }
       ]
     },
     
     {
       id: 3,
-      title: "PART 3 — Mastery & Strategy",
+      title: "PART 3 — Develop Your Strategy: Think & Act Like a Master Investor",
       modules: [
         { type: "module", title: "Simplicity vs Complexity" },
         { type: "case-study", title: "Domino's vs Nvidia" },
-        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" },
         { type: "case-study", title: "Starbucks vs Google" },
         { type: "module", title: "Becoming a Master Investor" },
         { type: "module", title: "High Efficiency Frameworks: Cheat Codes & Convex Heuristics" },
         { type: "module", title: "Macro Investing: Playing the Big Trends" },
         { type: "module", title: "Using Edges to Source Opportunities" },
-        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" }
       ]
     },
     
     {
       id: 4,
-      title: "PART 4 — Managing Risk & Portfolio Management",
+      title: "PART 4 — Achieve Resilience: Manage Risk & Build a Durable Portfolio",
       modules: [
         { type: "module", title: "Surviving Market Shifts: Disruption, De-Globalization & Business Model Risks" },
         { type: "module", title: "Portfolio Management & Construction" },
-        { type: "live-workshop", title: "Checkpoint" }, // LIVE WORKSHOP ADDED HERE
+        { type: "live-workshop", title: "Checkpoint" },
         { type: "module", title: "Thriving in Uncertainty: Risk Management & Decision Making" },
         { type: "module", title: "Reflexivity, Boom/Bust Cycles & Micro-Bubbles" },
         { type: "module", title: "You Are the Edge (and Other Intangible Angles)" },
-        { type: "live-workshop", title: "Mastery Check" } // LIVE WORKSHOP AT END
+        { type: "live-workshop", title: "Mastery Check" }
       ]
     }
   ]

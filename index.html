@@ -186,123 +186,7 @@
             justify-content: center;
         }
 
-        /* ===== VIDEO PREVIEW SECTION ===== */
-        .video-preview {
-            margin: 40px 0 40px 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-thumbnail {
-            position: relative;
-            cursor: pointer;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 3px solid #FF8C42;
-        }
-
-        .video-thumbnail:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.3);
-        }
-
-        .thumbnail-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .play-button-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .play-button {
-            transition: all 0.3s ease;
-        }
-
-        .video-thumbnail:hover .play-button {
-            transform: scale(1.1);
-        }
-
-        .playlist-indicator {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .playlist-icon {
-            font-size: 14px;
-            color: #FF8C42;
-        }
-
-        .playlist-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255, 140, 66, 0.9);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: bold;
-            backdrop-filter: blur(5px);
-        }
-
-        .video-title-enhanced {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .video-title-enhanced h3 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 5px;
-        }
-
-        .video-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-            margin: 0;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            border-radius: 12px;
-            overflow: hidden;
-            border: 3px solid #FF8C42;
-            margin-top: 20px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* ===== CURRICULUM SECTION ===== */
+        /* ===== CURRICULUM CONTAINER ===== */
         .outcomes {
             padding: 80px 0;
             background: #fff;
@@ -340,314 +224,6 @@
             margin-bottom: 8px;
         }
 
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials {
-            padding: 80px 0;
-            background: #FFF8E7;
-        }
-
-        .testimonials-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 50px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .testimonial {
-            background: #fff;
-            border: 2px solid #FF8C42;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: left;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255, 140, 66, 0.2);
-            border-color: #E67A35;
-        }
-
-        .testimonial-text {
-            font-size: 0.95rem;
-            color: #2C3E4A;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-size: 0.9rem;
-            color: #FF8C42;
-            font-weight: bold;
-        }
-
-        /* ===== WHO JOINS SECTION ===== */
-        .who-joins {
-            padding: 100px 0;
-            background: #fff;
-        }
-
-        .who-joins-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .who-joins h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 20px;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #2C3E4A;
-            margin-bottom: 50px;
-            opacity: 0.8;
-        }
-
-        .investor-types {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .investor-type-card {
-            background: #FFF8E7;
-            border: 2px solid #FF8C42;
-            border-radius: 15px;
-            padding: 30px 25px;
-            text-align: left;
-        }
-
-        .investor-type-card h3 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #FF8C42;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .investor-type-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .investor-type-card li {
-            font-size: 0.95rem;
-            color: #2C3E4A;
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-            line-height: 1.4;
-        }
-
-        .investor-type-card li:before {
-            content: "•";
-            color: #FF8C42;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .investor-type-card strong {
-            color: #2C3E4A;
-        }
-
-        .common-thread {
-            background: #2C3E4A;
-            border-radius: 15px;
-            padding: 40px;
-            margin-top: 50px;
-            color: #fff;
-        }
-
-        .common-thread h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FF8C42;
-            margin-bottom: 20px;
-        }
-
-        .common-thread p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .common-thread strong {
-            color: #FF8C42;
-        }
-
-        /* ===== PAIN POINTS SECTION ===== */
-        .pain-points {
-            padding: 100px 0;
-            background: #2C3E4A;
-            color: #fff;
-        }
-
-        .pain-points-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .pain-points h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .pain-points-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        .pain-points-column h3 {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #FF8C42;
-            margin-bottom: 25px;
-        }
-
-        .pain-points-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .pain-points-list li {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .pain-points-list li:before {
-            content: "•";
-            color: #FF8C42;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            padding: 100px 0;
-            background: #fff;
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            color: #2C3E4A;
-            margin-bottom: 40px;
-            opacity: 0.8;
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact {
-            padding: 100px 0;
-            background: #FFF8E7;
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 1.1rem;
-            color: #2C3E4A;
-            margin-bottom: 50px;
-            opacity: 0.8;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            background: #fff;
-            border: 3px solid #FF8C42;
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .contact-item h3 {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2C3E4A;
-            margin-bottom: 10px;
-        }
-
-        .contact-item a {
-            color: #FF8C42;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
         /* ===== FOOTER ===== */
         footer {
             background: #2C3E4A;
@@ -657,130 +233,6 @@
 
         footer p {
             color: #fff;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* ===== MOBILE RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            /* Hero section fixes */
-            .hero {
-                min-height: 70vh;
-                padding: 120px 0 40px; /* More top padding for header */
-            }
-            
-            .hero-text h1 {
-                font-size: 2rem; /* Smaller on mobile */
-                margin-bottom: 15px;
-                margin-top: 20px; /* Space from header */
-                line-height: 1.1;
-            }
-
-            /* Fix video on mobile */
-            .video-preview {
-                margin: 15px 0;
-                max-width: 100%;
-                padding: 0 10px; /* Side padding */
-            }
-
-            .video-thumbnail {
-                border: 2px solid #FF8C42; /* Thinner border */
-            }
-
-            .playlist-badge {
-                top: 5px;
-                right: 5px;
-                padding: 3px 8px;
-                font-size: 10px;
-            }
-            
-            .playlist-indicator {
-                font-size: 10px;
-                padding: 3px 8px;
-            }
-            
-            .video-title-enhanced h3 {
-                font-size: 1.1rem;
-            }
-            
-            .video-subtitle {
-                font-size: 0.8rem;
-            }
-
-            /* Stack buttons vertically on mobile */
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
-            .hero-buttons .cta-button-large,
-            .hero-buttons .cta-button-secondary {
-                width: 100%;
-                max-width: 280px;
-                text-align: center;
-                padding: 16px 20px;
-            }
-
-            /* Other layout fixes */
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .investor-types {
-                grid-template-columns: 1fr;
-            }
-            
-            .pain-points-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .outcomes h2 {
-                font-size: 1.8rem;
-            }
-            
-            .outcomes-part h3 {
-                font-size: 1.3rem;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .logo .brand-name {
-                font-size: 20px;
-            }
-            
-            .logo .brand-tagline {
-                font-size: 12px;
-            }
-            
-            .cta-button {
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-            
-            .cta-button-large {
-                padding: 16px 30px;
-                font-size: 1rem;
-            }
-            
-            .cta-button-secondary {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
         }
     </style>
 </head>
@@ -812,40 +264,6 @@
                 <div class="hero-text">
       <h1>Master Investing. One Module at a Time.</h1>
 
-                <!-- Enhanced Video Preview with Playlist Indicators -->
-                <div class="video-preview" id="video-preview">
-                    <div class="video-thumbnail" onclick="loadVideo()">
-                        <img src="https://img.youtube.com/vi/uei1YkI0TMQ/maxresdefault.jpg" alt="Course Preview Playlist" class="thumbnail-image">
-                        
-                        <!-- Enhanced play button with playlist indicator -->
-                        <div class="play-button-container">
-                            <svg width="68" height="48" viewBox="0 0 68 48" fill="none" class="play-button">
-                                <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF0000"/>
-                                <path d="M 45,24 27,14 27,34" fill="white"/>
-                            </svg>
-                            <!-- Playlist indicator -->
-                            <div class="playlist-indicator">
-                                <div class="playlist-icon">≡</div>
-                                <span class="playlist-count">Multiple videos</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Playlist badge in corner -->
-                        <div class="playlist-badge">
-                            <span>📺 PLAYLIST</span>
-                        </div>
-                    </div>
-                    
-                    <div class="video-title-enhanced">
-                        <h3>Course Preview</h3>
-                        <p class="video-subtitle">See what's inside</p>
-                    </div>
-                    
-                    <div class="video-container" id="video-container" style="display: none;">
-                        <!-- Video will be loaded here when clicked -->
-                    </div>
-                </div>
-
 <div class="hero-buttons">
     <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank" onclick="plausible('FormClick')">Apply Now</a>
 </div>
@@ -854,9 +272,8 @@
         </div>
     </section>
 
-    <!-- ===== CURRICULUM SECTION ===== -->
+    <!-- ===== CURRICULUM SECTION (dynamic) ===== -->
     <div id="curriculum-container"></div>
-  
 
     <!-- ===== TESTIMONIALS SECTION ===== -->
     <section class="testimonials">
@@ -868,32 +285,37 @@
                         <p class="testimonial-text">"Probably one of the best investment newsletters out there right now. One of the last original thinkers on fintwit? Philo shares a philosophical approach to investing, focusing on high-quality analysis of investment opportunities using a business mindset, simplifying complex concepts, and providing insights on both individual stocks and broader market trends."</p>
                         <p class="testimonial-author">— Polymath Investor</p>
                     </div>
-                    
-                    <div class="testimonial">
-                        <p class="testimonial-text">"This stuff is better wisdom than buffett puts out lol. Killin it @philoinvestor"</p>
-                        <p class="testimonial-author">— Alex Pitti</p>
-                    </div>
-                    
-                    <a href="https://x.com/Johnie36149708/status/1517426642855022593" target="_blank" class="testimonial">
-                        <p class="testimonial-text">"I really enjoy your content. In a cesspool of technical analysis articles you provide in-depth fundamental rationale and explain the triggers and psychology behind it. You always get me thinking and questioning myself after I read your stuff."</p>
-                        <p class="testimonial-author">— Johnie Random Capital</p>
-                    </a>
-                    
-                    <a href="https://x.com/TihoBrkan/status/1913181084944040007" target="_blank" class="testimonial">
-                        <p class="testimonial-text">"Not enough credit goes @philoinvestor, who took the other side of the $NVO widespread consensus at the peak of euphoria last summer. This is not only a contrarian view, this is a variant perception (non-consensus view that proved to be right)."</p>
-                        <p class="testimonial-author">— Tiho Brkan</p>
-                    </a>
-                    
-                    <a href="https://x.com/ReturnsJourney/status/1909956537969164452" target="_blank" class="testimonial">
-                        <p class="testimonial-text">"The only 'macro' commentator that does not change opinion every month, and has been right so far. The only I would listen to."</p>
-                        <p class="testimonial-author">— Olivier @ReturnsJourney</p>
-                    </a>
-                    
-                    <a href="https://x.com/KlendathuCap/status/1878569302514950293" target="_blank" class="testimonial">
-                        <p class="testimonial-text">"@philoinvestor is the best. Read his Netflix piece back in 2022 after Ackman sold"</p>
-                        <p class="testimonial-author">— The Klendathu Cap</p>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Philo’s Academy. Learn Investing. Better.</p>
+        </div>
+    </footer>
+
+    <!-- ===== LOAD CURRICULUM JS ===== -->
+    <script src="/curriculum-data.js?v=3" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const mount = document.getElementById('curriculum-container');
+        if (!mount) return;
+
+        if (typeof generateCurriculumHTML !== 'function') {
+          console.error('curriculum-data.js did not load');
+          return;
+        }
+
+        mount.innerHTML = generateCurriculumHTML();
+
+        window.scrollToSection = (id) => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+      });
+    </script>
+</body>
+</html>

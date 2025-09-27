@@ -382,30 +382,25 @@
     if(window.plausible) plausible('PlaylistLoad');
   }
 
-  // 🚀 Staircase animation
-  document.addEventListener('DOMContentLoaded', function () {
-    const steps = document.querySelectorAll('.step');
-    if (!steps.length) return;
+ // Reveal steps on scroll (upward fade)
+document.addEventListener('DOMContentLoaded', function () {
+  const steps = document.querySelectorAll('.step');
+  if (!steps.length) return;
 
-    if (!('IntersectionObserver' in window)) {
-      steps.forEach(s => s.classList.add('in-view'));
-      return;
-    }
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
-
-    steps.forEach(step => io.observe(step));
-  });
-</script>
-</body>
-</html>
+  if (!('IntersectionObserver' in window)) {
+    steps.forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  steps.forEach(step => io.observe(step));
+});
   </script>
 </body>
 </html>

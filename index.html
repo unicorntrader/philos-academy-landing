@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
   <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Philo's Academy - Learn Investing. Better.</title>
 
-  <!-- Social -->
+  <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://philomastery.com">
   <meta property="og:title" content="Philo's Academy - Learn Investing. Better.">
   <meta property="og:description" content="Zero to Hero in Investing: 28 modules, 8 case studies, 4 core parts. For beginners and professionals re-discovering their edge.">
   <meta property="og:image" content="https://philomastery.com/philosacademy-share-image.png">
+
+  <!-- Twitter Card Meta Tags -->
   <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://philomastery.com">
+  <meta property="twitter:title" content="Philo's Academy - Learn Investing. Better.">
+  <meta property="twitter:description" content="Zero to Hero in Investing: 28 modules, 8 case studies, 4 core parts. For beginners and professionals re-discovering their edge.">
+  <meta property="twitter:image" content="https://philomastery.com/philosacademy-share-image.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -20,149 +26,105 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:#2C3E4A;background:#FFF8E7;overflow-x:hidden}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    /* ===== BASIC RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+      line-height: 1.6;
+      color: #2C3E4A;
+      background: #FFF8E7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* Header */
-    header{padding:20px 0;position:fixed;width:100%;top:0;background:#FFF8E7;border-bottom:2px solid #fff;z-index:1000;transition:all .3s ease}
-    nav{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:24px;font-weight:bold;color:#2C3E4A;text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
-    .logo .brand-name{font-size:24px}
-    .logo .brand-tagline{font-size:14px;font-weight:normal;color:#FF8C42;margin-top:2px}
-    .cta-button-large{background:#FF8C42;color:#fff;padding:20px 50px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.2rem;transition:all .3s ease;display:inline-block;border:none;cursor:pointer}
-    .cta-button-large:hover{background:#E67A35;transform:translateY(-3px)}
-    .cta-button-secondary{background:transparent;color:#FF8C42;padding:15px 35px;border:2px solid #FF8C42;border-radius:10px;text-decoration:none;font-weight:bold;font-size:1rem;transition:all .3s ease;display:inline-block}
-    .cta-button-secondary:hover{background:#FF8C42;color:#fff;transform:translateY(-2px)}
+    /* ===== HEADER ===== */
+    header {
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: #FFF8E7;
+      border-bottom: 2px solid #fff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 24px; font-weight: bold; color: #2C3E4A; text-decoration: none; display: flex; flex-direction: column; line-height: 1.2; }
+    .logo .brand-name { font-size: 24px; }
+    .logo .brand-tagline { font-size: 14px; font-weight: normal; color: #FF8C42; margin-top: 2px; }
+    .cta-button-secondary {
+      background: transparent; color: #FF8C42;
+      padding: 12px 24px; border: 2px solid #FF8C42; border-radius: 8px;
+      text-decoration: none; font-weight: bold; transition: all 0.3s ease;
+    }
+    .cta-button-secondary:hover { background:#FF8C42; color:#fff; transform:translateY(-2px); }
 
-    /* Hero */
-    .hero{min-height:80vh;display:flex;align-items:center;padding:140px 0 60px}
-    .hero-content{text-align:center}
-    .hero-text{animation:slideInLeft 1s ease-out}
-    .hero-text h1{font-size:3.5rem;font-weight:bold;color:#2C3E4A;margin-bottom:24px;line-height:1.2}
-    .hero-buttons{display:flex;gap:20px;justify-content:center;align-items:center;margin-top:30px;flex-wrap:wrap}
+    /* ===== HERO ===== */
+    .hero { min-height: 80vh; display: flex; align-items: center; padding: 140px 0 60px; }
+    .hero-content { text-align: center; }
+    .hero-text h1 { font-size: 3.5rem; font-weight: bold; margin-bottom: 40px; color: #2C3E4A; }
+    .cta-button-large {
+      background: #FF8C42; color: #fff; padding: 20px 50px;
+      border-radius: 12px; font-weight: bold; font-size: 1.2rem;
+      text-decoration: none; display: inline-block; transition: all .3s ease;
+    }
+    .cta-button-large:hover { background:#E67A35; transform:translateY(-3px); }
 
-    /* Video preview / playlist */
-    .video-preview{margin:24px auto 32px;max-width:600px}
-    .video-thumbnail{position:relative;cursor:pointer;border-radius:12px;overflow:hidden;transition:all .3s ease;border:3px solid #FF8C42}
-    .video-thumbnail:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,140,66,.3)}
-    .thumbnail-image{width:100%;height:auto;display:block}
-    .play-button-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px}
-    .play-button{transition:all .3s ease}
-    .video-thumbnail:hover .play-button{transform:scale(1.1)}
-    .playlist-indicator{display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.8);color:#fff;padding:5px 10px;border-radius:15px;font-size:12px;font-weight:bold}
-    .playlist-icon{font-size:14px;color:#FF8C42}
-    .playlist-badge{position:absolute;top:10px;right:10px;background:rgba(255,140,66,.9);color:#fff;padding:5px 10px;border-radius:15px;font-size:12px;font-weight:bold;backdrop-filter:blur(5px)}
-    .video-title-enhanced{text-align:center;margin-top:12px}
-    .video-title-enhanced h3{font-size:1.2rem;font-weight:700;color:#2C3E4A;margin-bottom:4px}
-    .video-subtitle{font-size:.9rem;color:#666;font-style:italic;margin:0}
-    .video-container{position:relative;width:100%;height:0;padding-bottom:56.25%;border-radius:12px;overflow:hidden;border:3px solid #FF8C42;margin-top:16px}
-    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+    /* ===== OUTCOMES ===== */
+    .outcomes { padding: 100px 0; background:#fff; }
+    .outcomes h2 { text-align:center; font-size:2.5rem; margin-bottom:40px; color:#2C3E4A; }
+    .outcomes-part { margin-bottom:40px; }
+    .outcomes-part h3 { color:#FF8C42; font-size:1.6rem; margin-bottom:12px; text-align:center; }
+    .outcomes-part ul { list-style: disc; margin-left:40px; line-height:1.6; }
+    .outcomes-part li { margin-bottom:10px; }
 
-    /* Outcomes (Who You Will Become) */
-    .outcomes{padding:80px 0;background:#fff}
-    .outcomes .container{max-width:1000px}
-    .section-kicker{text-align:center;color:#FF8C42;font-weight:700;letter-spacing:.08em;margin-bottom:6px;text-transform:uppercase}
-    .outcomes h2{text-align:center;font-size:2.2rem;margin-bottom:36px;color:#2C3E4A}
-    .outcomes-part{margin-bottom:32px}
-    .outcomes-part h3{color:#FF8C42;font-size:1.25rem;margin-bottom:8px}
-    .outcomes-part ul{list-style:disc;margin-left:20px;color:#2C3E4A;line-height:1.6}
-    .outcomes-part li{margin-bottom:6px}
+    /* ===== FOOTER ===== */
+    footer { background:#2C3E4A; padding:40px 0; text-align:center; }
+    footer p { color:#fff; }
 
-    /* Footer */
-    footer{background:#2C3E4A;padding:40px 0;text-align:center}
-    footer p{color:#fff}
-
-    @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
-
-    @media (max-width:768px){
-      .hero{min-height:70vh;padding:120px 0 40px}
-      .hero-text h1{font-size:2rem;margin-bottom:15px;margin-top:20px;line-height:1.1}
-      .video-preview{margin:15px 0;max-width:100%;padding:0 10px}
-      .video-thumbnail{border:2px solid #FF8C42}
-      .playlist-badge{top:5px;right:5px;padding:3px 8px;font-size:10px}
-      .playlist-indicator{font-size:10px;padding:3px 8px}
-      .video-title-enhanced h3{font-size:1.1rem}
-      .video-subtitle{font-size:.8rem}
-      .hero-buttons{flex-direction:column;gap:15px}
-      .hero-buttons .cta-button-large,.hero-buttons .cta-button-secondary{width:100%;max-width:280px;text-align:center;padding:16px 20px}
-      .outcomes h2{font-size:1.8rem}
-      .outcomes-part h3{font-size:1.15rem}
-      .logo{font-size:20px}
-      .logo .brand-name{font-size:20px}
-      .logo .brand-tagline{font-size:12px}
-      .cta-button-large{padding:16px 30px;font-size:1rem}
-      .cta-button-secondary{padding:12px 25px;font-size:.9rem}
+    /* ===== MOBILE ===== */
+    @media (max-width:768px) {
+      .hero { padding: 120px 0 40px; }
+      .hero-text h1 { font-size:2rem; }
+      .cta-button-large { font-size:1rem; padding:16px 30px; }
+      .outcomes h2 { font-size:2rem; }
+      .outcomes-part h3 { font-size:1.3rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <nav class="container">
-      <a href="#" class="logo">
+      <a href="/" class="logo">
         <span class="brand-name">Philo's Academy</span>
         <span class="brand-tagline">Learn Investing. Better.</span>
       </a>
-
       <div class="nav-actions">
-        <!-- Changed: Inside the Course -> The Result -->
-        <a href="#result"
-           onclick="scrollToSection('result'); if (window.plausible) plausible('ResultClick'); return false;"
-           class="cta-button-secondary">The Result</a>
-
-        <a href="mini-courses.html"
-           class="cta-button-secondary"
-           onclick="if (window.plausible) plausible('MiniCoursesNavClick')">Mini Courses</a>
+        <a href="#outcomes" class="cta-button-secondary">The Result</a>
+        <a href="mini-courses.html" class="cta-button-secondary">Mini Courses</a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
           <h1>Master Investing. One Module at a Time.</h1>
-
-          <!-- Video preview with playlist -->
-          <div class="video-preview" id="video-preview">
-            <div class="video-thumbnail" onclick="loadVideo()">
-              <img src="https://img.youtube.com/vi/uei1YkI0TMQ/maxresdefault.jpg" alt="Course Preview Playlist" class="thumbnail-image">
-              <div class="play-button-container">
-                <svg width="68" height="48" viewBox="0 0 68 48" fill="none" class="play-button" aria-hidden="true">
-                  <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF0000"/>
-                  <path d="M 45,24 27,14 27,34" fill="#fff"/>
-                </svg>
-                <div class="playlist-indicator">
-                  <div class="playlist-icon">≡</div>
-                  <span class="playlist-count">Multiple videos</span>
-                </div>
-              </div>
-              <div class="playlist-badge"><span>📺 PLAYLIST</span></div>
-            </div>
-
-            <div class="video-title-enhanced">
-              <h3>Course Preview</h3>
-              <p class="video-subtitle">See what's inside</p>
-            </div>
-
-            <div class="video-container" id="video-container" style="display:none;"></div>
-          </div>
-
           <div class="hero-buttons">
-            <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank" onclick="if (window.plausible) plausible('FormClick')">Apply Now</a>
+            <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank">Apply Now</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHO YOU WILL BECOME (results) -->
-  <section class="outcomes" id="result" aria-labelledby="result-title">
+  <!-- OUTCOMES -->
+  <section id="outcomes" class="outcomes">
     <div class="container">
-      <div class="section-kicker">Who You Will Become</div>
-      <h2 id="result-title">A Calm, Convicted, Repeatable Investor</h2>
+      <h2>Who You Will Become</h2>
 
       <div class="outcomes-part">
         <h3>PART 1 — Build an Unshakable Foundation</h3>
@@ -202,57 +164,11 @@
     </div>
   </section>
 
-  <!-- (Optional) curriculum container still mounted; leave if you want both -->
-  <div id="curriculum-container"></div>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Philo’s Academy. Learn Investing. Better.</p>
+      <p>&copy; 2025 Philo's Academy. Learn Investing. Better.</p>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="/curriculum-data.js?v=3" defer></script>
-  <script>
-    function scrollToSection(id){
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
-    }
-
-    function loadVideo(){
-      const playlistId = 'PLy4Lg9OioiDnuSmsf5iFh6JHdUJ2QLfxp';
-      const thumb = document.querySelector('.video-thumbnail');
-      const container = document.getElementById('video-container');
-      if (!thumb || !container) return;
-      thumb.style.display = 'none';
-      container.style.display = 'block';
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`;
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-      container.appendChild(iframe);
-      if (window.plausible) plausible('PlaylistLoad');
-    }
-
-    // If you still want the detailed curriculum below, this mounts it.
-    document.addEventListener('DOMContentLoaded', function(){
-      const mount = document.getElementById('curriculum-container');
-      if (!mount) return;
-      const tryRender = () => {
-        if (typeof generateCurriculumHTML === 'function') {
-          mount.innerHTML = generateCurriculumHTML();
-        } else {
-          setTimeout(tryRender, 50);
-        }
-      };
-      tryRender();
-
-      window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        header.style.boxShadow = (window.scrollY > 50) ? '0 2px 10px rgba(44,62,74,.1)' : 'none';
-      });
-    });
-  </script>
 </body>
 </html>

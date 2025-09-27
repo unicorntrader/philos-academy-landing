@@ -371,6 +371,46 @@
       container.appendChild(iframe);
       if(window.plausible) plausible('PlaylistLoad');
     }
+      // YouTube playlist loader
+  function loadVideo(){
+    const playlistId='PLy4Lg9OioiDnuSmsf5iFh6JHdUJ2QLfxp';
+    const thumb=document.querySelector('.video-thumbnail');
+    const container=document.getElementById('video-container');
+    if(!thumb||!container) return;
+    thumb.style.display='none';
+    container.style.display='block';
+    const iframe=document.createElement('iframe');
+    iframe.src=`https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`;
+    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen=true;
+    container.appendChild(iframe);
+    if(window.plausible) plausible('PlaylistLoad');
+  }
+
+  // 🚀 Staircase animation
+  document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.step');
+    if (!steps.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      steps.forEach(s => s.classList.add('in-view'));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
+
+    steps.forEach(step => io.observe(step));
+  });
+</script>
+</body>
+</html>
   </script>
 </body>
 </html>

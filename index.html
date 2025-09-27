@@ -132,7 +132,15 @@
   color:#7A8A96;
   margin-bottom:6px;
 }
-.step h3 { font-size:1.08rem; color:#2C3E4A; margin:4px 0 10px; text-align:left; }
+.step h3 { 
+  font-size: 1.08rem; 
+  color: #2C3E4A; 
+  margin: 4px 0 10px; 
+  text-align: left; 
+  min-height: 48px;           /* keeps all headers equal height */
+  display: flex;              /* lets text sit inside vertically */
+  align-items: center;        /* vertically center the text */
+}
 .step ul { margin-left:18px; }
 .step li { margin:6px 0; font-size:.98rem; line-height:1.55; }
 .step li::marker { color:#FF8C42; }

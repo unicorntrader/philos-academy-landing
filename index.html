@@ -360,6 +360,14 @@
     }
     @media(min-width:980px){#audience-fit-cards .card.span-2{grid-column:1 / -1;}}
     #audience-fit-cards .cta{ text-align:center;margin-top:28px;}
+    #audience-fit-cards .card {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#audience-fit-cards .card:hover {
+  transform: translateY(-6px);
+  box-shadow:0 12px 28px rgba(255,140,66,.18);
+}
   </style>
 
   <div class="wrap">

@@ -333,33 +333,86 @@
 </div>
 </section>
 
-<!-- === AUDIENCE & FIT (SEAMLESS AFTER PART 4) === -->
-<section id="audience-fit">
+<!-- === AUDIENCE & FIT (CARD FORMAT LIKE "THE RESULT") === -->
+<section id="audience-fit-cards" class="section">
   <style>
-    /* Scoped styles for this section only */
-    #audience-fit { background:#fff; }
-    #audience-fit .wrap { max-width:1100px; margin:0 auto; padding:56px 20px 64px; }
-    #audience-fit h2 {
-      margin:0 0 8px; font-weight:800; font-size:1.1rem; line-height:1.2;
-      text-transform:uppercase; letter-spacing:.03em; color:#1F2A34;
+    /* scoped to this block */
+    #audience-fit-cards .wrap{max-width:1100px;margin:0 auto;padding:40px 20px 60px;}
+    #audience-fit-cards .cards{display:grid;gap:22px;}
+    @media(min-width:980px){#audience-fit-cards .cards{grid-template-columns:1fr 1fr;}}
+    #audience-fit-cards .card{
+      background:#fff;border:2px solid #FF8C42;border-radius:14px;
+      box-shadow:0 6px 18px rgba(255,140,66,.12);
+      padding:22px 22px 18px;
     }
-    #audience-fit p.lead {
-      margin:0 0 14px; font-size:1rem; color:#364652;
+    #audience-fit-cards .eyebrow{
+      font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;margin:0 0 6px;
+      font-weight:700;
     }
-    #audience-fit ul { margin:6px 0 22px 1.25rem; padding:0; }
-    #audience-fit li { margin:6px 0; color:#2E3B44; }
-    #audience-fit strong { font-weight:700; color:#1F2A34; }
-    #audience-fit .cta { text-align:center; margin-top:40px; }
-    #audience-fit .cta a {
-      display:inline-block; background:#F97316; color:#fff; font-weight:600;
-      padding:14px 28px; border-radius:6px; text-decoration:none;
-      transition:background 0.2s ease;
+    #audience-fit-cards h3{
+      margin:0 0 10px;font-size:1.12rem;line-height:1.25;color:#2C3E4A;font-weight:800;
     }
-    #audience-fit .cta a:hover { background:#ea580c; }
-    @media (min-width:900px){
-      #audience-fit .grid { display:grid; grid-template-columns:1fr 1fr; gap:28px 48px; }
+    #audience-fit-cards p{margin:0 0 8px;color:#374151;}
+    #audience-fit-cards ul{margin:8px 0 0 0;padding:0;list-style:none;}
+    #audience-fit-cards li{margin:8px 0;padding-left:18px;position:relative;color:#2E3B44;line-height:1.45;}
+    #audience-fit-cards li::before{
+      content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#FF8C42;
     }
+    @media(min-width:980px){#audience-fit-cards .card.span-2{grid-column:1 / -1;}}
+    #audience-fit-cards .cta{ text-align:center;margin-top:28px;}
   </style>
+
+  <div class="wrap">
+    <div class="cards">
+
+      <!-- Card 1: Who Joins -->
+      <article class="card">
+        <p class="eyebrow">Audience Fit</p>
+        <h3>Who Joins Philo’s Academy</h3>
+        <p>From beginners to professionals, these are the people who learn inside.</p>
+        <ul>
+          <li>Beginners building their foundation</li>
+          <li>ETF investors moving into stock-picking</li>
+          <li>Professionals sharpening their edge</li>
+          <li>Macro thinkers adding bottom-up conviction</li>
+          <li>Rebuilders regaining confidence after setbacks</li>
+        </ul>
+      </article>
+
+      <!-- Card 2: Pain Points → Solutions -->
+      <article class="card">
+        <p class="eyebrow">Problems We Solve</p>
+        <h3>Pain Points → Solutions</h3>
+        <p>The most common struggles — and how the Academy solves them.</p>
+        <ul>
+          <li><strong>Analysis Paralysis</strong> → Structured process that cuts through noise</li>
+          <li><strong>No Strategy</strong> → A complete framework to rely on</li>
+          <li><strong>Low Confidence</strong> → Build conviction in your own process</li>
+          <li><strong>Behavioral Struggles</strong> → Hold winners, manage exits, avoid mistakes</li>
+        </ul>
+      </article>
+
+      <!-- Card 3: Motivations & Objectives (full width) -->
+      <article class="card span-2">
+        <p class="eyebrow">Goals & Outcomes</p>
+        <h3>Motivations & Objectives</h3>
+        <p>Why members join, and what they’re aiming for.</p>
+        <ul>
+          <li><strong>Passive → Active:</strong> Move beyond ETFs into confident stock-picking</li>
+          <li><strong>Sharpening Fundamentals:</strong> Analyze companies deeply & exit with clarity</li>
+          <li><strong>Macro → Bottom-Up:</strong> Connect cycles with business-level conviction</li>
+          <li><strong>Thematic → Broader Horizons:</strong> Expand beyond one sector into richer opportunities</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- reuse your existing button style -->
+    <div class="cta">
+      <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank">Sign Up Now</a>
+    </div>
+  </div>
+</section>
 
   <div class="wrap">
     <div class="grid">

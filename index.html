@@ -1,4 +1,4 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
@@ -145,7 +145,7 @@
 .step li { margin:6px 0; font-size:.98rem; line-height:1.55; }
 .step li::marker { color:#FF8C42; }
 
-/* remove any badge style you’re not using */
+/* remove any badge style you're not using */
 .step-badge { display:none; }
 /* CTA under steps */
 .steps-cta { 
@@ -182,11 +182,6 @@
     footer{background:#2C3E4A;padding:40px 0;text-align:center}
     footer p{color:#fff}
 
-    @media (max-width:768px){
-      ...
-    }
-
-    /* ADD THIS PART */
     /* Desktop defaults */
     .nav-actions{
       display:flex;
@@ -264,7 +259,7 @@
           </div>
 
           <div class="hero-buttons">
-            <a href="https://whop.com/checkout/plan_jU5TNm0b3wAnD?d2c=true" class="cta-button-large" target="_blank">Start Learning</a>
+            <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank" onclick="trackFormClick('hero')">Request More Information</a>
           </div>
         </div>
       </div>
@@ -329,7 +324,7 @@
 </div>
 
 <div class="steps-cta">
-  <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank">Request more information</a>
+  <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank" onclick="trackFormClick('outcomes')">Request More Information</a>
 </div>
 </section>
 
@@ -376,7 +371,7 @@
       <!-- Card 1: Who Joins -->
       <article class="card">
         <p class="eyebrow">Audience Fit</p>
-        <h3>Who Joins Philo’s Academy</h3>
+        <h3>Who Joins Philo's Academy</h3>
         <p>From beginners to professionals, these are the people who learn inside.</p>
         <ul>
           <li>Beginners building their foundation</li>
@@ -404,7 +399,7 @@
       <article class="card span-2">
         <p class="eyebrow">Goals & Outcomes</p>
         <h3>Motivations & Objectives</h3>
-        <p>Why members join, and what they’re aiming for.</p>
+        <p>Why members join, and what they're aiming for.</p>
         <ul>
           <li><strong>Passive → Active:</strong> Move beyond ETFs into confident stock-picking</li>
           <li><strong>Sharpening Fundamentals:</strong> Analyze companies deeply & exit with clarity</li>
@@ -417,7 +412,7 @@
 
     <!-- reuse your existing button style -->
     <div class="cta">
-      <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank">Sign Up Now</a>
+      <a href="https://forms.gle/pkiCoXNoYy4xNDBDA" class="cta-button-large" target="_blank" onclick="trackFormClick('audience-fit')">Sign Up Now</a>
     </div>
   </div>
 </section>
@@ -427,7 +422,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Philo’s Academy. Learn Investing. Better.</p>
+      <p>&copy; 2025 Philo's Academy. Learn Investing. Better.</p>
     </div>
   </footer>
 
@@ -464,6 +459,12 @@
       if(window.plausible) plausible('PlaylistLoad');
     }
 
+    // Track Google Form clicks with Plausible
+    function trackFormClick(location) {
+      if (typeof plausible !== 'undefined') {
+        plausible('FormClick', { props: { location: location } });
+      }
+    }
 
  // Reveal steps on scroll (upward fade)
 document.addEventListener('DOMContentLoaded', function () {

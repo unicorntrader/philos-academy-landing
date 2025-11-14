@@ -348,6 +348,92 @@
     </div>
   </section>
 
+  <!-- Results, Applied Section -->
+  <section id="results-applied" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #FF8C42; border-bottom:2px solid #FF8C42;">
+    <div class="container">
+      <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px; color:#2C3E4A;">Results, Applied</h2>
+      <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 48px;">Real transformations from students who went from lost to disciplined.</p>
+      
+      <div style="max-width:800px; margin:0 auto; background:#fff; border:2px solid #FF8C42; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12);">
+        
+        <ul style="list-style:none; padding:0; margin:0;">
+          
+          <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Chased headlines and narrative FOMO with no framework
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Operates with repeatable process and spots story stocks instantly
+            </p>
+          </li>
+
+          <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Couldn't value businesses, fell for "looks cheap" traps
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Breaks down any business model and kills value traps fast
+            </p>
+          </li>
+
+          <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Relied on false prophets, no sense of strategic direction
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Defined circle of competence and operates with clear rules
+            </p>
+          </li>
+
+          <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Panic-sold every dip, oversized positions, no exit strategy
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Built resilient portfolio with real risk rules and pre-mortems
+            </p>
+          </li>
+
+          <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Analysis paralysis, spent 10+ hours per idea
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Uses high-efficiency frameworks to decide faster and better
+            </p>
+          </li>
+
+          <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Macro tourist with no bottom-up conviction
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Integrates macro context without drifting into tourism
+            </p>
+          </li>
+
+          <li style="padding:20px 0;">
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
+              <strong style="color:#2C3E4A;">Before:</strong> Inconsistent adds/trims, missed catalysts, no review process
+            </p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
+              <strong style="color:#FF8C42;">After:</strong> Systematized review loops and operates simple, systematic, decisive
+            </p>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div style="text-align:center; margin-top:48px;">
+        <button onclick="window.location.href='https://forms.gle/1X31498irCCHvPoU7';trackFormClick('results-applied')" class="cta-button-large">Start Your Transformation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Load Testimonials -->
+  <div id="testimonials-container"></div>
+
   <!-- Audience & Fit -->
   <section id="audience-fit-cards" class="section" style="background:#FFF8E7">
     <div class="wrap">
@@ -410,33 +496,13 @@
 
   <!-- JS -->
 <script>
-  function submitEmailToGoogleForm(form, emailInputId, successId, buttonId){
-    const emailEl = document.getElementById(emailInputId);
-    const success = document.getElementById(successId);
-    const btn = document.getElementById(buttonId);
-    if (!form || !emailEl) return;
-
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const email = emailEl.value.trim();
-      if (!email) return;
-      if (btn) btn.disabled = true;
-
-      const endpoint = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
-      const data = new FormData();
-      data.append(`entry.${ENTRY_ID}`, email);
-
-      fetch(endpoint, { method: "POST", mode: "no-cors", body: data })
-        .catch(()=>{})
-        .finally(()=>{
-          if (success) success.style.display = "block";
-          form.reset();
-          try { if (typeof plausible === "function") plausible("WaitlistJoin"); } catch (e) {}
-          if (btn) setTimeout(()=>{ btn.disabled = false; }, 800);
-          setTimeout(()=>{ if (success) success.style.display = "none"; }, 5000);
-        });
-    });
-  }
+  // Load testimonials from external file
+  fetch('/testimonials.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('testimonials-container').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading testimonials:', error));
 
   // Smooth scroll for header links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{

@@ -4,8 +4,17 @@
     <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px; color:#2C3E4A;">Inside the Modules</h2>
     <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 48px;">Real excerpts from the course. See what you'll learn.</p>
     
+    <!-- Single Tweet Embed (will load if Twitter embeds work) -->
+    <div style="max-width:550px; margin:0 auto 32px; display:flex; justify-content:center;">
+      <blockquote class="twitter-tweet" data-theme="light" data-width="550">
+        <p lang="en" dir="ltr">Loading module excerpt...</p>
+        <a href="https://twitter.com/philoinvestor/status/1994766418114416673"></a>
+      </blockquote>
+    </div>
+    
+    <!-- Button fallback (always works) -->
     <div style="text-align:center; margin:48px 0;">
-      <a href="https://x.com/search?q=from%3Aphiloinvestor%20%23philosacademy&src=typed_query&f=live" target="_blank" class="cta-button-large" onclick="if(window.plausible) plausible('ModuleExcerpts_Click')" style="text-decoration:none;">View Module Excerpts on X</a>
+      <a href="https://x.com/search?q=from%3Aphiloinvestor%20%23philosacademy&src=typed_query&f=live" target="_blank" class="cta-button-large" onclick="if(window.plausible) plausible('ModuleExcerpts_Click')" style="text-decoration:none;">View All Module Excerpts on X</a>
     </div>
     
     <div style="text-align:center; margin-top:48px;">
@@ -14,7 +23,15 @@
   </div>
 </section>
 
+<!-- Twitter Widget Script -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <style>
+  /* Tweet card styling */
+  #module-excerpts .twitter-tweet {
+    margin: 0 auto !important;
+  }
+  
   /* Responsive adjustments */
   @media (max-width: 768px) {
     #module-excerpts {

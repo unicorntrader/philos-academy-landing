@@ -386,7 +386,7 @@
         .tweets-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+          gap: 32px;
           max-width: 1200px;
           margin: 0 auto;
         }
@@ -394,10 +394,15 @@
           display: flex;
           justify-content: center;
           align-items: flex-start;
+          min-height: 400px;
+        }
+        .tweet-container .twitter-tweet {
+          margin: 0 !important;
         }
         @media (max-width:768px){
           .tweets-grid{
             grid-template-columns:1fr;
+            gap: 24px;
           }
         }
       </style>
@@ -412,6 +417,13 @@
           </blockquote>
         </div>
 
+        <!-- Tweet 2 -->
+        <div class="tweet-container">
+          <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+            <p lang="en" dir="ltr">Loading...</p>
+            <a href="https://twitter.com/philoinvestor/status/1994803312861090252?ref_src=twsrc%5Etfw">View Tweet</a>
+          </blockquote>
+        </div>
 
         <!-- Tweet 3 -->
         <div class="tweet-container">
@@ -424,7 +436,7 @@
       </div>
       
       <!-- Additional Tweets Row 2 -->
-      <div class="tweets-grid" style="margin-top:24px;">
+      <div class="tweets-grid" style="margin-top:40px;">
         
         <!-- Tweet 4 -->
         <div class="tweet-container">
@@ -453,7 +465,7 @@
       </div>
       
       <!-- Additional Tweets Row 3 -->
-      <div class="tweets-grid" style="margin-top:24px;">
+      <div class="tweets-grid" style="margin-top:40px;">
         
         <!-- Tweet 7 -->
         <div class="tweet-container">
@@ -482,7 +494,7 @@
       </div>
       
       <!-- Additional Tweets Row 4 -->
-      <div class="tweets-grid" style="margin-top:24px;">
+      <div class="tweets-grid" style="margin-top:40px;">
         
         <!-- Tweet 10 -->
         <div class="tweet-container">

@@ -434,6 +434,9 @@
   <!-- Load Testimonials -->
   <div id="testimonials-container"></div>
 
+  <!-- Load Module Excerpts -->
+  <div id="module-excerpts-container"></div>
+
   <!-- Audience & Fit -->
   <section id="audience-fit-cards" class="section" style="background:#FFF8E7">
     <div class="wrap">
@@ -503,6 +506,14 @@
       document.getElementById('testimonials-container').innerHTML = html;
     })
     .catch(error => console.error('Error loading testimonials:', error));
+
+  // Load module excerpts from external file
+  fetch('/module-excerpts.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('module-excerpts-container').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading module excerpts:', error));
 
   // Smooth scroll for header links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{

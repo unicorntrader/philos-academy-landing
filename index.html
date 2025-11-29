@@ -143,21 +143,6 @@
     @media(min-width:980px){#audience-fit-cards .card.span-2{grid-column:1 / -1;}}
     #audience-fit-cards .cta{ text-align:center;margin-top:28px;}
 
-    /* Tweet Embeds */
-    .tweets-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .tweet-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
     /* Success Message */
     .success-message{
       display:none;margin-top:1rem;padding:1rem;text-align:center;border-radius:10px;
@@ -175,7 +160,6 @@
       .cta-button-large{padding:16px 30px;font-size:1rem}
       .outcomes h2{font-size:2rem}
       .steps{grid-template-columns:1fr}
-      .tweets-grid{grid-template-columns:1fr}
     }
 
     /* Desktop nav */
@@ -393,101 +377,8 @@
   <!-- Load Testimonials -->
   <div id="testimonials-container"></div>
 
-  <!-- Tweet Embeds Section -->
-  <section id="tweet-embeds" style="background:#fff; padding:80px 0; border-top:2px solid #FF8C42;">
-    <div class="container">
-      <h2 style="text-align:center; font-size:2.5rem; margin-bottom:48px; color:#2C3E4A;">What People Are Saying</h2>
-      
-      <div class="tweets-grid">
-        
-        <!-- Tweet 1 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1994731000820027886">View on X</a></p>
-          </blockquote>
-        </div>
-
-        <!-- Tweet 2 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1994803312861090252">View on X</a></p>
-          </blockquote>
-        </div>
-
-        <!-- Tweet 3 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1994766418114416673">View on X</a></p>
-          </blockquote>
-        </div>
-
-      </div>
-      
-      <!-- Additional Tweets Row 2 -->
-      <div class="tweets-grid" style="margin-top:24px;">
-        
-        <!-- Tweet 4 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1994739571343413443">View on X</a></p>
-          </blockquote>
-        </div>
-
-        <!-- Tweet 5 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1994736846832808034">View on X</a></p>
-          </blockquote>
-        </div>
-
-        <!-- Tweet 6 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1972965644929753218">View on X</a></p>
-          </blockquote>
-        </div>
-
-      </div>
-      
-      <!-- Additional Tweets Row 3 -->
-      <div class="tweets-grid" style="margin-top:24px;">
-        
-        <!-- Tweet 7 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1972603005502357618">View on X</a></p>
-          </blockquote>
-        </div>
-
-        <!-- Tweet 8 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1954078494956085549">View on X</a></p>
-          </blockquote>
-        </div>
-
-        <!-- Tweet 9 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1954075563959972343">View on X</a></p>
-          </blockquote>
-        </div>
-
-      </div>
-      
-      <!-- Additional Tweets Row 4 -->
-      <div class="tweets-grid" style="margin-top:24px;">
-        
-        <!-- Tweet 10 -->
-        <div class="tweet-container">
-          <blockquote class="twitter-tweet" data-theme="light">
-            <p lang="en" dir="ltr"><a href="https://x.com/philoinvestor/status/1940063771319308410">View on X</a></p>
-          </blockquote>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <!-- Load Module Excerpts -->
+  <div id="module-excerpts-container"></div>
 
   <!-- Audience & Fit -->
   <section id="audience-fit-cards" class="section" style="background:#FFF8E7">
@@ -558,6 +449,14 @@
       document.getElementById('testimonials-container').innerHTML = html;
     })
     .catch(error => console.error('Error loading testimonials:', error));
+
+  // Load module excerpts from external file
+  fetch('/module-excerpts.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('module-excerpts-container').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading module excerpts:', error));
 
   // Smooth scroll for header links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{

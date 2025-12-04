@@ -40,6 +40,8 @@
     .hero{min-height:50vh;display:flex;align-items:center;padding:100px 0 40px}
     .hero-content{text-align:center}
     .hero-text h1{font-size:3.5rem;font-weight:bold;margin-bottom:24px;color:#2C3E4A}
+    .course-details{font-size:1.25rem;line-height:1.6;color:#2C3E4A;margin:24px auto;max-width:800px}
+    .course-details strong{color:#2C3E4A;font-weight:700}
 
     /* Outcomes */
     .outcomes {
@@ -157,6 +159,7 @@
     @media (max-width:768px){
       .hero{min-height:40vh;padding:100px 0 30px}
       .hero-text h1{font-size:2rem}
+      .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:16px 30px;font-size:1rem}
       .outcomes h2{font-size:2rem}
       .steps{grid-template-columns:1fr}
@@ -217,18 +220,67 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Master Investing. One Module at a Time.</h1>
+      <div class="hero-content" style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+        
+        <!-- Left: Text Content -->
+        <div class="hero-text" style="text-align:left;">
+          <h1 style="text-align:left;">Master Investing. One Module at a Time.</h1>
+          
+          <!-- Course Details -->
+          <div class="course-details" style="text-align:left; margin:24px 0;">
+            <ul style="list-style:disc; padding-left:20px; font-size:1.5rem; line-height:1.8; font-weight:600; margin:0;">
+              <li>28 Modules</li>
+              <li>8 Case Studies</li>
+              <li>Live Workshops</li>
+              <li>1 Investing Course</li>
+            </ul>
+          </div>
 
           <!-- CTA Button -->
-          <div style="margin:24px auto">
+          <div style="margin:24px 0; text-align:left;">
             <button onclick="window.location.href='https://forms.gle/1X31498irCCHvPoU7';trackFormClick('hero')" class="cta-button-large">Start Learning!</button>
           </div>
         </div>
+
+        <!-- Right: Video -->
+        <div class="hero-video" style="text-align:center;">
+          <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:14px; border:2px solid #FF8C42; box-shadow:0 6px 18px rgba(255,140,66,.12);">
+            <iframe 
+              style="position:absolute; top:0; left:0; width:100%; height:100%;" 
+              src="YOUR_VIDEO_URL_HERE" 
+              title="Course Introduction Video" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <style>
+    @media (max-width:968px){
+      .hero-content{
+        grid-template-columns:1fr !important;
+        gap:30px !important;
+      }
+      .hero-text h1{
+        text-align:center !important;
+      }
+      .hero-text .course-details{
+        text-align:center !important;
+      }
+      .hero-text .course-details ul{
+        display:inline-block;
+        text-align:left;
+      }
+      .hero-text > div[style*="text-align:left"]{
+        text-align:center !important;
+      }
+    }
+  </style>
 
   <!-- Outcomes / Staircase -->
   <section id="outcomes" class="outcomes outcomes-staircase" aria-labelledby="result-title">

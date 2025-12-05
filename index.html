@@ -29,10 +29,10 @@
     nav{display:flex;justify-content:space-between;align-items:center}
     .logo{font-size:24px;font-weight:bold;color:#2C3E4A;text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
     .logo .brand-name{font-size:24px}
-    .logo .brand-tagline{font-size:14px;font-weight:normal;color:#FF8C42;margin-top:2px}
-    .cta-button-secondary{background:transparent;color:#FF8C42;padding:12px 24px;border:2px solid #FF8C42;border-radius:8px;text-decoration:none;font-weight:bold;transition:all .3s ease}
-    .cta-button-secondary:hover{background:#FF8C42;color:#fff;transform:translateY(-2px)}
-    .cta-button-large{background:#FF8C42;color:#fff;padding:20px 50px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.2rem;transition:all .3s ease;display:inline-block;border:none;cursor:pointer;font-family:inherit}
+    .logo .brand-tagline{font-size:14px;font-weight:normal;color:#E8590C;margin-top:2px}
+    .cta-button-secondary{background:transparent;color:#E8590C;padding:12px 24px;border:2px solid #E8590C;border-radius:8px;text-decoration:none;font-weight:bold;transition:all .3s ease}
+    .cta-button-secondary:hover{background:#E8590C;color:#fff;transform:translateY(-2px)}
+    .cta-button-large{background:#E8590C;color:#fff;padding:20px 50px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.2rem;transition:all .3s ease;display:inline-block;border:none;cursor:pointer;font-family:inherit}
     .cta-button-large:hover{background:#E67A35;transform:translateY(-3px)}
     .cta-button-large[disabled]{opacity:.7;cursor:not-allowed}
 
@@ -51,7 +51,9 @@
 
     .outcomes h2 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.1;
       margin-bottom: 36px;
       color: #2C3E4A;
     }
@@ -72,7 +74,7 @@
     .step{
       position: relative;
       background:#fff;
-      border:2px solid #FF8C42;
+      border:2px solid #E8590C;
       border-radius:14px;
       padding:22px 22px 18px;
       box-shadow:0 6px 18px rgba(255,140,66,.10);
@@ -107,7 +109,7 @@
     }
     .step ul { margin-left:18px; }
     .step li { margin:6px 0; font-size:.98rem; line-height:1.55; }
-    .step li::marker { color:#FF8C42; }
+    .step li::marker { color:#E8590C; }
 
     /* CTA under steps */
     .steps-cta { 
@@ -120,7 +122,7 @@
     #audience-fit-cards .cards{display:grid;gap:22px;}
     @media(min-width:980px){#audience-fit-cards .cards{grid-template-columns:1fr 1fr;}}
     #audience-fit-cards .card{
-      background:#fff;border:2px solid #FF8C42;border-radius:14px;
+      background:#fff;border:2px solid #E8590C;border-radius:14px;
       box-shadow:0 6px 18px rgba(255,140,66,.12);
       padding:22px 22px 18px;
       transition: transform .3s ease, box-shadow .3s ease;
@@ -140,7 +142,7 @@
     #audience-fit-cards ul{margin:8px 0 0 0;padding:0;list-style:none;}
     #audience-fit-cards li{margin:8px 0;padding-left:18px;position:relative;color:#2E3B44;line-height:1.45;}
     #audience-fit-cards li::before{
-      content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#FF8C42;
+      content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#E8590C;
     }
     @media(min-width:980px){#audience-fit-cards .card.span-2{grid-column:1 / -1;}}
     #audience-fit-cards .cta{ text-align:center;margin-top:28px;}
@@ -161,7 +163,8 @@
       .hero-text h1{font-size:2rem}
       .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:16px 30px;font-size:1rem}
-      .outcomes h2{font-size:2rem}
+      .outcomes h2{font-size:2.5rem}
+      h2[style*="font-size:4rem"]{font-size:2.5rem !important;}
       .steps{grid-template-columns:1fr}
     }
 
@@ -244,7 +247,7 @@
 
         <!-- Right: Video -->
         <div class="hero-video" style="text-align:center;">
-          <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:14px; border:2px solid #FF8C42; box-shadow:0 6px 18px rgba(255,140,66,.12);">
+          <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:14px; border:2px solid #E8590C; box-shadow:0 6px 18px rgba(255,140,66,.12);">
             <iframe 
               style="position:absolute; top:0; left:0; width:100%; height:100%;" 
               src="https://player.vimeo.com/video/1143828696?badge=0&autopause=0&player_id=0&app_id=58479" 
@@ -285,7 +288,8 @@
   <!-- Outcomes / Staircase -->
   <section id="outcomes" class="outcomes outcomes-staircase" aria-labelledby="result-title">
     <div class="container">
-      <h2 id="result-title">The Result</h2>
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">What You'll Master</p>
+      <h2 id="result-title" style="font-size:4rem; font-weight:900; line-height:1.1;">The Result</h2>
 
       <div class="steps">
         <!-- PART 1 -->
@@ -344,12 +348,13 @@
   </section>
 
   <!-- Results, Applied Section -->
-  <section id="results-applied" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #FF8C42; border-bottom:2px solid #FF8C42;">
+  <section id="results-applied" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C; border-bottom:2px solid #E8590C;">
     <div class="container">
-      <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px; color:#2C3E4A;">Results, Applied</h2>
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">From Lost to Disciplined</p>
+      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Results, Applied</h2>
       <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 48px;">Real transformations from students who went from lost to disciplined.</p>
       
-      <div style="max-width:800px; margin:0 auto; background:#fff; border:2px solid #FF8C42; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12);">
+      <div style="max-width:800px; margin:0 auto; background:#fff; border:2px solid #E8590C; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12);">
         
         <ul style="list-style:none; padding:0; margin:0;">
           
@@ -358,7 +363,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Chased headlines and narrative FOMO with no framework
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Operates with repeatable process and spots story stocks instantly
+              <strong style="color:#E8590C;">After:</strong> Operates with repeatable process and spots story stocks instantly
             </p>
           </li>
 
@@ -367,7 +372,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Couldn't value businesses, fell for "looks cheap" traps
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Breaks down any business model and kills value traps fast
+              <strong style="color:#E8590C;">After:</strong> Breaks down any business model and kills value traps fast
             </p>
           </li>
 
@@ -376,7 +381,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Relied on false prophets, no sense of strategic direction
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Defined circle of competence and operates with clear rules
+              <strong style="color:#E8590C;">After:</strong> Defined circle of competence and operates with clear rules
             </p>
           </li>
 
@@ -385,7 +390,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Panic-sold every dip, oversized positions, no exit strategy
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Built resilient portfolio with real risk rules and pre-mortems
+              <strong style="color:#E8590C;">After:</strong> Built resilient portfolio with real risk rules and pre-mortems
             </p>
           </li>
 
@@ -394,7 +399,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Analysis paralysis, no sense of direction or investment framework
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Uses high-efficiency frameworks to decide faster and better
+              <strong style="color:#E8590C;">After:</strong> Uses high-efficiency frameworks to decide faster and better
             </p>
           </li>
 
@@ -403,7 +408,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Macro tourist with no bottom-up conviction
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Integrates macro context without drifting into tourism
+              <strong style="color:#E8590C;">After:</strong> Integrates macro context without drifting into tourism
             </p>
           </li>
 
@@ -412,7 +417,7 @@
               <strong style="color:#2C3E4A;">Before:</strong> Inconsistent adds/trims, missed catalysts, no review process
             </p>
             <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#FF8C42;">After:</strong> Systematized review loops and operates simple, systematic, decisive
+              <strong style="color:#E8590C;">After:</strong> Systematized review loops and operates simple, systematic, decisive
             </p>
           </li>
 
@@ -430,9 +435,10 @@
   <div id="testimonials-container"></div>
 
   <!-- Tweet Embeds Section - Direct in HTML -->
-  <section id="tweet-embeds" style="background:#fff; padding:80px 0; border-top:2px solid #FF8C42;">
+  <section id="tweet-embeds" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
-      <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px; color:#2C3E4A;">Inside The Course</h2>
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">28 Modules. 8 Case Studies.</p>
+      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Inside The Course</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">See what you'll learn across 28 modules and 8 case studies</p>
       
       <style>
@@ -453,7 +459,7 @@
           font-weight: 700;
           letter-spacing: 0.05em;
           text-transform: uppercase;
-          color: #FF8C42;
+          color: #E8590C;
           margin-bottom: 12px;
           text-align: center;
         }
@@ -589,9 +595,10 @@
   </section>
 
   <!-- Case Studies Section -->
-  <section id="case-studies" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #FF8C42;">
+  <section id="case-studies" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
-      <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px; color:#2C3E4A;">Case Studies</h2>
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Real-World Applications</p>
+      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Case Studies</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">Real-world applications of the frameworks</p>
       
       <style>
@@ -612,7 +619,7 @@
           font-weight: 700;
           letter-spacing: 0.05em;
           text-transform: uppercase;
-          color: #FF8C42;
+          color: #E8590C;
           margin-bottom: 12px;
           text-align: center;
         }
@@ -647,9 +654,10 @@
   </section>
 
   <!-- Workshops Section -->
-  <section id="workshops" style="background:#fff; padding:80px 0; border-top:2px solid #FF8C42;">
+  <section id="workshops" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
-      <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px; color:#2C3E4A;">Workshops</h2>
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Live Learning</p>
+      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Workshops</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">Live sessions and deep dives</p>
       
       <style>
@@ -670,7 +678,7 @@
           font-weight: 700;
           letter-spacing: 0.05em;
           text-transform: uppercase;
-          color: #FF8C42;
+          color: #E8590C;
           margin-bottom: 12px;
           text-align: center;
         }

@@ -23,21 +23,12 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:#2C3E4A;background:#FFF8E7;overflow-x:hidden}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
-
-    /* Header */
-    header{padding:20px 0;position:fixed;width:100%;top:0;background:#FFF8E7;border-bottom:2px solid #fff;z-index:1000;transition:all .3s ease}
-    nav{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:24px;font-weight:bold;color:#2C3E4A;text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
-    .logo .brand-name{font-size:24px}
-    .logo .brand-tagline{font-size:14px;font-weight:normal;color:#E8590C;margin-top:2px}
-    .cta-button-secondary{background:transparent;color:#E8590C;padding:12px 24px;border:2px solid #E8590C;border-radius:8px;text-decoration:none;font-weight:bold;transition:all .3s ease}
-    .cta-button-secondary:hover{background:#E8590C;color:#fff;transform:translateY(-2px)}
     .cta-button-large{background:#E8590C;color:#fff;padding:20px 50px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.2rem;transition:all .3s ease;display:inline-block;border:none;cursor:pointer;font-family:inherit}
     .cta-button-large:hover{background:#E67A35;transform:translateY(-3px)}
     .cta-button-large[disabled]{opacity:.7;cursor:not-allowed}
 
     /* Hero */
-    .hero{min-height:50vh;display:flex;align-items:center;padding:100px 0 40px}
+    .hero{min-height:50vh;display:flex;align-items:center;padding:60px 0 40px}
     .hero-content{text-align:center}
     .hero-text h1{font-size:3.5rem;font-weight:bold;margin-bottom:24px;color:#2C3E4A}
     .course-details{font-size:1.25rem;line-height:1.6;color:#2C3E4A;margin:24px auto;max-width:800px}
@@ -159,7 +150,7 @@
 
     /* Responsive */
     @media (max-width:768px){
-      .hero{min-height:40vh;padding:100px 0 30px}
+      .hero{min-height:40vh;padding:60px 0 30px}
       .hero-text h1{font-size:2rem}
       .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:16px 30px;font-size:1rem}
@@ -167,59 +158,9 @@
       h2[style*="font-size:4rem"]{font-size:2.5rem !important;}
       .steps{grid-template-columns:1fr}
     }
-
-    /* Desktop nav */
-    .nav-actions{
-      display:flex;
-      gap:12px;
-    }
-
-    nav{ flex-wrap:wrap; }
-
-    @media (max-width: 640px){
-      header{ padding:12px 0 8px; }
-      nav{ align-items:center; }
-
-      .logo .brand-name{ font-size:20px; }
-      .logo .brand-tagline{ font-size:12px; }
-
-      .nav-actions{
-        width:100%;
-        flex-direction:row;
-        gap:6px;
-        margin-top:8px;
-        justify-content:center;
-      }
-
-      .cta-button-secondary{
-        flex:1;
-        text-align:center;
-        padding:8px 10px;
-        font-size:0.8rem;
-        white-space:nowrap;
-      }
-
-      .hero{ padding:140px 0 40px; }
-    }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav class="container">
-      <a href="/" class="logo">
-        <span class="brand-name">Philo's Academy</span>
-        <span class="brand-tagline">Learn Investing. Better.</span>
-      </a>
-<div class="nav-actions">
-  <a href="#outcomes" class="cta-button-secondary">The Result</a>
-  <a href="#audience-fit-cards" class="cta-button-secondary">Who Joins</a>
-  <a href="/mini-courses.html" class="cta-button-secondary">Free Courses</a>
-</div>
-    
-    </nav>
-  </header>
-
   <!-- Hero -->
   <section class="hero">
     <div class="container">
@@ -242,6 +183,36 @@
           <!-- CTA Button -->
           <div style="margin:24px 0; text-align:left;">
             <button onclick="window.location.href='https://forms.gle/1X31498irCCHvPoU7';trackFormClick('hero')" class="cta-button-large">Start Learning!</button>
+          </div>
+
+          <!-- Credibility Badges -->
+          <div style="margin-top:40px; padding-top:32px; border-top:2px solid #E8590C;">
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; font-size:0.95rem; color:#2C3E4A;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1.5rem;">📊</span>
+                <span><strong>20+ Years</strong> Investing Experience</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1.5rem;">👥</span>
+                <span><strong>15,000+</strong> Followers on X & Substack</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1.5rem;">🏦</span>
+                <span>Trusted by <strong>$20Bn+ AUM</strong> Managers</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1.5rem;">🎓</span>
+                <span><strong>50+ Students</strong> Building Their Edge</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attribution -->
+          <div style="margin-top:24px; padding-top:20px; border-top:1px solid #ddd; text-align:left;">
+            <p style="font-size:0.9rem; color:#666;">
+              By <strong>Philo</strong> from <a href="https://philoinvestor.com" target="_blank" style="color:#E8590C; text-decoration:none; font-weight:600;">Philoinvestor</a> • 
+              <a href="https://x.com/philoinvestor" target="_blank" style="color:#E8590C; text-decoration:none;">@philoinvestor</a>
+            </p>
           </div>
         </div>
 
@@ -427,6 +398,38 @@
 
       <div style="text-align:center; margin-top:48px;">
         <button onclick="window.location.href='https://forms.gle/1X31498irCCHvPoU7';trackFormClick('results-applied')" class="cta-button-large">Start Your Transformation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Harsh Truth Section -->
+  <section id="harsh-truth" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
+    <div class="container">
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">This Isn't For Everyone</p>
+      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:32px; color:#2C3E4A;">The Harsh Truth</h2>
+      
+      <div style="max-width:800px; margin:0 auto; background:#FFF8E7; border:2px solid #E8590C; border-radius:14px; padding:48px; box-shadow:0 6px 18px rgba(232,89,12,.2);">
+        
+        <p style="font-size:1.3rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px; font-weight:600;">
+          36 modules. One year commitment. 20 hours of content plus case studies and workshops.
+        </p>
+        
+        <p style="font-size:1.1rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px;">
+          Walking the path of the master investor is not for everyone. It takes years of focused work and strategic direction.
+        </p>
+        
+        <p style="font-size:1.1rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px;">
+          This course compresses my learnings of more than 20 years into one resource—saving you time and protecting you from many of the mistakes.
+        </p>
+        
+        <p style="font-size:1.1rem; line-height:1.8; color:#2C3E4A; margin-bottom:0;">
+          It's like having a mentor.
+        </p>
+        
+      </div>
+
+      <div style="text-align:center; margin-top:48px;">
+        <button onclick="window.location.href='https://forms.gle/1X31498irCCHvPoU7';trackFormClick('harsh-truth')" class="cta-button-large">I'm Ready to Commit</button>
       </div>
     </div>
   </section>
@@ -813,12 +816,6 @@
       const el=document.getElementById(id);
       if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
     });
-  });
-
-  // Header shadow on scroll
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (header) header.style.boxShadow = (window.scrollY > 50) ? '0 2px 10px rgba(44,62,74,.1)' : 'none';
   });
 
   // Track form clicks

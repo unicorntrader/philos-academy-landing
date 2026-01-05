@@ -183,7 +183,7 @@
 
           <!-- CTA Button -->
           <div style="margin:24px 0; text-align:left;">
-            <button onclick="window.location.href='https://whop.com/checkout/plan_yfvYJqfifiNR5';trackFormClick('hero')" class="cta-button-large">Start Learning!</button>
+            <button onclick="window.location.href='https://whop.com/checkout/plan_yfvYJqfifiNR5';trackFormClick()" class="cta-button-large">Start Learning!</button>
           </div>
 
           <!-- Credibility Badges -->
@@ -250,7 +250,7 @@
         <p style="font-size:1.1rem; color:#2C3E4A; margin-bottom:24px; line-height:1.6;">
           🎥 <strong>6 hours of free investing education</strong>
         </p>
-        <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')", {props: {location: 'hero-section'}})" class="cta-button-large" style="text-decoration:none;">Watch Now</a>
+        <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Now</a>
         <p style="font-size:0.85rem; color:#999; margin-top:16px;">New modules added weekly</p>
       </div>
     </div>
@@ -842,12 +842,12 @@
   });
 
   // Track form clicks
-  window.trackFormClick = function(location) {
+// Track checkout clicks
+  window.trackFormClick = function() {
     if (typeof plausible !== 'undefined') {
-      plausible('FormClick', { props: { location: location } });
+      plausible('CheckoutClick');
     }
   }
-
   // Reveal steps on scroll (restores the missing cards)
   document.addEventListener('DOMContentLoaded', function () {
     const steps = document.querySelectorAll('.step');

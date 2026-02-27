@@ -2,7 +2,39 @@
 <section id="testimonials" style="background:#fff; padding:80px 0; border-top:2px solid #FF8C42;">
   <div class="container">
     <h2 style="text-align:center; font-size:2.5rem; margin-bottom:48px; color:#2C3E4A;">What Students Say</h2>
-    
+
+    <!-- FEATURED TESTIMONIAL: Yazan -->
+    <div style="max-width:800px; margin:0 auto 56px;">
+      <article style="background:#FFF8E7; border:3px solid #E8590C; border-radius:16px; padding:36px 40px; box-shadow:0 10px 32px rgba(232,89,12,.18); position:relative;">
+        <!-- Featured badge -->
+        <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:#E8590C; color:#fff; font-size:0.75rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:5px 20px; border-radius:20px; white-space:nowrap;">
+          ★ Featured Review
+        </div>
+        <!-- Stars -->
+        <div style="display:flex; gap:3px; margin-bottom:18px; justify-content:center;">
+          <span style="color:#E8590C; font-size:26px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">★</span>
+          <span style="color:#E8590C; font-size:26px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">★</span>
+          <span style="color:#E8590C; font-size:26px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">★</span>
+          <span style="color:#E8590C; font-size:26px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">★</span>
+          <span style="color:#E8590C; font-size:26px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">★</span>
+        </div>
+        <!-- Quote -->
+        <p style="color:#2C3E4A; line-height:1.75; font-size:1.2rem; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; text-align:center; margin-bottom:18px;">
+          "What I love about Zero to Hero is the balance between macro context and bottom-up business analysis. The way Philo frames concepts and investment ideas shows how deeply and how long he has thought about them. This kind of perspective only comes from sustained thinking and practice, not textbook theory."
+        </p>
+        <p style="color:#2C3E4A; line-height:1.75; font-size:1.2rem; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; text-align:center; margin-bottom:28px;">
+          "One of the most valuable parts of the course is the live workshops. The discussions were lively and informative, and they gave me the opportunity to pick Philo's brain on specific investment opportunities and current market dynamics."
+        </p>
+        <!-- Attribution -->
+        <div style="text-align:center; border-top:1px solid #FFD5B8; padding-top:18px;">
+          <p style="font-weight:800; color:#2C3E4A; margin:0 0 5px; font-size:1.15rem; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Yazan</p>
+          <p style="font-size:0.95rem; color:#E8590C; font-weight:700; margin:0 0 8px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Professional Investor</p>
+          <p style="font-size:0.88rem; color:#999; margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Written February 24, 2026 &nbsp;·&nbsp; <strong style="color:#E8590C;">8 months after purchase</strong></p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Regular Testimonials Grid -->
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; max-width:1100px; margin:0 auto;">
       
       <!-- Testimonial 1 - SavvasC -->
@@ -180,6 +212,7 @@
           <p style="font-size:0.8rem; color:#999; margin:0;">November 21, 2025</p>
         </div>
       </article>
+
       <!-- Testimonial 9 - Andreas -->
       <article style="background:#FFF8E7; border:2px solid #FF8C42; border-radius:14px; padding:24px; box-shadow:0 6px 18px rgba(255,140,66,.12); transition:transform .3s ease, box-shadow .3s ease;" class="testimonial-card">
         <div style="display:flex; align-items:center; margin-bottom:12px; gap:8px;">
@@ -229,23 +262,13 @@
 </section>
 
 <style>
-  /* Testimonial hover effect */
   .testimonial-card:hover {
     transform: translateY(-6px) !important;
     box-shadow: 0 12px 28px rgba(255,140,66,.18) !important;
   }
-  
-  /* Responsive adjustments */
   @media (max-width: 768px) {
-    #testimonials {
-      padding: 60px 0 !important;
-    }
-    #testimonials h2 {
-      font-size: 2rem !important;
-      margin-bottom: 32px !important;
-    }
-    #testimonials > div > div {
-      grid-template-columns: 1fr !important;
-    }
+    #testimonials { padding: 60px 0 !important; }
+    #testimonials h2 { font-size: 2rem !important; margin-bottom: 32px !important; }
+    #testimonials > div > div { grid-template-columns: 1fr !important; }
   }
 </style>

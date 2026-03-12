@@ -148,6 +148,91 @@
     footer{background:#2C3E4A;padding:40px 0;text-align:center}
     footer p{color:#fff}
 
+    /* Tweet / Case Study grids */
+    .tweets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .tweet-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .module-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #E8590C;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .tweet-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .tweet-container .twitter-tweet {
+      margin: 0 !important;
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .case-study-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .case-study-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #E8590C;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .case-study-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .workshop-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .workshop-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #E8590C;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .workshop-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     /* Responsive */
     @media (max-width:768px){
       .hero{min-height:40vh;padding:60px 0 30px}
@@ -157,6 +242,9 @@
       .outcomes h2{font-size:2.5rem}
       h2[style*="font-size:4rem"]{font-size:2.5rem !important;}
       .steps{grid-template-columns:1fr}
+      .tweets-grid{grid-template-columns:1fr;gap:24px;}
+      .case-study-grid{grid-template-columns:1fr;gap:24px;}
+      .workshop-grid{grid-template-columns:1fr;gap:24px;}
     }
   </style>
 </head>
@@ -219,7 +307,6 @@
 
         <!-- Right: Video -->
         <div class="hero-video" style="text-align:center;">
-          <!-- Video Label with Arrow -->
           <div style="margin-bottom:16px; text-align:center;">
             <p style="font-size:1.1rem; font-weight:700; color:#E8590C; margin:0; letter-spacing:0.02em;">See Inside the Academy</p>
           </div>
@@ -238,23 +325,6 @@
 
       </div>
     </div>
-  </section>
-<!-- YouTube Free Content Section -->
-  <section id="youtube-content" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C; border-bottom:2px solid #E8590C;">
-    <div class="container">
-      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Free Content</p>
-      <h2 style="text-align:center; font-size:2.5rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Watch the First 10 Minutes of Every Module</h2>
-      <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 32px;">See Philo's teaching style and get a taste of the Academy before you join.</p>
-      
-      <div style="max-width:600px; margin:0 auto; background:#fff; border:2px solid #E8590C; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12); text-align:center;">
-        <p style="font-size:1.1rem; color:#2C3E4A; margin-bottom:24px; line-height:1.6;">
-          🎥 <strong>6 hours of free investing education</strong>
-        </p>
-        <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Now</a>
-        <p style="font-size:0.85rem; color:#999; margin-top:16px;">New modules added weekly</p>
-      </div>
-    </div>
-  </section>
   </section>
 
   <style>
@@ -278,6 +348,23 @@
       }
     }
   </style>
+
+  <!-- YouTube Free Content Section -->
+  <section id="youtube-content" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C; border-bottom:2px solid #E8590C;">
+    <div class="container">
+      <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Free Content</p>
+      <h2 style="text-align:center; font-size:2.5rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Watch the First 10 Minutes of Every Module</h2>
+      <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 32px;">See Philo's teaching style and get a taste of the Academy before you join.</p>
+      
+      <div style="max-width:600px; margin:0 auto; background:#fff; border:2px solid #E8590C; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12); text-align:center;">
+        <p style="font-size:1.1rem; color:#2C3E4A; margin-bottom:24px; line-height:1.6;">
+          🎥 <strong>6 hours of free investing education</strong>
+        </p>
+        <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Now</a>
+        <p style="font-size:0.85rem; color:#999; margin-top:16px;">New modules added weekly</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Outcomes / Staircase -->
   <section id="outcomes" class="outcomes outcomes-staircase" aria-labelledby="result-title">
@@ -349,74 +436,36 @@
       <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 48px;">Real transformations from students who went from lost to disciplined.</p>
       
       <div style="max-width:800px; margin:0 auto; background:#fff; border:2px solid #E8590C; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12);">
-        
         <ul style="list-style:none; padding:0; margin:0;">
-          
           <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Chased headlines and narrative FOMO with no framework
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Operates with repeatable process and spots story stocks instantly
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Chased headlines and narrative FOMO with no framework</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Operates with repeatable process and spots story stocks instantly</p>
           </li>
-
           <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Couldn't value businesses, fell for "looks cheap" traps
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Breaks down any business model and kills value traps fast
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Couldn't value businesses, fell for "looks cheap" traps</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Breaks down any business model and kills value traps fast</p>
           </li>
-
           <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Relied on false prophets, no sense of strategic direction
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Defined circle of competence and operates with clear rules
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Relied on false prophets, no sense of strategic direction</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Defined circle of competence and operates with clear rules</p>
           </li>
-
           <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Panic-sold every dip, oversized positions, no exit strategy
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Built resilient portfolio with real risk rules and pre-mortems
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Panic-sold every dip, oversized positions, no exit strategy</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Built resilient portfolio with real risk rules and pre-mortems</p>
           </li>
-
           <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Analysis paralysis, no sense of direction or investment framework
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Uses high-efficiency frameworks to decide faster and better
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Analysis paralysis, no sense of direction or investment framework</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Uses high-efficiency frameworks to decide faster and better</p>
           </li>
-
           <li style="padding:20px 0; border-bottom:1px solid #FFE4CC;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Macro tourist with no bottom-up conviction
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Integrates macro context without drifting into tourism
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Macro tourist with no bottom-up conviction</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Integrates macro context without drifting into tourism</p>
           </li>
-
           <li style="padding:20px 0;">
-            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;">
-              <strong style="color:#2C3E4A;">Before:</strong> Inconsistent adds/trims, missed catalysts, no review process
-            </p>
-            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;">
-              <strong style="color:#E8590C;">After:</strong> Systematized review loops and operates simple, systematic, decisive
-            </p>
+            <p style="color:#666; margin:0 0 8px; font-size:0.95rem;"><strong style="color:#2C3E4A;">Before:</strong> Inconsistent adds/trims, missed catalysts, no review process</p>
+            <p style="color:#2C3E4A; margin:0; font-weight:600; font-size:0.95rem;"><strong style="color:#E8590C;">After:</strong> Systematized review loops and operates simple, systematic, decisive</p>
           </li>
-
         </ul>
-
       </div>
 
       <div style="text-align:center; margin-top:48px;">
@@ -432,23 +481,18 @@
       <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:32px; color:#2C3E4A;">The Harsh Truth</h2>
       
       <div style="max-width:800px; margin:0 auto; background:#FFF8E7; border:2px solid #E8590C; border-radius:14px; padding:48px; box-shadow:0 6px 18px rgba(232,89,12,.2);">
-        
         <p style="font-size:1.3rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px; font-weight:600;">
           33 modules. One year commitment. 20 hours of content plus case studies and workshops.
         </p>
-        
         <p style="font-size:1.1rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px;">
           Walking the path of the master investor is not for everyone. It takes years of focused work and strategic direction.
         </p>
-        
         <p style="font-size:1.1rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px;">
           This course compresses my learnings of more than 20 years into one resource—saving you time and protecting you from many of the mistakes.
         </p>
-        
         <p style="font-size:1.1rem; line-height:1.8; color:#2C3E4A; margin-bottom:0;">
           It's like having a mentor.
         </p>
-        
       </div>
 
       <div style="text-align:center; margin-top:48px;">
@@ -460,56 +504,17 @@
   <!-- Load Testimonials -->
   <div id="testimonials-container"></div>
 
-  <!-- Tweet Embeds Section - Direct in HTML -->
+  <!-- Tweet Embeds Section -->
   <section id="tweet-embeds" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">25 Modules. 7 Case Studies.</p>
       <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Inside The Course</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">See what you'll learn across 25 modules and 7 case studies</p>
       
-      <style>
-        .tweets-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        .tweet-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .module-label {
-          font-size: 0.85rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          color: #E8590C;
-          margin-bottom: 12px;
-          text-align: center;
-        }
-        .tweet-wrapper {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-        .tweet-container .twitter-tweet {
-          margin: 0 !important;
-        }
-        @media (max-width:768px){
-          .tweets-grid{
-            grid-template-columns:1fr;
-            gap: 24px;
-          }
-        }
-      </style>
-
+      <!-- Row 1: Modules 1–3 -->
       <div class="tweets-grid">
-        
-        <!-- Module 1 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 1 OF 28<br>Introduction</div>
+          <div class="module-label">MODULE 1<br>Introduction</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -517,10 +522,8 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Module 2 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 2 OF 28<br>Cash Flow Curve</div>
+          <div class="module-label">MODULE 2<br>Cash Flow Curve</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -528,10 +531,8 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Module 3 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 3 OF 28<br>Value Engine</div>
+          <div class="module-label">MODULE 3<br>Value Engine</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -539,15 +540,12 @@
             </blockquote>
           </div>
         </div>
-
       </div>
-      
-      <!-- Additional Tweets Row 2 -->
+
+      <!-- Row 2: Modules 4–6 -->
       <div class="tweets-grid" style="margin-top:40px;">
-        
-        <!-- Module 4 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 4 OF 28<br>Value Creation</div>
+          <div class="module-label">MODULE 4<br>Value Creation</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -555,10 +553,8 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Module 5 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 5 OF 28<br>Next-Level Thinking</div>
+          <div class="module-label">MODULE 5<br>Next-Level Thinking</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -566,10 +562,8 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Module 6 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 6 OF 28<br>Where Investors Go Wrong</div>
+          <div class="module-label">MODULE 6<br>Where Investors Go Wrong</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -577,15 +571,12 @@
             </blockquote>
           </div>
         </div>
-
       </div>
-      
-      <!-- Additional Tweets Row 3 -->
+
+      <!-- Row 3: Modules 7–9 -->
       <div class="tweets-grid" style="margin-top:40px;">
-        
-        <!-- Module 7 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 7 OF 28<br>Investing Where You Have an Edge</div>
+          <div class="module-label">MODULE 7<br>Investing Where You Have an Edge</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -593,10 +584,8 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Module 8 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 8 OF 28<br>Psychology of Investing</div>
+          <div class="module-label">MODULE 8<br>Psychology of Investing</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -604,10 +593,8 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Module 9 -->
         <div class="tweet-container">
-          <div class="module-label">MODULE 9 OF 28<br>Psychology of Markets</div>
+          <div class="module-label">MODULE 9<br>Psychology of Markets</div>
           <div class="tweet-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -615,8 +602,39 @@
             </blockquote>
           </div>
         </div>
-
       </div>
+
+      <!-- Row 4: Modules 10–12 (NEW) -->
+      <div class="tweets-grid" style="margin-top:40px;">
+        <div class="tweet-container">
+          <div class="module-label">MODULE 10<br>Understanding Market Dimensions</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032016997714629093?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+        <div class="tweet-container">
+          <div class="module-label">MODULE 11<br>Differentiating Business Models</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032017378108727396?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+        <div class="tweet-container">
+          <div class="module-label">MODULE 12<br>Unlocking Optionality in Investing</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032018158840652123?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -626,47 +644,11 @@
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Real-World Applications</p>
       <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Case Studies</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">Real-world applications of the frameworks</p>
-      
-      <style>
-        .case-study-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        .case-study-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .case-study-label {
-          font-size: 0.85rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          color: #E8590C;
-          margin-bottom: 12px;
-          text-align: center;
-        }
-        .case-study-wrapper {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-        @media (max-width:768px){
-          .case-study-grid{
-            grid-template-columns:1fr;
-            gap: 24px;
-          }
-        }
-      </style>
 
+      <!-- Row 1: Case Studies 1–3 (NEW: 2 & 3 added) -->
       <div class="case-study-grid">
-        
-        <!-- Case Study 1 -->
         <div class="case-study-container">
-          <div class="case-study-label">CASE STUDY 1 OF 7<br>Major Investing Mistakes</div>
+          <div class="case-study-label">CASE STUDY 1<br>Major Investing Mistakes</div>
           <div class="case-study-wrapper">
             <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
               <p lang="en" dir="ltr">Loading...</p>
@@ -674,8 +656,26 @@
             </blockquote>
           </div>
         </div>
-
+        <div class="case-study-container">
+          <div class="case-study-label">CASE STUDY 2<br>Netflix vs Legacy Media</div>
+          <div class="case-study-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032017757869330786?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+        <div class="case-study-container">
+          <div class="case-study-label">CASE STUDY 3<br>Banking vs Software</div>
+          <div class="case-study-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032017918679036007?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -685,45 +685,8 @@
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Live Learning</p>
       <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Workshops</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">Live workshops and student Q&A</p>
-      
-      <style>
-        .workshop-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        .workshop-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .workshop-label {
-          font-size: 0.85rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          color: #E8590C;
-          margin-bottom: 12px;
-          text-align: center;
-        }
-        .workshop-wrapper {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-        @media (max-width:768px){
-          .workshop-grid{
-            grid-template-columns:1fr;
-            gap: 24px;
-          }
-        }
-      </style>
 
       <div class="workshop-grid">
-        
-        <!-- Workshop 1 -->
         <div class="workshop-container">
           <div class="workshop-label">WORKSHOP 1</div>
           <div class="workshop-wrapper">
@@ -733,8 +696,6 @@
             </blockquote>
           </div>
         </div>
-
-        <!-- Workshop 2 -->
         <div class="workshop-container">
           <div class="workshop-label">WORKSHOP 2</div>
           <div class="workshop-wrapper">
@@ -744,7 +705,6 @@
             </blockquote>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -753,8 +713,6 @@
   <section id="audience-fit-cards" class="section" style="background:#FFF8E7">
     <div class="wrap">
       <div class="cards">
-
-        <!-- Card 1: Who Joins -->
         <article class="card">
           <p class="eyebrow">Audience Fit</p>
           <h3>Who Joins Philo's Academy</h3>
@@ -767,8 +725,6 @@
             <li>Rebuilders regaining confidence after setbacks</li>
           </ul>
         </article>
-
-        <!-- Card 2: Pain Points → Solutions -->
         <article class="card">
           <p class="eyebrow">Problems We Solve</p>
           <h3>Pain Points → Solutions</h3>
@@ -780,8 +736,6 @@
             <li><strong>Behavioral Struggles</strong> → Hold winners, manage exits, avoid mistakes</li>
           </ul>
         </article>
-
-        <!-- Card 3: Motivations & Objectives (full width) -->
         <article class="card span-2">
           <p class="eyebrow">Goals & Outcomes</p>
           <h3>Motivations & Objectives</h3>
@@ -793,9 +747,7 @@
             <li><strong>Thematic → Broader Horizons:</strong> Expand beyond one sector into richer opportunities</li>
           </ul>
         </article>
-
       </div>
-
       <div class="cta">
         <button onclick="window.location.href='https://whop.com/checkout/plan_Q2alZu6JtLCMm';trackFormClick()" class="cta-button-large">Sign Up Now</button>
       </div>
@@ -808,9 +760,8 @@
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">For Investment Professionals</p>
       <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Corporate Packages</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:700px; margin:0 auto 48px;">Education packages for in-house investment teams, family offices, and advisory firms</p>
-      
       <div style="text-align:center;">
-        <a href="mailto:thinker@philoinvestor.com?subject=Corporate%20Package%20Inquiry%20-%20Philo's%20Academy&body=Hi,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20corporate%20packages%20for%20Philo's%20Academy.%0D%0A%0D%0ACompany/Organization:%0D%0ATeam%20Size:%0D%0ASpecific%20Needs:%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you." class="cta-button-large">Inquire About Corporate Training</a>
+        <a href="/cdn-cgi/l/email-protection#42362a2b2c29273002322a2b2e2d2b2c342731362d306c212d2f7d313720282721367f012d30322d30233627677072122321292325276770720b2c33372b303b6770726f677072122a2b2e2d653167707203212326272f3b64202d263b7f0a2b6e6772066772036772066772030b652f6770722b2c36273027313627266770722b2c6770722e2723302c2b2c256770722f2d302767707223202d3736677072212d30322d302336276770723223212923252731677072242d30677072122a2b2e2d653167707203212326272f3b6c677206677203677206677203012d2f32232c3b6d0d3025232c2b3823362b2d2c786772066772031627232f677072112b382778677206677203113227212b242b216770720c27272631786772066772036772066772030e2d2d292b2c25677072242d3035233026677072362d6770722a2723302b2c2567707224302d2f6770723b2d376c" class="cta-button-large">Inquire About Corporate Training</a>
       </div>
     </div>
   </section>
@@ -823,120 +774,73 @@
   </footer>
 
   <!-- JS -->
-<script>
-  // Load testimonials from external file
-  fetch('/testimonials.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('testimonials-container').innerHTML = html;
-    })
-    .catch(error => console.error('Error loading testimonials:', error));
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    fetch('/testimonials.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('testimonials-container').innerHTML = html;
+      })
+      .catch(error => console.error('Error loading testimonials:', error));
 
-  // Smooth scroll for header links
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1);
-      const el=document.getElementById(id);
-      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
-    });
-  });
-
-  // Track form clicks
-// Track checkout clicks
-  window.trackFormClick = function() {
-    if (typeof plausible !== 'undefined') {
-      plausible('CheckoutClick');
-    }
-  }
-  // Reveal steps on scroll (restores the missing cards)
-  document.addEventListener('DOMContentLoaded', function () {
-    const steps = document.querySelectorAll('.step');
-    if (!steps.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      steps.forEach(s => s.classList.add('in-view'));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
       });
-    }, { threshold: 0.15 });
-    steps.forEach(step => io.observe(step));
-  });
-</script>
+    });
 
-<!-- Twitter Widget Script - Load globally for embedded tweets -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    window.trackFormClick = function() {
+      if (typeof plausible !== 'undefined') {
+        plausible('CheckoutClick');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const steps = document.querySelectorAll('.step');
+      if (!steps.length) return;
+      if (!('IntersectionObserver' in window)) {
+        steps.forEach(s => s.classList.add('in-view'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      steps.forEach(step => io.observe(step));
+    });
+  </script>
+
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <!-- Floating Share Bar -->
-<div id="share-bar" style="position:fixed; right:30px; top:50%; transform:translateY(-50%); z-index:1000; display:flex; flex-direction:column; gap:12px;">
-  
-  <!-- Share on X -->
-  <a href="https://twitter.com/intent/tweet?text=6%20hours%20of%20free%20investing%20education%20-%20taught%20by%20someone%20with%2020%2B%20years%20experience%0A%0AStart%20here%3A%20https%3A%2F%2Fyoutube.com%2F%40philos_academy%0AFull%20course%3A%20https%3A%2F%2Fphilomastery.com" target="_blank" rel="noopener" onclick="plausible && plausible('ShareClick', {props: {platform: 'twitter'}})" style="width:50px; height:50px; background:#1DA1F2; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.15); transition:all .3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-  </a>
-  
-  <!-- Share on WhatsApp -->
-  <a href="https://wa.me/?text=6%20hours%20of%20free%20investing%20education%20-%20taught%20by%20someone%20with%2020%2B%20years%20experience%0A%0AStart%20here%3A%20https%3A%2F%2Fyoutube.com%2F%40philos_academy%0AFull%20course%3A%20https%3A%2F%2Fphilomastery.com" target="_blank" rel="noopener" onclick="plausible && plausible('ShareClick', {props: {platform: 'whatsapp'}})" style="width:50px; height:50px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.15); transition:all .3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  </a>
-  
-  <!-- Copy Link -->
-  <button onclick="copyShareLink()" style="width:50px; height:50px; background:#E8590C; border-radius:50%; display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,.15); transition:all .3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-  </button>
-  
-  <!-- Copied Tooltip -->
-  <div id="copy-tooltip" style="position:absolute; right:60px; top:50%; transform:translateY(-50%); background:#2C3E4A; color:white; padding:8px 12px; border-radius:6px; font-size:0.85rem; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .3s ease;">
-    Link copied!
+  <div id="share-bar" style="position:fixed; right:30px; top:50%; transform:translateY(-50%); z-index:1000; display:flex; flex-direction:column; gap:12px;">
+    <a href="https://twitter.com/intent/tweet?text=6%20hours%20of%20free%20investing%20education%20-%20taught%20by%20someone%20with%2020%2B%20years%20experience%0A%0AStart%20here%3A%20https%3A%2F%2Fyoutube.com%2F%40philos_academy%0AFull%20course%3A%20https%3A%2F%2Fphilomastery.com" target="_blank" rel="noopener" onclick="plausible && plausible('ShareClick', {props: {platform: 'twitter'}})" style="width:50px; height:50px; background:#1DA1F2; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.15); transition:all .3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://wa.me/?text=6%20hours%20of%20free%20investing%20education%20-%20taught%20by%20someone%20with%2020%2B%20years%20experience%0A%0AStart%20here%3A%20https%3A%2F%2Fyoutube.com%2F%40philos_academy%0AFull%20course%3A%20https%3A%2F%2Fphilomastery.com" target="_blank" rel="noopener" onclick="plausible && plausible('ShareClick', {props: {platform: 'whatsapp'}})" style="width:50px; height:50px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.15); transition:all .3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+    <button onclick="copyShareLink()" style="width:50px; height:50px; background:#E8590C; border-radius:50%; display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,.15); transition:all .3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+    </button>
+    <div id="copy-tooltip" style="position:absolute; right:60px; top:50%; transform:translateY(-50%); background:#2C3E4A; color:white; padding:8px 12px; border-radius:6px; font-size:0.85rem; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .3s ease;">
+      Link copied!
+    </div>
   </div>
-</div>
 
-<!-- Mobile: Hide on small screens or move to bottom -->
-<style>
-  @media (max-width:768px){
-    #share-bar {
-      right: 15px;
-      gap: 10px;
+  <style>
+    @media (max-width:768px){
+      #share-bar { right: 15px; gap: 10px; }
+      #share-bar a, #share-bar button { width: 45px; height: 45px; }
+      #share-bar svg { width: 20px; height: 20px; }
     }
-    #share-bar a, #share-bar button {
-      width: 45px;
-      height: 45px;
-    }
-    #share-bar svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-</style>
+  </style>
 
-<script>
-function copyShareLink() {
-  const shareText = "6 hours of free investing education - taught by someone with 20+ years experience\n\nStart here: https://youtube.com/@philos_academy\nFull course: https://philomastery.com";
-  
-  navigator.clipboard.writeText(shareText).then(() => {
-    // Show tooltip
-    const tooltip = document.getElementById('copy-tooltip');
-    tooltip.style.opacity = '1';
-    
-    // Track in Plausible
-    if (typeof plausible !== 'undefined') {
-      plausible('ShareClick', { props: { platform: 'copy' } });
-    }
-    
-    // Hide tooltip after 2 seconds
-    setTimeout(() => {
-      tooltip.style.opacity = '0';
-    }, 2000);
-  }).catch(err => {
-    console.error('Failed to copy:', err);
-  });
-}
-</script>
-
-</body>
-</html>
+  <script>
+    function copyShareLink() {
+      const shareText = "6 hours of free investing education - taught by someone with 20+ years experience\n\nStart here: https://youtube.com/@philos_academy\nFull course: https://philoma

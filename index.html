@@ -62,7 +62,8 @@
     .eyebrow{text-align:center;font-size:clamp(.8rem,1.5vw,.9rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
 
     /* Hero */
-    .hero{padding:clamp(48px,8vw,88px) 0 clamp(40px,6vw,64px)}
+    .hero{min-height:calc(100vh - 52px);display:flex;align-items:center;padding:clamp(32px,6vw,56px) 0}
+    .hero-video-section{padding:0 0 clamp(40px,6vw,64px)}
     .hero-inner{max-width:760px;margin:0 auto;text-align:center}
     .hero-inner h1{font-size:clamp(2rem,4vw + 1rem,3.25rem);font-weight:800;line-height:1.08;margin-bottom:18px;color:var(--ink);letter-spacing:-.01em}
     .hero-summary{font-size:clamp(1rem,1.5vw + .6rem,1.15rem);color:var(--grey);margin:0 0 22px;line-height:1.5}
@@ -199,7 +200,7 @@
 
     /* Footer */
     footer{background:var(--cream);padding:clamp(48px,7vw,72px) 0 28px;border-top:2px solid var(--brand)}
-    .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1100px;margin:0 auto;padding:0 20px}
+    .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1100px;margin:0 auto;padding:0 20px}
     .footer-brand .mark{font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
     .footer-brand p{color:#6b6156;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
     .footer-col h5{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
@@ -295,7 +296,6 @@
 
     /* Responsive: type now scales fluidly via clamp() in .h2/.hero-inner h1, no jump needed */
     @media (max-width:768px){
-      .hero{min-height:40vh;padding:60px 0 30px}
       .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:14px 28px;font-size:.95rem}
       .steps{grid-template-columns:1fr}
@@ -308,18 +308,18 @@
     .topnav{
       position:fixed; top:0; left:0; right:0; z-index:200;
       display:flex; align-items:center; justify-content:space-between; gap:16px;
-      padding:14px clamp(20px,5vw,42px);
+      padding:11px clamp(20px,5vw,42px);
       background:rgba(255,248,231,.85);
       backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(44,62,74,.08);
     }
-    .topnav-logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
-    .topnav-links{display:flex;align-items:center;gap:clamp(14px,2.5vw,28px)}
-    .topnav-links a{font-weight:600;font-size:.92rem;color:var(--ink);text-decoration:none}
+    .topnav-logo{font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .topnav-links{display:flex;align-items:center;gap:clamp(12px,2vw,24px)}
+    .topnav-links a{font-weight:600;font-size:.85rem;color:var(--ink);text-decoration:none}
     .topnav-links a:hover{color:var(--brand)}
-    .topnav-links a.topnav-cta{background:var(--brand);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;white-space:nowrap;transition:background .2s ease,color .2s ease}
+    .topnav-links a.topnav-cta{background:var(--brand);color:#fff;padding:8px 18px;border-radius:999px;font-weight:700;white-space:nowrap;transition:background .2s ease,color .2s ease}
     .topnav-links a.topnav-cta:hover{background:var(--brand-hover);color:#fff}
-    body{padding-top:60px}
+    body{padding-top:52px}
 
     .topnav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:26px;height:20px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
     .topnav-burger span{display:block;height:2.6px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
@@ -328,7 +328,7 @@
     .topnav-burger.open span:nth-child(3){transform:translateY(-7.6px) rotate(-45deg)}
 
     .topnav-mobile-panel{
-      position:fixed; top:60px; left:0; right:0; z-index:199;
+      position:fixed; top:52px; left:0; right:0; z-index:199;
       background:rgba(255,255,255,.98); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(44,62,74,.08);
       display:flex; flex-direction:column;
@@ -400,8 +400,12 @@
           <a href="https://x.com/philoinvestor" target="_blank">@philoinvestor</a>
         </p>
       </div>
+    </div>
+  </section>
 
-      <!-- Video -->
+  <!-- Video -->
+  <section class="hero-video-section">
+    <div class="container">
       <div class="hero-video-block reveal">
         <p class="hero-video-eyebrow">See Inside the Academy</p>
         <div class="hero-video-frame">
@@ -863,7 +867,7 @@
       <h2 class="h2">Corporate Packages</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:700px; margin:0 auto 48px;">Education packages for in-house investment teams, family offices, and advisory firms</p>
       <div style="text-align:center;">
-        <a href="/cdn-cgi/l/email-protection#42362a2b2c29273002322a2b2e2d2b2c342731362d306c212d2f7d313720282721367f012d30322d30233627677072122321292325276770720b2c33372b303b6770726f677072122a2b2e2d653167707203212326272f3b64202d263b7f0a2b6e6772066772036772066772030b652f6770722b2c36273027313627266770722b2c6770722e2723302c2b2c256770722f2d302767707223202d3736677072212d30322d302336276770723223212923252731677072242d30677072122a2b2e2d653167707203212326272f3b6c677206677203677206677203012d2f32232c3b6d0d3025232c2b3823362b2d2c786772066772031627232f677072112b382778677206677203113227212b242b216770720c27272631786772066772036772066772030e2d2d292b2c25677072242d3035233026677072362d6770722a2723302b2c2567707224302d2f6770723b2d376c" class="cta-button-large">Inquire About Corporate Training</a>
+        <a href="mailto:thinker@philoinvestor.com?subject=Corporate%20Package%20Inquiry%20-%20Philo's%20Academy&amp;body=Hi,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20corporate%20packages%20for%20Philo's%20Academy.%0D%0A%0D%0ACompany/Organization:%0D%0ATeam%20Size:%0D%0ASpecific%20Needs:%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you." class="cta-button-large">Inquire About Corporate Training</a>
       </div>
     </div>
   </section>
@@ -882,7 +886,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="mark">Philo's Academy</div>
-        <p>Zero to Hero in Investing &mdash; a complete framework for beginners and professionals rediscovering their edge.</p>
+        <p>Learn Investing. Better.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
@@ -896,6 +900,12 @@
         <a href="https://x.com/philoinvestor" target="_blank" rel="noopener">@philoinvestor</a>
         <a href="https://youtube.com/@philos_academy" target="_blank" rel="noopener">YouTube</a>
         <a href="https://philoinvestor.com" target="_blank" rel="noopener">Philoinvestor</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/disclaimer.html">Disclaimer</a>
       </div>
     </div>
     <div class="footer-legal">

@@ -784,7 +784,14 @@
             tabRowEl.scrollLeft = Math.max(0, target);
           }
           if (window.innerWidth <= 640 && tabRowEl) {
-            tabRowEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Explicit offset instead of scrollIntoView: on iOS Safari the address
+            // bar can be showing (shrinking the real viewport) when this fires, and
+            // scrollIntoView's own math doesn't reliably account for that, so the
+            // tab row (and the icons in it) end up scrolled partly under the fixed
+            // header instead of sitting cleanly below it.
+            var headerOffset = 82;
+            var targetY = tabRowEl.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
           }
         });
       });

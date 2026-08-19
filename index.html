@@ -840,8 +840,38 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('testimonials-container').innerHTML = html;
+        initTestimonialChips();
       })
       .catch(error => console.error('Error loading testimonials:', error));
+
+    function initTestimonialChips(){
+      var container = document.getElementById('testimonials-container');
+      var chips = container.querySelectorAll('.testi-chip');
+      var panel = container.querySelector('#testi-panel');
+      if(!chips.length || !panel) return;
+      var panelStars = panel.querySelector('.testi-panel-stars');
+      var panelQuote = panel.querySelector('.testi-panel-quote');
+      var panelName = panel.querySelector('.testi-panel-name');
+      var panelDate = panel.querySelector('.testi-panel-date');
+
+      function activate(chip){
+        chips.forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        var fullText = chip.querySelector('.testi-full-text');
+        var stars = parseInt(chip.getAttribute('data-stars'), 10) || 5;
+        panelStars.textContent = '★'.repeat(stars);
+        panelQuote.textContent = fullText ? fullText.textContent : '';
+        panelName.textContent = chip.getAttribute('data-name') || '';
+        panelDate.textContent = chip.getAttribute('data-date') || '';
+        panel.classList.add('show');
+      }
+
+      chips.forEach(function(chip){
+        chip.addEventListener('click', function(){ activate(chip); });
+      });
+
+      activate(chips[0]);
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{

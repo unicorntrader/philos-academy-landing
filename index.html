@@ -35,9 +35,11 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:none;cursor:pointer;font-family:inherit}
-    .cta-button-large:hover{background:var(--brand-hover);transform:translateY(-2px)}
+    .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
+    .cta-button-large:hover{background:var(--brand-hover);border-color:var(--brand-hover);transform:translateY(-2px)}
     .cta-button-large[disabled]{opacity:.7;cursor:not-allowed}
+    .cta-button-ghost{background:transparent;color:var(--brand);padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
+    .cta-button-ghost:hover{background:var(--brand);color:#fff;transform:translateY(-2px)}
 
     /* Fluid type scale: min value IS the mobile size, no breakpoint jump needed */
     .h2{text-align:center;font-weight:900;line-height:1.1;color:var(--ink);font-size:clamp(1.75rem,5vw + .5rem,4rem);margin-bottom:20px}
@@ -188,9 +190,23 @@
       background:#d1fae5;border:2px solid #10b981;color:#065f46;font-weight:600;
     }
 
+    /* Closing CTA band */
+    .closing-cta{background:var(--brand);text-align:center;padding:clamp(56px,9vw,96px) 0}
+    .closing-cta h2{color:#fff;font-size:clamp(1.75rem,5vw + .5rem,3.25rem);font-weight:900;line-height:1.1;margin-bottom:16px}
+    .closing-cta p{color:rgba(255,255,255,.9);font-size:1.1rem;max-width:560px;margin:0 auto 32px;line-height:1.5}
+    .closing-cta .cta-button-ghost{border-color:#fff;color:#fff}
+    .closing-cta .cta-button-ghost:hover{background:#fff;color:var(--brand)}
+
     /* Footer */
-    footer{background:#2C3E4A;padding:40px 0;text-align:center}
-    footer p{color:#fff}
+    footer{background:var(--cream);padding:clamp(48px,7vw,72px) 0 28px;border-top:2px solid var(--brand)}
+    .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1100px;margin:0 auto;padding:0 20px}
+    .footer-brand .mark{font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
+    .footer-brand p{color:#6b6156;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
+    .footer-col h5{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
+    .footer-col a{display:block;color:#4a4640;font-size:.92rem;text-decoration:none;margin-bottom:10px}
+    .footer-col a:hover{color:var(--brand)}
+    .footer-legal{max-width:1100px;margin:clamp(32px,5vw,48px) auto 0;padding:20px 20px 0;border-top:1px solid rgba(44,62,74,.12);color:#9a9186;font-size:.82rem;text-align:center}
+    @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
 
     /* Tweet / Case Study grids */
     .tweets-grid {
@@ -374,7 +390,10 @@
           <span>1 Investing Course</span>
         </div>
 
-        <button onclick="window.location.href='https://whop.com/checkout/plan_G0hXojwo3WzJQ';trackFormClick()" class="cta-button-large">Start Learning!</button>
+        <div class="hero-ctas" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button onclick="window.location.href='https://whop.com/checkout/plan_G0hXojwo3WzJQ';trackFormClick()" class="cta-button-large">Start Learning!</button>
+          <a href="#outcomes" class="cta-button-ghost">See What's Inside</a>
+        </div>
 
         <p class="hero-attribution">
           By <strong>Philo</strong> from <a href="https://philoinvestor.com" target="_blank">Philoinvestor</a> &nbsp;·&nbsp;
@@ -849,10 +868,38 @@
     </div>
   </section>
 
+  <!-- Closing CTA -->
+  <section class="closing-cta reveal">
+    <div class="container">
+      <h2>Ready to master investing?</h2>
+      <p>Join Philo's Academy and build an investment framework that actually works.</p>
+      <button onclick="window.location.href='https://whop.com/checkout/plan_G0hXojwo3WzJQ';trackFormClick()" class="cta-button-ghost">Start Learning &rarr;</button>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Philo's Academy. Learn Investing. Better.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="mark">Philo's Academy</div>
+        <p>Zero to Hero in Investing &mdash; a complete framework for beginners and professionals rediscovering their edge.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="#outcomes">The Course</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#workshops">Workshops</a>
+        <a href="#audience-fit-cards">Is This For You</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="https://x.com/philoinvestor" target="_blank" rel="noopener">@philoinvestor</a>
+        <a href="https://youtube.com/@philos_academy" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://philoinvestor.com" target="_blank" rel="noopener">Philoinvestor</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      &copy; 2026 Philo's Academy. Learn Investing. Better.
     </div>
   </footer>
 

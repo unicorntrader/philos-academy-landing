@@ -56,7 +56,7 @@
     .stagger.in > *:nth-child(5){transition-delay:.32s}
     .stagger.in > *:nth-child(6){transition-delay:.4s}
     @media (prefers-reduced-motion: reduce){
-      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .step, .card{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
       .hero-scenery{display:none}
     }
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
@@ -133,63 +133,51 @@
     /* One consistent vertical rhythm for every regular section */
     .section-pad{padding:clamp(56px,9vw,110px) 0}
 
-    /* Outcomes (flat layout) */
-    .outcomes-staircase { position: relative; overflow: hidden; }
+    /* Outcomes: clickable tabs (icon + label), one panel switches below — copied from ct3000-landing's feature-tabs */
+    .tab-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:28px 0 44px}
+    .tab-btn{display:flex;flex-direction:column;align-items:center;gap:0;background:#fff;border:2px solid #f0e1c8;border-radius:16px;padding:18px;width:170px;cursor:pointer;transition:border-color .2s ease;font-family:inherit}
+    .tab-btn-icon{width:100%;height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:var(--cream);border-radius:10px}
+    .tab-btn-icon img{max-width:78%;max-height:78%;object-fit:contain;display:block}
+    .tab-btn span:last-child{font-size:14px;font-weight:700;color:var(--ink)}
+    .tab-btn:hover{border-color:#FFD5B8}
+    .tab-btn.active{border-color:var(--brand)}
+    .tab-btn.active span:last-child{color:var(--brand)}
 
-    /* 4 equal columns on desktop, stretch same height */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      align-items: stretch;
-      margin-top: 22px;
+    .tab-panels{max-width:640px;margin:0 auto;min-height:220px;text-align:left}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    .tab-panel .part-label{font-size:.8rem;letter-spacing:.02em;color:#7A8A96;margin-bottom:6px}
+    .tab-panel h3{font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--ink);margin:4px 0 14px}
+    .tab-panel ul{margin-left:18px}
+    .tab-panel li{margin:8px 0;font-size:1rem;line-height:1.55}
+    .tab-panel li::marker{color:var(--brand)}
+
+    /* Restart on every switch so re-clicking a tab replays it too (see initOutcomesTabs) */
+    .reveal-row{opacity:0;transform:translateY(9px);animation:tabRowReveal .22s ease forwards}
+    .tab-panel.active .part-label.reveal-row,
+    .tab-panel.active h3.reveal-row{animation-delay:0s}
+    .tab-panel.active ul.reveal-row{animation-delay:.08s}
+    @keyframes tabRowReveal{to{opacity:1;transform:translateY(0)}}
+
+    @media (max-width:640px){
+      .tab-row{
+        flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;
+        scroll-snap-type:x mandatory;
+        margin:24px calc(-1 * clamp(20px,5vw,48px)) 28px;
+        padding:4px clamp(20px,5vw,48px) 8px;
+        scroll-padding-left:clamp(20px,5vw,48px);
+        scroll-padding-right:clamp(20px,5vw,48px);
+      }
+      .tab-row::-webkit-scrollbar{display:none}
+      .tab-row{scrollbar-width:none}
+      .tab-btn{flex:0 0 auto;width:112px;padding:12px;scroll-snap-align:start}
+      .tab-btn-icon{height:60px;margin-bottom:8px}
+      .tab-btn span:last-child{font-size:12px}
     }
 
-    /* Step cards – flat, group-stagger reveal matched to try-gather.co's "how it works" timing */
-    .step{
-      position: relative;
-      background:#fff;
-      border:2px solid #E8590C;
-      border-radius:14px;
-      padding:22px 22px 18px;
-      box-shadow:0 6px 18px rgba(255,140,66,.10);
-      opacity:0;
-      transform: translateY(22px);
-      transition: opacity .65s ease var(--delay,0s), transform .65s ease var(--delay,0s), box-shadow .35s ease;
-      will-change: transform, opacity;
-    }
-    .steps.in .step{
-      transform: translateY(0);
-      opacity:1;
-    }
-    .steps.in .step:hover{
-      transform: translateY(-6px);
-      box-shadow:0 12px 28px rgba(255,140,66,.18);
-    }
-
-    .part-label {
-      font-size:.8rem;
-      letter-spacing:.02em;
-      color:#7A8A96;
-      margin-bottom:6px;
-    }
-    .step h3 {
-      font-size: clamp(18px,2.4vw,24px);
-      font-weight: 700;
-      color: #2C3E4A;
-      margin: 4px 0 10px;
-      text-align: left;
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-    }
-    .step ul { margin-left:18px; }
-    .step li { margin:6px 0; font-size:.98rem; line-height:1.55; }
-    .step li::marker { color:#E8590C; }
-
-    /* CTA under steps */
-    .steps-cta { 
-      text-align: center; 
+    /* CTA under the tabs */
+    .steps-cta {
+      text-align: center;
       margin-top: 60px;
     }
 
@@ -301,7 +289,6 @@
     @media (max-width:768px){
       .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:14px 28px;font-size:.95rem}
-      .steps{grid-template-columns:1fr}
       .workshop-grid{grid-template-columns:1fr;gap:24px;}
     }
 
@@ -455,59 +442,71 @@
   </section>
 
   <!-- Outcomes / Staircase -->
-  <section id="outcomes" class="outcomes-staircase section-pad bg-cream" aria-labelledby="result-title">
+  <section id="outcomes" class="section-pad bg-cream" aria-labelledby="result-title">
     <div class="container">
       <p class="eyebrow">What You'll Master</p>
       <h2 id="result-title" class="h2">The Result</h2>
 
-      <div class="steps">
-        <!-- PART 1 -->
-        <article class="step" style="--delay:.05s;">
-          <p class="part-label">PART 1 — Foundational Concepts &amp; Value Investing</p>
-          <h3>Build an Unshakable Base</h3>
-          <ul>
+      <div class="tab-row" role="tablist">
+        <button class="tab-btn active" data-tab="foundations" role="tab" aria-selected="true">
+          <span class="tab-btn-icon"><img src="/part1-foundations.png" alt=""></span>
+          <span>Foundations</span>
+        </button>
+        <button class="tab-btn" data-tab="analyst" role="tab" aria-selected="false">
+          <span class="tab-btn-icon"><img src="/part2-analyst.png" alt=""></span>
+          <span>Analyst Mindset</span>
+        </button>
+        <button class="tab-btn" data-tab="strategy" role="tab" aria-selected="false">
+          <span class="tab-btn-icon"><img src="/part3-strategy.png" alt=""></span>
+          <span>Strategy</span>
+        </button>
+        <button class="tab-btn" data-tab="risk" role="tab" aria-selected="false">
+          <span class="tab-btn-icon"><img src="/part4-risk.png" alt=""></span>
+          <span>Risk &amp; Portfolio</span>
+        </button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="tab-panel active" data-panel="foundations">
+          <p class="part-label reveal-row">PART 1 — Foundational Concepts &amp; Value Investing</p>
+          <h3 class="reveal-row">Build an Unshakable Base</h3>
+          <ul class="reveal-row">
             <li>Explain drivers of business value &amp; returns in plain English.</li>
             <li>Spot traps early (story stocks, fake cheap, narrative FOMO).</li>
             <li>Define your circle of competence and operate with rules.</li>
             <li>Shift from headline-reactive to calm, repeatable process.</li>
           </ul>
-        </article>
-
-        <!-- PART 2 -->
-        <article class="step" style="--delay:.22s;">
-          <p class="part-label">PART 2 — Advanced Investment Concepts</p>
-          <h3>Think Like a Professional Analyst</h3>
-          <ul>
+        </div>
+        <div class="tab-panel" data-panel="analyst">
+          <p class="part-label reveal-row">PART 2 — Advanced Investment Concepts</p>
+          <h3 class="reveal-row">Think Like a Professional Analyst</h3>
+          <ul class="reveal-row">
             <li>Break down any business model and value it correctly.</li>
             <li>Identify optionality &amp; disruption before consensus.</li>
             <li>Source ideas systematically; kill value traps fast.</li>
             <li>Map ranges of outcomes and size positions accordingly.</li>
           </ul>
-        </article>
-
-        <!-- PART 3 -->
-        <article class="step" style="--delay:.39s;">
-          <p class="part-label">PART 3 — Mastery &amp; Strategy</p>
-          <h3>Codify Your Edge</h3>
-          <ul>
+        </div>
+        <div class="tab-panel" data-panel="strategy">
+          <p class="part-label reveal-row">PART 3 — Mastery &amp; Strategy</p>
+          <h3 class="reveal-row">Codify Your Edge</h3>
+          <ul class="reveal-row">
             <li>Use high-efficiency frameworks to decide faster, better.</li>
             <li>Integrate macro context without drifting into tourism.</li>
             <li>Systematize adds/trims, catalysts, &amp; review loops.</li>
             <li>Operate simple, systematic, decisive.</li>
           </ul>
-        </article>
-
-        <!-- PART 4 -->
-        <article class="step" style="--delay:.56s;">
-          <p class="part-label">PART 4 — Managing Risk &amp; Portfolio Management</p>
-          <h3>Portfolio Mastery &amp; Resilience</h3>
-          <ul>
+        </div>
+        <div class="tab-panel" data-panel="risk">
+          <p class="part-label reveal-row">PART 4 — Managing Risk &amp; Portfolio Management</p>
+          <h3 class="reveal-row">Portfolio Mastery &amp; Resilience</h3>
+          <ul class="reveal-row">
             <li>Build a portfolio that survives disruption &amp; uncertainty.</li>
             <li>Apply real risk rules: sizing, liquidity, reflexivity, cycles.</li>
             <li>Stress-test: pre-mortems, exit rules, error budgets.</li>
             <li>Leave with your own decision operating system.</li>
           </ul>
-        </article>
+        </div>
       </div>
 
       <div class="steps-cta">
@@ -732,7 +731,7 @@
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!('IntersectionObserver' in window) || reduceMotion) {
         window.initScrollReveal = function(root){
-          (root || document).querySelectorAll('.h2, .reveal, .stagger, .steps, .cards').forEach(function(el){ el.classList.add('in'); });
+          (root || document).querySelectorAll('.h2, .reveal, .stagger, .cards').forEach(function(el){ el.classList.add('in'); });
         };
         document.addEventListener('DOMContentLoaded', function(){ window.initScrollReveal(); });
         return;
@@ -747,7 +746,7 @@
       }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
 
       window.initScrollReveal = function(root){
-        (root || document).querySelectorAll('.h2, .reveal, .stagger, .steps, .cards').forEach(function(el){
+        (root || document).querySelectorAll('.h2, .reveal, .stagger, .cards').forEach(function(el){
           if (el.dataset.revealBound) return;
           el.dataset.revealBound = '1';
           observer.observe(el);
@@ -849,6 +848,48 @@
         a.addEventListener('click', closeMenu);
       });
     });
+
+    // Outcomes tabs: click a part to switch the panel below (ct3000-landing's feature-tabs pattern)
+    (function initOutcomesTabs(){
+      var tabs = document.querySelectorAll('#outcomes .tab-btn');
+      var panels = document.querySelectorAll('#outcomes .tab-panel');
+      if (!tabs.length) return;
+      var tabRowEl = document.querySelector('#outcomes .tab-row');
+
+      function activate(name){
+        tabs.forEach(function(t){
+          var isTarget = t.dataset.tab === name;
+          t.classList.toggle('active', isTarget);
+          t.setAttribute('aria-selected', String(isTarget));
+        });
+        panels.forEach(function(p){
+          var isTarget = p.dataset.panel === name;
+          p.classList.toggle('active', isTarget);
+          if (isTarget) {
+            // Restart the reveal animation on every switch (including re-clicking
+            // the same tab) -- toggle the property off then back on after a reflow.
+            p.querySelectorAll('.reveal-row').forEach(function(row){
+              row.style.animation = 'none';
+              void row.offsetWidth;
+              row.style.animation = '';
+            });
+          }
+        });
+      }
+
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          activate(tab.dataset.tab);
+          if (tabRowEl) {
+            var target = tab.offsetLeft - tabRowEl.clientLeft - parseFloat(getComputedStyle(tabRowEl).paddingLeft || 0);
+            tabRowEl.scrollLeft = Math.max(0, target);
+          }
+          if (window.innerWidth <= 640 && tabRowEl) {
+            tabRowEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    })();
 
   </script>
 

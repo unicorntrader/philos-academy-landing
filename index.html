@@ -57,6 +57,7 @@
     .stagger.in > *:nth-child(6){transition-delay:.4s}
     @media (prefers-reduced-motion: reduce){
       .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .step, .card{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .hero-scenery{display:none}
     }
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
     .eyebrow{text-align:center;font-size:clamp(12px,1.5vw,15px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
@@ -74,7 +75,7 @@
       justify-content:center;
       padding:48px 0;
     }
-    .hero-inner{max-width:760px;margin:0 auto;text-align:center}
+    .hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center}
     .hero-inner h1{font-size:clamp(38px,9.5vw,86px);font-weight:800;line-height:.88;margin-bottom:18px;color:var(--ink);letter-spacing:-.02em}
     .hero-summary{font-size:clamp(16px,2.2vw,20px);color:var(--grey);margin:0 auto 22px;max-width:48ch;line-height:1.5}
 
@@ -84,6 +85,24 @@
     .hero-inner h1{animation-delay:.05s}
     .hero-summary{animation-delay:.25s}
     .hero-ctas{animation-delay:.45s}
+
+    /* Hero scenery: a treeline with Philo the owl gliding past on a loop */
+    .hero-scenery{position:absolute;left:0;right:0;bottom:0;height:140px;overflow:hidden;pointer-events:none;z-index:0}
+    .hero-treeline{position:absolute;left:0;bottom:0;width:100%;height:140px;display:block}
+    .hero-owl{position:absolute;top:12%;left:-70px;width:52px;height:auto;animation:owlFly 24s linear infinite}
+    @keyframes owlFly{
+      0%   { left:-70px;            transform:translateY(0) rotate(-4deg); }
+      20%  {                        transform:translateY(-22px) rotate(2deg); }
+      40%  {                        transform:translateY(4px) rotate(-3deg); }
+      60%  {                        transform:translateY(-16px) rotate(3deg); }
+      80%  {                        transform:translateY(2px) rotate(-2deg); }
+      100% { left:calc(100% + 70px); transform:translateY(0) rotate(-4deg); }
+    }
+    @media (max-width:640px){
+      .hero-scenery{height:90px}
+      .hero-treeline{height:90px}
+      .hero-owl{width:38px}
+    }
 
     .hero-video-block{max-width:820px;margin:clamp(32px,5vw,48px) auto 0}
     .hero-video-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:2px solid var(--brand);box-shadow:0 6px 18px rgba(255,140,66,.12)}
@@ -227,13 +246,28 @@
     /* Footer */
     footer{background:var(--cream);padding:clamp(52px,7vw,80px) 0 clamp(28px,4vw,40px);border-top:2px solid var(--brand)}
     .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
-    .footer-brand .mark{font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
+    .footer-brand .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
+    .footer-brand .mark img{height:36px;width:auto;display:block}
     .footer-brand p{color:#6b6156;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
     .footer-col h5{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
     .footer-col a{display:block;color:#4a4640;font-size:15px;text-decoration:none;margin-bottom:10px}
     .footer-col a:hover{color:var(--brand)}
     .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:#9a9186;font-size:13px;text-align:center}
     @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
+
+    /* Inside The Course: modules + case studies cards, then workshops below */
+    .inside-course-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+    @media (max-width:700px){.inside-course-grid{grid-template-columns:1fr}}
+    .inside-course-card{
+      background:#fff;border:2px solid #E8590C;border-radius:14px;
+      box-shadow:0 6px 18px rgba(255,140,66,.12);
+      padding:28px 26px;text-align:center;
+    }
+    .inside-course-card h3{font-size:clamp(18px,2.4vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px}
+    .inside-course-card p{color:var(--grey);margin-bottom:22px;line-height:1.5}
+    .inside-course-workshops{margin-top:48px;text-align:center}
+    .inside-course-workshops h3{font-size:clamp(18px,2.4vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px}
+    .inside-course-workshops > p{color:var(--grey);margin-bottom:28px}
 
     /* Workshop grid */
     .workshop-grid {
@@ -280,7 +314,8 @@
       backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(44,62,74,.07);
     }
-    .topnav-logo{font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .topnav-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .topnav-logo img{height:30px;width:auto;display:block}
     .topnav-links{display:flex;align-items:center;gap:clamp(16px,3vw,30px)}
     .topnav-links a{font-weight:700;font-size:14.5px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
     .topnav-links a:hover{color:var(--brand)}
@@ -323,12 +358,12 @@
 <body>
   <!-- Nav -->
   <header class="topnav">
-    <a href="#top" class="topnav-logo">Philo's Academy</a>
+    <a href="#top" class="topnav-logo"><img src="/philo-owl-mark.png" alt="" width="240" height="255">Philo's Academy</a>
     <nav class="topnav-links">
       <a href="#outcomes">The Course</a>
       <a href="/modules.html">Modules</a>
       <a href="/case-studies.html">Case Studies</a>
-      <a href="#workshops">Workshops</a>
+      <a href="#inside-the-course">Inside The Course</a>
       <a href="#audience-fit-cards">Is This For You</a>
       <button type="button" class="topnav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobilePanel">
         <span></span><span></span><span></span>
@@ -340,7 +375,7 @@
     <a href="#outcomes">The Course</a>
     <a href="/modules.html">Modules</a>
     <a href="/case-studies.html">Case Studies</a>
-    <a href="#workshops">Workshops</a>
+    <a href="#inside-the-course">Inside The Course</a>
     <a href="#audience-fit-cards">Is This For You</a>
     <a href="https://whop.com/checkout/plan_G0hXojwo3WzJQ" class="topnav-cta">Start Learning</a>
   </div>
@@ -356,6 +391,20 @@
           <button onclick="window.location.href='https://whop.com/checkout/plan_G0hXojwo3WzJQ';trackFormClick()" class="cta-button-large">Start Learning!</button>
         </div>
       </div>
+    </div>
+
+    <div class="hero-scenery" aria-hidden="true">
+      <svg class="hero-treeline" viewBox="0 0 1600 140" preserveAspectRatio="xMidYMax slice" focusable="false">
+        <defs>
+          <pattern id="pines" width="160" height="140" patternUnits="userSpaceOnUse">
+            <polygon points="20,50 0,140 45,140" fill="rgba(44,62,74,.10)"/>
+            <polygon points="75,75 55,140 100,140" fill="rgba(44,62,74,.14)"/>
+            <polygon points="125,95 105,140 150,140" fill="rgba(44,62,74,.18)"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="1600" height="140" fill="url(#pines)"></rect>
+      </svg>
+      <img class="hero-owl" src="/philo-owl-mark.png" alt="" width="240" height="255">
     </div>
   </section>
 
@@ -376,7 +425,7 @@
     <div class="container">
       <p class="eyebrow">Free Content</p>
       <h2 class="h2 h2--sm">See Inside the Academy</h2>
-      <p class="section-lead">Watch the first 10 minutes of every module — 6 hours of free teaching, new modules added weekly.</p>
+      <p class="section-lead">A quick look at what's inside — then dive into 6+ hours of free teaching on YouTube, including the first 10 minutes of every module.</p>
 
       <div class="hero-video-block reveal">
         <div class="hero-video-frame">
@@ -397,7 +446,7 @@
   </section>
 
   <!-- Outcomes / Staircase -->
-  <section id="outcomes" class="outcomes-staircase section-pad bg-white" aria-labelledby="result-title">
+  <section id="outcomes" class="outcomes-staircase section-pad bg-cream" aria-labelledby="result-title">
     <div class="container">
       <p class="eyebrow">What You'll Master</p>
       <h2 id="result-title" class="h2">The Result</h2>
@@ -459,7 +508,7 @@
   </section>
 
   <!-- Results, Applied Section -->
-  <section id="results-applied" class="section-pad bg-cream">
+  <section id="results-applied" class="section-pad bg-white">
     <div class="container">
       <p class="eyebrow">From Lost to Disciplined</p>
       <h2 class="h2">Results, Applied</h2>
@@ -507,54 +556,47 @@
   <!-- Load Testimonials -->
   <div id="testimonials-container"></div>
 
-  <!-- Modules Teaser Section -->
-  <section id="modules-teaser" class="section-pad bg-white">
+  <!-- Inside The Course: modules, case studies, and workshops unified in one section -->
+  <section id="inside-the-course" class="section-pad bg-white">
     <div class="container">
-      <p class="eyebrow">25 Modules</p>
+      <p class="eyebrow">25 Modules · 7 Case Studies · Live Workshops</p>
       <h2 class="h2">Inside The Course</h2>
-      <p class="section-lead">Real excerpts from every module — the frameworks, walkthroughs, and posts students actually learn from.</p>
-      <div style="text-align:center;">
-        <a href="/modules.html" class="cta-button-large">See All 25 Modules &rarr;</a>
-      </div>
-    </div>
-  </section>
+      <p class="section-lead">Everything you get access to inside Philo's Academy.</p>
 
-  <!-- Case Studies Teaser Section -->
-  <section id="case-studies-teaser" class="section-pad bg-cream">
-    <div class="container">
-      <p class="eyebrow">Real-World Applications</p>
-      <h2 class="h2">Case Studies</h2>
-      <p class="section-lead">See the frameworks applied to real companies — Netflix vs. legacy media, banking vs. software, and more.</p>
-      <div style="text-align:center;">
-        <a href="/case-studies.html" class="cta-button-large">See All Case Studies &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Workshops Section -->
-  <section id="workshops" class="section-pad bg-white">
-    <div class="container">
-      <p class="eyebrow">Live Learning</p>
-      <h2 class="h2">Workshops</h2>
-      <p class="section-lead">Live workshops and student Q&amp;A</p>
-
-      <div class="workshop-grid stagger">
-        <div class="workshop-container">
-          <div class="workshop-label">WORKSHOP 1</div>
-          <div class="workshop-wrapper">
-            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
-              <p lang="en" dir="ltr">Loading...</p>
-              <a href="https://twitter.com/philoinvestor/status/1965032326909374747?ref_src=twsrc%5Etfw">View Tweet</a>
-            </blockquote>
-          </div>
+      <div class="inside-course-grid stagger">
+        <div class="inside-course-card">
+          <h3>25 Modules</h3>
+          <p>Real excerpts from every module — the frameworks, walkthroughs, and posts students actually learn from.</p>
+          <a href="/modules.html" class="cta-button-large">See All Modules &rarr;</a>
         </div>
-        <div class="workshop-container">
-          <div class="workshop-label">WORKSHOP 2</div>
-          <div class="workshop-wrapper">
-            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
-              <p lang="en" dir="ltr">Loading...</p>
-              <a href="https://twitter.com/philoinvestor/status/1995077656971194623?ref_src=twsrc%5Etfw">View Tweet</a>
-            </blockquote>
+        <div class="inside-course-card">
+          <h3>Case Studies</h3>
+          <p>See the frameworks applied to real companies — Netflix vs. legacy media, banking vs. software, and more.</p>
+          <a href="/case-studies.html" class="cta-button-large">See All Case Studies &rarr;</a>
+        </div>
+      </div>
+
+      <div class="inside-course-workshops">
+        <h3>Live Workshops</h3>
+        <p>Live workshops and student Q&amp;A.</p>
+        <div class="workshop-grid stagger">
+          <div class="workshop-container">
+            <div class="workshop-label">WORKSHOP 1</div>
+            <div class="workshop-wrapper">
+              <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+                <p lang="en" dir="ltr">Loading...</p>
+                <a href="https://twitter.com/philoinvestor/status/1965032326909374747?ref_src=twsrc%5Etfw">View Tweet</a>
+              </blockquote>
+            </div>
+          </div>
+          <div class="workshop-container">
+            <div class="workshop-label">WORKSHOP 2</div>
+            <div class="workshop-wrapper">
+              <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+                <p lang="en" dir="ltr">Loading...</p>
+                <a href="https://twitter.com/philoinvestor/status/1995077656971194623?ref_src=twsrc%5Etfw">View Tweet</a>
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
@@ -631,7 +673,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="mark">Philo's Academy</div>
+        <div class="mark"><img src="/philo-owl-mark.png" alt="" width="240" height="255">Philo's Academy</div>
         <p>Learn Investing. Better.</p>
       </div>
       <div class="footer-col">
@@ -639,7 +681,7 @@
         <a href="#outcomes">The Course</a>
         <a href="/modules.html">Modules</a>
         <a href="/case-studies.html">Case Studies</a>
-        <a href="#workshops">Workshops</a>
+        <a href="#inside-the-course">Inside The Course</a>
         <a href="#audience-fit-cards">Is This For You</a>
       </div>
       <div class="footer-col">
@@ -662,6 +704,11 @@
 
   <!-- JS -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Load housekeeping: refresh always starts at the top, never mid-scroll
+    if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', () => window.scrollTo(0, 0));
+
     fetch('/testimonials.html')
       .then(response => response.text())
       .then(html => {

@@ -88,7 +88,17 @@
 
     /* Hero scenery: a treeline with Philo the owl gliding past on a loop */
     .hero-scenery{position:absolute;left:0;right:0;bottom:0;height:140px;pointer-events:none;z-index:0}
-    .hero-treeline{position:absolute;left:0;bottom:0;width:100%;height:140px;display:block}
+    /* Fixed-pixel repeating tile instead of an SVG viewBox -- "slice" scaling on a
+       wide viewport rescales the whole pattern up to cover the width, which pushes
+       it taller too and crops the excess off the top. A CSS background tile always
+       renders at its literal background-size, so it never rescales or crops. */
+    .hero-treeline{
+      position:absolute;left:0;bottom:0;width:100%;height:140px;display:block;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='140' viewBox='0 0 170 140'%3E%3Crect x='26' y='110' width='8' height='30' fill='rgba(44,62,74,.10)'/%3E%3Cpolygon points='4,110 56,110 30,55' fill='rgba(44,62,74,.10)'/%3E%3Cpolygon points='12,75 48,75 30,25' fill='rgba(44,62,74,.10)'/%3E%3Crect x='86' y='118' width='8' height='22' fill='rgba(44,62,74,.14)'/%3E%3Cpolygon points='64,118 116,118 90,72' fill='rgba(44,62,74,.14)'/%3E%3Cpolygon points='72,90 108,90 90,48' fill='rgba(44,62,74,.14)'/%3E%3Crect x='136' y='126' width='8' height='14' fill='rgba(44,62,74,.20)'/%3E%3Cpolygon points='116,126 156,126 136,86' fill='rgba(44,62,74,.20)'/%3E%3Cpolygon points='122,100 150,100 136,64' fill='rgba(44,62,74,.20)'/%3E%3C/svg%3E");
+      background-repeat:repeat-x;
+      background-position:bottom left;
+      background-size:170px 140px;
+    }
     .hero-owl{position:absolute;top:12%;left:-70px;width:52px;height:auto;animation:owlFly 24s linear infinite}
     @keyframes owlFly{
       0%   { left:-70px;            transform:translateY(0) rotate(-4deg); }
@@ -100,7 +110,7 @@
     }
     @media (max-width:640px){
       .hero-scenery{height:90px}
-      .hero-treeline{height:90px}
+      .hero-treeline{height:90px;background-size:110px 90px}
       .hero-owl{width:38px}
     }
 
@@ -381,25 +391,7 @@
     </div>
 
     <div class="hero-scenery" aria-hidden="true">
-      <svg class="hero-treeline" viewBox="0 0 1700 140" preserveAspectRatio="xMidYMax slice" focusable="false">
-        <defs>
-          <pattern id="pines" width="170" height="140" patternUnits="userSpaceOnUse">
-            <!-- back pine (tallest, faintest) -->
-            <rect x="26" y="110" width="8" height="30" fill="rgba(44,62,74,.10)"></rect>
-            <polygon points="4,110 56,110 30,55" fill="rgba(44,62,74,.10)"></polygon>
-            <polygon points="12,75 48,75 30,25" fill="rgba(44,62,74,.10)"></polygon>
-            <!-- mid pine -->
-            <rect x="86" y="118" width="8" height="22" fill="rgba(44,62,74,.14)"></rect>
-            <polygon points="64,118 116,118 90,72" fill="rgba(44,62,74,.14)"></polygon>
-            <polygon points="72,90 108,90 90,48" fill="rgba(44,62,74,.14)"></polygon>
-            <!-- front pine (shortest, darkest) -->
-            <rect x="136" y="126" width="8" height="14" fill="rgba(44,62,74,.20)"></rect>
-            <polygon points="116,126 156,126 136,86" fill="rgba(44,62,74,.20)"></polygon>
-            <polygon points="122,100 150,100 136,64" fill="rgba(44,62,74,.20)"></polygon>
-          </pattern>
-        </defs>
-        <rect x="0" y="0" width="1700" height="140" fill="url(#pines)"></rect>
-      </svg>
+      <div class="hero-treeline"></div>
       <img class="hero-owl" src="/philo-owl-mark.png" alt="" width="240" height="255">
     </div>
   </section>

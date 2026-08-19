@@ -25,19 +25,31 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <style>
+    :root{
+      --brand:#E8590C;
+      --brand-hover:#E67A35;
+      --ink:#2C3E4A;
+      --cream:#FFF8E7;
+      --grey:#666;
+    }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:#2C3E4A;background:#FFF8E7;overflow-x:hidden}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .cta-button-large{background:#E8590C;color:#fff;padding:20px 50px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.2rem;transition:all .3s ease;display:inline-block;border:none;cursor:pointer;font-family:inherit}
-    .cta-button-large:hover{background:#E67A35;transform:translateY(-3px)}
+    .cta-button-large{background:var(--brand);color:#fff;padding:20px 50px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.2rem;transition:all .3s ease;display:inline-block;border:none;cursor:pointer;font-family:inherit}
+    .cta-button-large:hover{background:var(--brand-hover);transform:translateY(-3px)}
     .cta-button-large[disabled]{opacity:.7;cursor:not-allowed}
+
+    /* Fluid type scale: min value IS the mobile size, no breakpoint jump needed */
+    .h2{text-align:center;font-weight:900;line-height:1.1;color:var(--ink);font-size:clamp(1.75rem,5vw + .5rem,4rem);margin-bottom:20px}
+    .h2--sm{font-size:clamp(1.5rem,3.5vw + .5rem,2.5rem)}
+    .eyebrow{text-align:center;font-size:clamp(.8rem,1.5vw,.9rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
 
     /* Hero */
     .hero{min-height:50vh;display:flex;align-items:center;padding:60px 0 40px}
     .hero-content{text-align:center}
-    .hero-text h1{font-size:3.5rem;font-weight:bold;margin-bottom:24px;color:#2C3E4A}
-    .course-details{font-size:1.25rem;line-height:1.6;color:#2C3E4A;margin:24px auto;max-width:800px}
-    .course-details strong{color:#2C3E4A;font-weight:700}
+    .hero-text h1{font-size:clamp(2rem,4vw + 1rem,3.5rem);font-weight:bold;margin-bottom:24px;color:var(--ink)}
+    .course-details{font-size:1.25rem;line-height:1.6;color:var(--ink);margin:24px auto;max-width:800px}
+    .course-details strong{color:var(--ink);font-weight:700}
 
     /* Outcomes */
     .outcomes {
@@ -46,12 +58,7 @@
     }
 
     .outcomes h2 {
-      text-align: center;
-      font-size: 4rem;
-      font-weight: 900;
-      line-height: 1.1;
       margin-bottom: 36px;
-      color: #2C3E4A;
     }
 
     /* Outcomes (flat layout) */
@@ -238,14 +245,11 @@
       justify-content: center;
     }
 
-    /* Responsive */
+    /* Responsive: type now scales fluidly via clamp() in .h2/.hero-text h1, no jump needed */
     @media (max-width:768px){
       .hero{min-height:40vh;padding:60px 0 30px}
-      .hero-text h1{font-size:2rem}
       .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:16px 30px;font-size:1rem}
-      .outcomes h2{font-size:2.5rem}
-      h2[style*="font-size:4rem"]{font-size:2.5rem !important;}
       .steps{grid-template-columns:1fr}
       .tweets-grid{grid-template-columns:1fr;gap:24px;}
       .case-study-grid{grid-template-columns:1fr;gap:24px;}
@@ -358,7 +362,7 @@
   <section id="youtube-content" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C; border-bottom:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Free Content</p>
-      <h2 style="text-align:center; font-size:2.5rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Watch the First 10 Minutes of Every Module</h2>
+      <h2 class="h2 h2--sm">Watch the First 10 Minutes of Every Module</h2>
       <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 32px;">See Philo's teaching style and get a taste of the Academy before you join.</p>
       
       <div style="max-width:600px; margin:0 auto; background:#fff; border:2px solid #E8590C; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12); text-align:center;">
@@ -375,7 +379,7 @@
   <section id="outcomes" class="outcomes outcomes-staircase" aria-labelledby="result-title">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">What You'll Master</p>
-      <h2 id="result-title" style="font-size:4rem; font-weight:900; line-height:1.1;">The Result</h2>
+      <h2 id="result-title" class="h2">The Result</h2>
 
       <div class="steps">
         <!-- PART 1 -->
@@ -437,7 +441,7 @@
   <section id="results-applied" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C; border-bottom:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">From Lost to Disciplined</p>
-      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Results, Applied</h2>
+      <h2 class="h2">Results, Applied</h2>
       <p style="text-align:center; font-size:1.15rem; color:#666; max-width:700px; margin:0 auto 48px;">Real transformations from students who went from lost to disciplined.</p>
       
       <div style="max-width:800px; margin:0 auto; background:#fff; border:2px solid #E8590C; border-radius:14px; padding:40px; box-shadow:0 6px 18px rgba(255,140,66,.12);">
@@ -483,7 +487,7 @@
   <section id="harsh-truth" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">This Isn't For Everyone</p>
-      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:32px; color:#2C3E4A;">The Harsh Truth</h2>
+      <h2 class="h2" style="margin-bottom:32px;">The Harsh Truth</h2>
       
       <div style="max-width:800px; margin:0 auto; background:#FFF8E7; border:2px solid #E8590C; border-radius:14px; padding:48px; box-shadow:0 6px 18px rgba(232,89,12,.2);">
         <p style="font-size:1.3rem; line-height:1.8; color:#2C3E4A; margin-bottom:24px; font-weight:600;">
@@ -513,7 +517,7 @@
   <section id="tweet-embeds" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">25 Modules. 7 Case Studies.</p>
-      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Inside The Course</h2>
+      <h2 class="h2">Inside The Course</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">See what you'll learn across 25 modules and 7 case studies</p>
       
       <!-- Row 1: Modules 1–3 -->
@@ -669,7 +673,7 @@
   <section id="case-studies" style="background:#FFF8E7; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Real-World Applications</p>
-      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Case Studies</h2>
+      <h2 class="h2">Case Studies</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">Real-world applications of the frameworks</p>
 
       <!-- Row 1: Case Studies 1–3 (NEW: 2 & 3 added) -->
@@ -710,7 +714,7 @@
   <section id="workshops" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">Live Learning</p>
-      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Workshops</h2>
+      <h2 class="h2">Workshops</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:600px; margin:0 auto 48px;">Live workshops and student Q&A</p>
 
       <div class="workshop-grid">
@@ -785,7 +789,7 @@
   <section id="corporate-packages" style="background:#fff; padding:80px 0; border-top:2px solid #E8590C;">
     <div class="container">
       <p style="text-align:center; font-size:0.9rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8590C; margin-bottom:12px;">For Investment Professionals</p>
-      <h2 style="text-align:center; font-size:4rem; font-weight:900; line-height:1.1; margin-bottom:20px; color:#2C3E4A;">Corporate Packages</h2>
+      <h2 class="h2">Corporate Packages</h2>
       <p style="text-align:center; font-size:1.1rem; color:#666; max-width:700px; margin:0 auto 48px;">Education packages for in-house investment teams, family offices, and advisory firms</p>
       <div style="text-align:center;">
         <a href="/cdn-cgi/l/email-protection#42362a2b2c29273002322a2b2e2d2b2c342731362d306c212d2f7d313720282721367f012d30322d30233627677072122321292325276770720b2c33372b303b6770726f677072122a2b2e2d653167707203212326272f3b64202d263b7f0a2b6e6772066772036772066772030b652f6770722b2c36273027313627266770722b2c6770722e2723302c2b2c256770722f2d302767707223202d3736677072212d30322d302336276770723223212923252731677072242d30677072122a2b2e2d653167707203212326272f3b6c677206677203677206677203012d2f32232c3b6d0d3025232c2b3823362b2d2c786772066772031627232f677072112b382778677206677203113227212b242b216770720c27272631786772066772036772066772030e2d2d292b2c25677072242d3035233026677072362d6770722a2723302b2c2567707224302d2f6770723b2d376c" class="cta-button-large">Inquire About Corporate Training</a>

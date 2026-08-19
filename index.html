@@ -15,9 +15,8 @@
   <meta property="twitter:card" content="summary_large_image">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -33,7 +32,7 @@
       --grey:#666;
     }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
+    body{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
     .container{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
     .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
     .cta-button-large:hover{background:transparent;color:var(--brand);transform:translateY(-2px)}
@@ -61,7 +60,7 @@
     }
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
     .eyebrow{text-align:center;font-size:clamp(12px,1.5vw,15px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
-    .section-lead{text-align:center;font-size:clamp(15px,2vw,18px);color:var(--grey);max-width:44ch;margin:0 auto 40px;line-height:1.48}
+    .section-lead{text-align:center;font-size:clamp(16px,2.2vw,20px);color:var(--ink);max-width:44ch;margin:0 auto 40px;line-height:1.48}
     .bg-white{background:#fff}
     .bg-cream{background:var(--cream)}
 
@@ -77,7 +76,7 @@
     }
     .hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center}
     .hero-inner h1{font-size:clamp(38px,9.5vw,86px);font-weight:800;line-height:.88;margin-bottom:18px;color:var(--ink);letter-spacing:-.02em}
-    .hero-summary{font-size:clamp(16px,2.2vw,20px);color:var(--grey);margin:0 auto 22px;max-width:48ch;line-height:1.5}
+    .hero-summary{font-size:clamp(16px,2.2vw,20px);color:var(--ink);margin:0 auto 22px;max-width:48ch;line-height:1.5}
 
     /* Hero page-load reveal: headline, then subhead, then CTA, one after another (ct3000-landing timing) */
     @keyframes heroReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -237,7 +236,7 @@
     .closing-cta .cta-button-ghost{border-color:#fff;color:#fff}
     .closing-cta .cta-button-ghost:hover{background:#fff;color:var(--brand)}
 
-    /* Footer */
+    /* SYNC:FOOTER:START -- kept in sync across pages by sync-shared.py, edit there */
     footer{background:var(--cream);padding:clamp(52px,7vw,80px) 0 clamp(28px,4vw,40px);border-top:2px solid var(--brand)}
     .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
     .footer-brand .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
@@ -248,6 +247,7 @@
     .footer-col a:hover{color:var(--brand)}
     .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:#9a9186;font-size:13px;text-align:center}
     @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
+    /* SYNC:FOOTER:END */
 
     /* Responsive: type now scales fluidly via clamp() in .h2/.hero-inner h1, no jump needed */
     @media (max-width:768px){
@@ -255,6 +255,7 @@
       .cta-button-large{padding:14px 28px;font-size:.95rem}
     }
 
+    /* SYNC:NAV:START -- kept in sync across pages by sync-shared.py, edit there */
     /* Fixed nav */
     .topnav{
       position:fixed; top:0; left:0; right:0; z-index:200;
@@ -269,6 +270,7 @@
     .topnav-links{display:flex;align-items:center;gap:clamp(16px,3vw,30px)}
     .topnav-links a{font-weight:600;font-size:15px;letter-spacing:0;color:var(--ink);text-decoration:none}
     .topnav-links a:hover{color:var(--brand)}
+    .topnav-links a.current, .topnav-mobile-panel a.current{color:var(--brand)}
     .topnav-links a.topnav-cta{background:var(--brand);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;white-space:nowrap;transition:background .6s ease,color .6s ease,box-shadow .6s ease}
     .topnav-links a.topnav-cta:hover{background:#fff;color:var(--brand);box-shadow:inset 0 0 0 2px var(--brand)}
     body{padding-top:66px}
@@ -305,6 +307,7 @@
     @media (min-width:821px){
       .topnav-mobile-panel{display:none}
     }
+    /* SYNC:NAV:END */
   </style>
 </head>
 <body>

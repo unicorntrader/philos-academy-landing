@@ -102,6 +102,75 @@ def build_footer(page):
   </footer>'''
 
 
+# The nav and footer *CSS* (not just the markup above) also has to stay
+# identical across pages -- font sizes, hover treatment, colors. It lives
+# between /* SYNC:NAV:START */.../* SYNC:NAV:END */ and the FOOTER
+# equivalent in each page's <style> block. Canonical text below, copied
+# from index.html; edit it here, not in the individual pages.
+NAV_CSS = '''    /* Fixed nav */
+    .topnav{
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:14px clamp(22px,6vw,42px);
+      background:rgba(255,248,231,.92);
+      backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(44,62,74,.07);
+    }
+    .topnav-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .topnav-logo img{height:30px;width:auto;display:block}
+    .topnav-links{display:flex;align-items:center;gap:clamp(16px,3vw,30px)}
+    .topnav-links a{font-weight:600;font-size:15px;letter-spacing:0;color:var(--ink);text-decoration:none}
+    .topnav-links a:hover{color:var(--brand)}
+    .topnav-links a.current, .topnav-mobile-panel a.current{color:var(--brand)}
+    .topnav-links a.topnav-cta{background:var(--brand);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;white-space:nowrap;transition:background .6s ease,color .6s ease,box-shadow .6s ease}
+    .topnav-links a.topnav-cta:hover{background:#fff;color:var(--brand);box-shadow:inset 0 0 0 2px var(--brand)}
+    body{padding-top:66px}
+
+    .topnav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:26px;height:20px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+    .topnav-burger span{display:block;height:2.6px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .topnav-burger.open span:nth-child(1){transform:translateY(7.6px) rotate(45deg)}
+    .topnav-burger.open span:nth-child(2){opacity:0}
+    .topnav-burger.open span:nth-child(3){transform:translateY(-7.6px) rotate(-45deg)}
+
+    .topnav-mobile-panel{
+      position:fixed; top:66px; left:0; right:0; z-index:199;
+      background:rgba(255,255,255,.98); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(44,62,74,.08);
+      display:flex; flex-direction:column;
+      max-height:0; overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .topnav-mobile-panel.open{max-height:400px}
+    .topnav-mobile-panel a{padding:13px 22px;font-weight:600;color:var(--ink);text-decoration:none;font-size:1rem;border-top:1px solid rgba(44,62,74,.06)}
+    .topnav-mobile-panel a:first-child{border-top:none}
+    .topnav-mobile-panel a:hover{color:var(--brand)}
+    .topnav-mobile-panel a.topnav-cta{
+      background:var(--brand);color:#fff;text-align:center;border-radius:999px;font-weight:700;
+      margin:10px 22px 16px;border-top:none;padding:13px 20px;
+      transition:background .6s ease,color .6s ease,box-shadow .6s ease;
+    }
+    .topnav-mobile-panel a.topnav-cta:hover{background:#fff;color:var(--brand);box-shadow:inset 0 0 0 2px var(--brand)}
+
+    @media (max-width:820px){
+      .topnav-links a{display:none}
+      .topnav-burger{display:flex}
+    }
+    @media (min-width:821px){
+      .topnav-mobile-panel{display:none}
+    }'''
+
+FOOTER_CSS = '''    footer{background:var(--cream);padding:clamp(52px,7vw,80px) 0 clamp(28px,4vw,40px);border-top:2px solid var(--brand)}
+    .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+    .footer-brand .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
+    .footer-brand .mark img{height:36px;width:auto;display:block}
+    .footer-brand p{color:#6b6156;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
+    .footer-col h5{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
+    .footer-col a{display:block;color:#4a4640;font-size:15px;text-decoration:none;margin-bottom:10px}
+    .footer-col a:hover{color:var(--brand)}
+    .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:#9a9186;font-size:13px;text-align:center}
+    @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}'''
+
+
 # filename -> page type
 PAGES = {
     'index.html':   'home',
@@ -114,6 +183,8 @@ HEADER_RE = re.compile(
     re.DOTALL,
 )
 FOOTER_RE = re.compile(r'<footer>.*?</footer>', re.DOTALL)
+NAV_CSS_RE = re.compile(r'(?<=SYNC:NAV:START -- kept in sync across pages by sync-shared.py, edit there \*/\n).*?(?=\n {4}/\* SYNC:NAV:END \*/)', re.DOTALL)
+FOOTER_CSS_RE = re.compile(r'(?<=SYNC:FOOTER:START -- kept in sync across pages by sync-shared.py, edit there \*/\n).*?(?=\n {4}/\* SYNC:FOOTER:END \*/)', re.DOTALL)
 
 
 def main():
@@ -128,6 +199,8 @@ def main():
 
         new_content = HEADER_RE.sub(lambda m: header, content, count=1)
         new_content = FOOTER_RE.sub(lambda m: footer, new_content, count=1)
+        new_content = NAV_CSS_RE.sub(lambda m: NAV_CSS, new_content, count=1)
+        new_content = FOOTER_CSS_RE.sub(lambda m: FOOTER_CSS, new_content, count=1)
 
         if new_content != content:
             changed.append(fname)

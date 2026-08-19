@@ -35,6 +35,7 @@
     </div>
 
     <!-- Testimonial chips: click one to load the full quote into the panel below -->
+    <p class="testi-scroll-hint">&larr; Scroll to see more &rarr;</p>
     <div class="testi-chips">
 
       <button type="button" class="testi-chip active" data-name="SavvasC" data-date="November 13, 2025" data-stars="5">
@@ -124,15 +125,24 @@
 
 <style>
   .testi-chips{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+    display:flex;
     gap:14px;
+    overflow-x:auto;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
     max-width:1100px;
     margin:0 auto;
+    padding:4px 4px 14px;
   }
+  .testi-chips::-webkit-scrollbar{height:7px}
+  .testi-chips::-webkit-scrollbar-track{background:transparent}
+  .testi-chips::-webkit-scrollbar-thumb{background:#FFD5B8;border-radius:4px}
+  .testi-scroll-hint{text-align:center;color:#999;font-size:.8rem;margin:0 0 8px;}
   .testi-chip{
     all:unset;
     box-sizing:border-box;
+    flex:0 0 220px;
+    scroll-snap-align:start;
     cursor:pointer;
     display:flex;
     flex-direction:column;
@@ -140,7 +150,7 @@
     background:#fff;
     border:2px solid #FFD5B8;
     border-radius:12px;
-    padding:16px 18px;
+    padding:14px 16px;
     transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease, background .2s ease;
   }
   .testi-chip:hover{
@@ -154,8 +164,11 @@
     box-shadow:0 8px 20px rgba(255,140,66,.2);
   }
   .testi-chip-stars{color:#FF8C42;font-size:13px;letter-spacing:1px}
-  .testi-chip-snippet{color:#2C3E4A;font-size:.9rem;line-height:1.45;margin:0}
-  .testi-chip-name{font-weight:700;color:#2C3E4A;font-size:.82rem;margin-top:auto}
+  .testi-chip-snippet{
+    color:#2C3E4A;font-size:.85rem;line-height:1.4;margin:0;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .testi-chip-name{font-weight:700;color:#2C3E4A;font-size:.8rem;margin-top:auto}
 
   .testi-panel{
     max-width:800px;
@@ -170,6 +183,8 @@
     transition:opacity .3s ease, transform .3s ease;
   }
   .testi-panel.show{opacity:1;transform:none}
+  .testi-panel.pulse{animation:testiPulse .5s ease}
+  @keyframes testiPulse{0%{box-shadow:0 0 0 0 rgba(232,89,12,.35)}100%{box-shadow:0 10px 28px rgba(232,89,12,.14)}}
   .testi-panel-stars{color:#E8590C;font-size:22px;letter-spacing:2px;text-align:center;margin-bottom:14px}
   .testi-panel-quote{color:#2C3E4A;font-size:1.1rem;line-height:1.7;text-align:center;margin:0 0 20px}
   .testi-panel-foot{text-align:center;border-top:1px solid #FFD5B8;padding-top:14px}

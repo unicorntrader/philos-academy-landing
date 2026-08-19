@@ -36,7 +36,7 @@
     body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
     .container{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
     .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
-    .cta-button-large:hover{background:var(--brand-hover);border-color:var(--brand-hover);transform:translateY(-2px)}
+    .cta-button-large:hover{background:transparent;color:var(--brand);transform:translateY(-2px)}
     .cta-button-large[disabled]{opacity:.7;cursor:not-allowed}
     .cta-button-ghost{background:transparent;color:var(--brand);padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
     .cta-button-ghost:hover{background:var(--brand);color:#fff;transform:translateY(-2px)}
@@ -113,10 +113,6 @@
       .hero-treeline{height:90px;background-size:110px 90px}
       .hero-owl{width:38px}
     }
-
-    .hero-video-block{max-width:820px;margin:clamp(32px,5vw,48px) auto 0}
-    .hero-video-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:2px solid var(--brand);box-shadow:0 6px 18px rgba(255,140,66,.12)}
-    .hero-video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 
     /* Stats band: the section right after a full-height hero, spec calls for its own breathing room */
     .stats-band{padding:48px 0 clamp(32px,5vw,48px)}
@@ -253,53 +249,10 @@
     .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:#9a9186;font-size:13px;text-align:center}
     @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
 
-    /* Inside The Course: modules + case studies cards, then workshops below */
-    .inside-course-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
-    @media (max-width:700px){.inside-course-grid{grid-template-columns:1fr}}
-    .inside-course-card{
-      background:#fff;border:2px solid #E8590C;border-radius:14px;
-      box-shadow:0 6px 18px rgba(255,140,66,.12);
-      padding:28px 26px;text-align:center;
-    }
-    .inside-course-card h3{font-size:clamp(18px,2.4vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px}
-    .inside-course-card p{color:var(--grey);margin-bottom:22px;line-height:1.5}
-    .inside-course-workshops{margin-top:48px;text-align:center}
-    .inside-course-workshops h3{font-size:clamp(18px,2.4vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px}
-    .inside-course-workshops > p{color:var(--grey);margin-bottom:28px}
-
-    /* Workshop grid */
-    .workshop-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .workshop-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .workshop-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #E8590C;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    .workshop-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
     /* Responsive: type now scales fluidly via clamp() in .h2/.hero-inner h1, no jump needed */
     @media (max-width:768px){
       .course-details{font-size:1rem;padding:0 10px}
       .cta-button-large{padding:14px 28px;font-size:.95rem}
-      .workshop-grid{grid-template-columns:1fr;gap:24px;}
     }
 
     /* Fixed nav */
@@ -341,7 +294,9 @@
     .topnav-mobile-panel a.topnav-cta{
       background:var(--brand);color:#fff;text-align:center;border-radius:999px;font-weight:700;
       margin:10px 22px 16px;border-top:none;padding:13px 20px;
+      transition:background .6s ease,color .6s ease,box-shadow .6s ease;
     }
+    .topnav-mobile-panel a.topnav-cta:hover{background:#fff;color:var(--brand);box-shadow:inset 0 0 0 2px var(--brand)}
 
     @media (max-width:820px){
       .topnav-links a{display:none}
@@ -358,8 +313,6 @@
     <a href="#top" class="topnav-logo"><img src="/philo-owl-mark.png" alt="" width="240" height="255">Philo's Academy</a>
     <nav class="topnav-links">
       <a href="#outcomes">The Course</a>
-      <a href="/modules.html">Modules</a>
-      <a href="/case-studies.html">Case Studies</a>
       <a href="#inside-the-course">Inside The Course</a>
       <a href="#audience-fit-cards">Is This For You</a>
       <button type="button" class="topnav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobilePanel">
@@ -370,8 +323,6 @@
   </header>
   <div class="topnav-mobile-panel" id="navMobilePanel">
     <a href="#outcomes">The Course</a>
-    <a href="/modules.html">Modules</a>
-    <a href="/case-studies.html">Case Studies</a>
     <a href="#inside-the-course">Inside The Course</a>
     <a href="#audience-fit-cards">Is This For You</a>
     <a href="https://whop.com/checkout/plan_G0hXojwo3WzJQ" class="topnav-cta">Start Learning</a>
@@ -413,21 +364,9 @@
     <div class="container">
       <p class="eyebrow">Free Content</p>
       <h2 class="h2 h2--sm">See Inside the Academy</h2>
-      <p class="section-lead">A quick look at what's inside — then dive into 6+ hours of free teaching on YouTube, including the first 10 minutes of every module.</p>
+      <p class="section-lead">6+ hours of free teaching on YouTube — watch the first 10 minutes of every module before you decide.</p>
 
-      <div class="hero-video-block reveal">
-        <div class="hero-video-frame">
-          <iframe
-            src="https://player.vimeo.com/video/1143828696?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-            title="Course Introduction Video"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-      <div style="text-align:center; margin-top:32px;">
+      <div style="text-align:center;">
         <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Free Modules on YouTube</a>
       </div>
     </div>
@@ -559,46 +498,11 @@
   <!-- Inside The Course: modules, case studies, and workshops unified in one section -->
   <section id="inside-the-course" class="section-pad bg-white">
     <div class="container">
-      <p class="eyebrow">25 Modules · 7 Case Studies · Live Workshops</p>
+      <p class="eyebrow">25 Modules · 3 Case Studies · Live Workshops</p>
       <h2 class="h2">Inside The Course</h2>
-      <p class="section-lead">Everything you get access to inside Philo's Academy.</p>
-
-      <div class="inside-course-grid stagger">
-        <div class="inside-course-card">
-          <h3>25 Modules</h3>
-          <p>Real excerpts from every module — the frameworks, walkthroughs, and posts students actually learn from.</p>
-          <a href="/modules.html" class="cta-button-large">See All Modules &rarr;</a>
-        </div>
-        <div class="inside-course-card">
-          <h3>Case Studies</h3>
-          <p>See the frameworks applied to real companies — Netflix vs. legacy media, banking vs. software, and more.</p>
-          <a href="/case-studies.html" class="cta-button-large">See All Case Studies &rarr;</a>
-        </div>
-      </div>
-
-      <div class="inside-course-workshops">
-        <h3>Live Workshops</h3>
-        <p>Live workshops and student Q&amp;A.</p>
-        <div class="workshop-grid stagger">
-          <div class="workshop-container">
-            <div class="workshop-label">WORKSHOP 1</div>
-            <div class="workshop-wrapper">
-              <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
-                <p lang="en" dir="ltr">Loading...</p>
-                <a href="https://twitter.com/philoinvestor/status/1965032326909374747?ref_src=twsrc%5Etfw">View Tweet</a>
-              </blockquote>
-            </div>
-          </div>
-          <div class="workshop-container">
-            <div class="workshop-label">WORKSHOP 2</div>
-            <div class="workshop-wrapper">
-              <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
-                <p lang="en" dir="ltr">Loading...</p>
-                <a href="https://twitter.com/philoinvestor/status/1995077656971194623?ref_src=twsrc%5Etfw">View Tweet</a>
-              </blockquote>
-            </div>
-          </div>
-        </div>
+      <p class="section-lead">Real excerpts from every module, case studies applying the frameworks to real companies, and recordings from live workshops — everything you get access to inside Philo's Academy.</p>
+      <div style="text-align:center;">
+        <a href="/modules.html" class="cta-button-large">See Everything Inside &rarr;</a>
       </div>
     </div>
   </section>
@@ -679,8 +583,6 @@
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="#outcomes">The Course</a>
-        <a href="/modules.html">Modules</a>
-        <a href="/case-studies.html">Case Studies</a>
         <a href="#inside-the-course">Inside The Course</a>
         <a href="#audience-fit-cards">Is This For You</a>
       </div>

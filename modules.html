@@ -4,13 +4,13 @@
   <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>All Modules - Philo's Academy</title>
+  <title>Inside The Course - Philo's Academy</title>
 
   <!-- Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://philomastery.com/modules.html">
-  <meta property="og:title" content="All Modules - Philo's Academy">
-  <meta property="og:description" content="Browse every module in Philo's Academy: real excerpts, frameworks, and walkthroughs.">
+  <meta property="og:title" content="Inside The Course - Philo's Academy">
+  <meta property="og:description" content="Everything you get access to inside Philo's Academy: modules, case studies, and live workshops.">
   <meta property="twitter:card" content="summary_large_image">
 
   <!-- Fonts -->
@@ -59,7 +59,15 @@
     .page-header .back-link:hover{color:var(--brand)}
     .page-header p.intro{max-width:640px;margin:0 auto;color:var(--grey);font-size:1.1rem}
 
-    /* Tweet grids */
+    /* Jump nav between the three sections on this combined page */
+    .content-jump{display:flex;justify-content:center;gap:clamp(16px,3vw,32px);flex-wrap:wrap;padding:18px clamp(20px,5vw,42px);background:#fff;border-bottom:2px solid var(--brand);position:sticky;top:52px;z-index:100}
+    .content-jump a{font-size:.9rem;font-weight:700;color:var(--ink);text-decoration:none}
+    .content-jump a:hover{color:var(--brand)}
+
+    /* Sub-heading for each content type within the combined page */
+    .content-subhead{text-align:center;font-size:clamp(1.4rem,3vw + .5rem,2.25rem);font-weight:900;color:var(--ink);margin-bottom:36px;scroll-margin-top:110px}
+
+    /* Tweet grids -- shared by modules, case studies, and workshops */
     .tweets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1200px;margin:0 auto}
     .tweet-container{display:flex;flex-direction:column;align-items:center}
     .module-label{font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#E8590C;margin-bottom:12px;text-align:center}
@@ -136,9 +144,8 @@
     <a href="/index.html#top" class="topnav-logo">Philo's Academy</a>
     <nav class="topnav-links">
       <a href="/index.html#outcomes">The Course</a>
-      <a href="/modules.html">Modules</a>
-      <a href="/case-studies.html">Case Studies</a>
-      <a href="/index.html#workshops">Workshops</a>
+      <a href="/modules.html">Inside The Course</a>
+      <a href="/index.html#audience-fit-cards">Is This For You</a>
       <button type="button" class="topnav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobilePanel">
         <span></span><span></span><span></span>
       </button>
@@ -147,9 +154,8 @@
   </header>
   <div class="topnav-mobile-panel" id="navMobilePanel">
     <a href="/index.html#outcomes">The Course</a>
-    <a href="/modules.html">Modules</a>
-    <a href="/case-studies.html">Case Studies</a>
-    <a href="/index.html#workshops">Workshops</a>
+    <a href="/modules.html">Inside The Course</a>
+    <a href="/index.html#audience-fit-cards">Is This For You</a>
     <a href="https://whop.com/checkout/plan_G0hXojwo3WzJQ" class="topnav-cta">Start Learning</a>
   </div>
 
@@ -157,15 +163,23 @@
   <section class="page-header">
     <div class="container">
       <a href="/index.html" class="back-link">&larr; Back to Philo's Academy</a>
-      <p class="eyebrow">25 Modules</p>
+      <p class="eyebrow">25 Modules &middot; 3 Case Studies &middot; Live Workshops</p>
       <h2 class="h2 in">Inside The Course</h2>
-      <p class="intro">Real excerpts from every module — the frameworks, walkthroughs, and posts students actually learn from.</p>
+      <p class="intro">Everything you get access to inside Philo's Academy — modules, case studies, and live workshops.</p>
     </div>
   </section>
+
+  <!-- Section nav -->
+  <nav class="content-jump">
+    <a href="#modules">Modules</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#workshops">Workshops</a>
+  </nav>
 
   <!-- Modules Section -->
   <section id="modules" class="section-pad" style="background:#fff;">
     <div class="container">
+      <h3 class="content-subhead">Modules</h3>
 
       <!-- Row 1: Modules 1–3 -->
       <div class="tweets-grid stagger in">
@@ -316,6 +330,71 @@
     </div>
   </section>
 
+  <!-- Case Studies Section -->
+  <section id="case-studies" class="section-pad" style="background:#FFF8E7;">
+    <div class="container">
+      <h3 class="content-subhead">Case Studies</h3>
+
+      <div class="tweets-grid stagger in">
+        <div class="tweet-container">
+          <div class="module-label">CASE STUDY 1<br>Major Investing Mistakes</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/1995029711718944927?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+        <div class="tweet-container">
+          <div class="module-label">CASE STUDY 2<br>Netflix vs Legacy Media</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032017757869330786?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+        <div class="tweet-container">
+          <div class="module-label">CASE STUDY 3<br>Banking vs Software</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/2032017918679036007?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops Section -->
+  <section id="workshops" class="section-pad" style="background:#fff;">
+    <div class="container">
+      <h3 class="content-subhead">Workshops</h3>
+
+      <div class="tweets-grid stagger in">
+        <div class="tweet-container">
+          <div class="module-label">WORKSHOP 1</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/1965032326909374747?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+        <div class="tweet-container">
+          <div class="module-label">WORKSHOP 2</div>
+          <div class="tweet-wrapper">
+            <blockquote class="twitter-tweet" data-lang="en" data-dnt="true">
+              <p lang="en" dir="ltr">Loading...</p>
+              <a href="https://twitter.com/philoinvestor/status/1995077656971194623?ref_src=twsrc%5Etfw">View Tweet</a>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Closing CTA -->
   <section class="closing-cta reveal in">
     <div class="container">
@@ -335,9 +414,7 @@
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="/index.html#outcomes">The Course</a>
-        <a href="/modules.html">Modules</a>
-        <a href="/case-studies.html">Case Studies</a>
-        <a href="/index.html#workshops">Workshops</a>
+        <a href="/modules.html">Inside The Course</a>
         <a href="/index.html#audience-fit-cards">Is This For You</a>
       </div>
       <div class="footer-col">

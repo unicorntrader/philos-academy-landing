@@ -29,7 +29,7 @@
       --brand-hover:#E67A35;
       --ink:#2C3E4A;
       --cream:#FFF8E7;
-      --grey:rgba(44,62,74,.72);
+      --grey:rgba(44,62,74,.85);
     }
     *{margin:0;padding:0;box-sizing:border-box}
     /* overflow-x:hidden on body alone isn't always enough on iOS Safari to actually
@@ -197,12 +197,12 @@
     /* === AUDIENCE & FIT (CARD FORMAT) === */
     #audience-fit-cards .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
     #audience-fit-cards .cards{display:grid;gap:22px;}
-    @media(min-width:980px){#audience-fit-cards .cards{grid-template-columns:1fr 1fr;}}
     /* Cards – group-stagger reveal matched to try-gather.co's "insight cards" timing */
     #audience-fit-cards .card{
       background:#fff;border:2px solid #E8590C;border-radius:14px;
       box-shadow:0 6px 18px rgba(255,140,66,.12);
       padding:22px 22px 18px;
+      max-width:520px;margin:0 auto;
       opacity:0;
       transform: translateY(20px);
       transition: opacity .55s ease var(--delay,0s), transform .55s ease var(--delay,0s), box-shadow .3s ease;
@@ -222,13 +222,12 @@
     #audience-fit-cards h3{
       margin:0 0 10px;font-size:clamp(18px,2.4vw,24px);line-height:1.25;color:var(--ink);font-weight:700;
     }
-    #audience-fit-cards p{margin:0 0 8px;color:var(--ink);opacity:.72;}
+    #audience-fit-cards p{margin:0 0 8px;color:var(--ink);opacity:.85;}
     #audience-fit-cards ul{margin:8px 0 0 0;padding:0;list-style:none;}
     #audience-fit-cards li{margin:8px 0;padding-left:18px;position:relative;color:var(--ink);line-height:1.45;}
     #audience-fit-cards li::before{
       content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#E8590C;
     }
-    @media(min-width:980px){#audience-fit-cards .card.span-2{grid-column:1 / -1;}}
     #audience-fit-cards .cta{ text-align:center;margin-top:28px;}
 
     /* Results, Applied: before/after comparison cards */
@@ -236,7 +235,7 @@
     .transform-row{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;background:#fff;border:2px solid #f0e1c8;border-radius:14px;padding:20px 26px;transition:border-color .2s ease}
     .transform-row:hover{border-color:var(--brand)}
     .transform-before,.transform-after{font-size:.95rem;line-height:1.5;color:var(--ink)}
-    .transform-before{opacity:.6}
+    .transform-before{opacity:.75}
     .transform-after{font-weight:600}
     .transform-label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
     .transform-before .transform-label{color:var(--ink)}
@@ -265,11 +264,11 @@
     .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
     .footer-brand .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
     .footer-brand .mark img{height:36px;width:auto;display:block}
-    .footer-brand p{color:var(--ink);opacity:.65;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
+    .footer-brand p{color:var(--ink);opacity:.85;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
     .footer-col h5{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
-    .footer-col a{display:block;color:var(--ink);opacity:.72;font-size:15px;text-decoration:none;margin-bottom:10px;transition:opacity .2s ease,color .2s ease}
+    .footer-col a{display:block;color:var(--ink);opacity:.92;font-size:15px;text-decoration:none;margin-bottom:10px;transition:opacity .2s ease,color .2s ease}
     .footer-col a:hover{color:var(--brand);opacity:1}
-    .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:var(--ink);opacity:.5;font-size:13px;text-align:center}
+    .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:var(--ink);opacity:.7;font-size:13px;text-align:center}
     @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
     /* SYNC:FOOTER:END */
 
@@ -541,27 +540,8 @@
             <li>ETF investors moving into stock-picking</li>
             <li>Professionals sharpening their edge</li>
             <li>Macro thinkers adding bottom-up conviction</li>
+            <li>Thematic investors expanding beyond one sector</li>
             <li>Rebuilders regaining confidence after setbacks</li>
-          </ul>
-        </article>
-        <article class="card" style="--delay:.2s;">
-          <h3>Pain Points → Solutions</h3>
-          <p>The most common struggles — and how the Academy solves them.</p>
-          <ul>
-            <li><strong>Analysis Paralysis</strong> → Structured process that cuts through noise</li>
-            <li><strong>No Strategy</strong> → A complete framework to rely on</li>
-            <li><strong>Low Confidence</strong> → Build conviction in your own process</li>
-            <li><strong>Behavioral Struggles</strong> → Hold winners, manage exits, avoid mistakes</li>
-          </ul>
-        </article>
-        <article class="card span-2" style="--delay:.35s;">
-          <h3>Motivations & Objectives</h3>
-          <p>Why members join, and what they're aiming for.</p>
-          <ul>
-            <li><strong>Passive → Active:</strong> Move beyond ETFs into confident stock-picking</li>
-            <li><strong>Sharpening Fundamentals:</strong> Analyze companies deeply &amp; exit with clarity</li>
-            <li><strong>Macro → Bottom-Up:</strong> Connect cycles with business-level conviction</li>
-            <li><strong>Thematic → Broader Horizons:</strong> Expand beyond one sector into richer opportunities</li>
           </ul>
         </article>
       </div>

@@ -37,8 +37,8 @@ def nav_links(page):
     inside_c = cls(page == 'inside-the-course')
     faq_c = cls(page == 'faq')
     return (
-        f'<a href="{course_href}">The Course</a>\n'
-        f'      <a href="{inside_href}"{inside_c}>Inside The Course</a>\n'
+        f'<a href="{course_href}">Outcomes</a>\n'
+        f'      <a href="{inside_href}"{inside_c}>Course</a>\n'
         f'      <a href="{fit_href}">Is This For You</a>\n'
         f'      <a href="/faq.html"{faq_c}>FAQ</a>'
     )
@@ -78,8 +78,8 @@ def build_footer(page):
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
-        <a href="{course_href}">The Course</a>
-        <a href="{inside_href}">Inside The Course</a>
+        <a href="{course_href}">Outcomes</a>
+        <a href="{inside_href}">Course</a>
         <a href="{fit_href}">Is This For You</a>
         <a href="/faq.html">FAQ</a>
       </div>

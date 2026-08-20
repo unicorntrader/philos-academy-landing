@@ -87,11 +87,15 @@
        vh usage in its measured spec is wrapped in clamp() with a hard px ceiling (e.g.
        padding:clamp(66px,15vh,150px)), so no matter how a given rendering pass resolves
        the vh unit, the result is mathematically bounded and can't run away. Same fix here:
-       whatever vh does under Safari's export, this can never exceed 950px. */
+       whatever vh does under Safari's export, this can never exceed 1300px. (950px fully
+       fixed the export bug with room to spare, so the runaway value it was guarding against
+       is almost certainly much larger than that -- raised the ceiling to 1300px so tall
+       desktop displays still get a properly full-height hero instead of visibly stopping
+       short of the window's bottom edge.) */
     .hero{
       position:relative;
-      min-height:clamp(600px, calc(100vh - 66px), 950px);
-      min-height:clamp(600px, calc(100dvh - 66px), 950px);
+      min-height:clamp(600px, calc(100vh - 66px), 1300px);
+      min-height:clamp(600px, calc(100dvh - 66px), 1300px);
       display:flex;
       align-items:center;
       justify-content:center;

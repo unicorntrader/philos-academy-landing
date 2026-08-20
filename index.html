@@ -61,6 +61,17 @@
       .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
       .hero-scenery{display:none}
     }
+    /* Safari's "Export as PDF" renders through the print engine, where 100vh has no
+       real viewport to resolve against -- it blows the hero up far past its normal
+       height, which pushes every section below it outside the area Safari captures,
+       so the export ends up showing just the hero. Force a normal auto height and
+       skip the scroll-triggered reveal (nothing scrolls during a print/export pass,
+       so those elements would otherwise stay stuck at opacity:0) for print only. */
+    @media print{
+      .hero{min-height:auto!important}
+      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .hero-scenery{display:none}
+    }
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
     .eyebrow{text-align:center;font-size:clamp(12px,1.5vw,15px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
     .section-lead{text-align:center;font-size:clamp(16px,2.2vw,20px);color:var(--ink);max-width:44ch;margin:0 auto 40px;line-height:1.48}

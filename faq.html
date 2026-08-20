@@ -49,6 +49,11 @@
     @media (prefers-reduced-motion: reduce){
       .h2, .reveal, .stagger > *{opacity:1!important;transform:none!important;transition:none!important}
     }
+    /* Print/PDF export never scrolls, so scroll-triggered reveal elements would
+       otherwise stay stuck at opacity:0 and vanish from the export entirely. */
+    @media print{
+      .h2, .reveal, .stagger > *{opacity:1!important;transform:none!important;transition:none!important}
+    }
     .eyebrow{text-align:center;font-size:clamp(.8rem,1.5vw,.9rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
     .section-pad{padding:clamp(56px,9vw,88px) 0}
 

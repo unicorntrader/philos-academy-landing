@@ -78,11 +78,20 @@
     .bg-white{background:#fff}
     .bg-cream{background:var(--cream)}
 
-    /* Hero: full viewport height minus the fixed nav, exactly like ct3000-landing/Gather */
+    /* Hero: full viewport height minus the fixed nav, exactly like ct3000-landing/Gather.
+       Capped with clamp() instead of a bare min-height:100vh -- Safari's "Export as PDF"
+       flattens the whole page into one tall image, and re-resolves 100vh against something
+       other than the real viewport while doing that, ballooning this section (unbounded)
+       and pushing everything below it outside the exported area. try-gather.co's own
+       production CSS never uses a bare vh value for exactly this kind of reason -- every
+       vh usage in its measured spec is wrapped in clamp() with a hard px ceiling (e.g.
+       padding:clamp(66px,15vh,150px)), so no matter how a given rendering pass resolves
+       the vh unit, the result is mathematically bounded and can't run away. Same fix here:
+       whatever vh does under Safari's export, this can never exceed 950px. */
     .hero{
       position:relative;
-      min-height:calc(100vh - 66px);
-      min-height:calc(100dvh - 66px);
+      min-height:clamp(600px, calc(100vh - 66px), 950px);
+      min-height:clamp(600px, calc(100dvh - 66px), 950px);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -139,8 +148,8 @@
        fixed headline size instead of the clamp floor, full-width CTA — copied from ct3000-landing */
     @media (max-width:640px){
       .hero{
-        min-height:86vh;
-        min-height:86dvh;
+        min-height:clamp(480px, 86vh, 800px);
+        min-height:clamp(480px, 86dvh, 800px);
         padding:40px 0 28px;
       }
       .hero-inner h1{font-size:34px}

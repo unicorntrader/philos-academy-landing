@@ -208,9 +208,11 @@
       transform:none;
     }
     #audience-fit-cards ul{margin:0;padding:0;list-style:none;}
-    #audience-fit-cards li{margin:14px 0;padding-left:26px;position:relative;color:var(--ink);font-size:1.1rem;line-height:1.5}
+    #audience-fit-cards li{display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--ink);font-size:1.1rem;line-height:1.5}
     #audience-fit-cards li::before{
-      content:"";position:absolute;left:0;top:.65em;width:8px;height:8px;border-radius:50%;background:#E8590C;
+      content:"✓";flex-shrink:0;display:flex;align-items:center;justify-content:center;
+      width:22px;height:22px;border-radius:50%;background:#E8590C;color:#fff;
+      font-size:.72rem;font-weight:800;
     }
     #audience-fit-cards .cta{ text-align:center;margin-top:28px;}
 
@@ -329,8 +331,8 @@
     <a href="#top" class="topnav-logo"><img src="/philo-owl-mark.png" alt="" width="240" height="255">Philo's Academy</a>
     <nav class="topnav-links">
       <a href="#outcomes">Outcomes</a>
-      <a href="#inside-the-course">Course</a>
       <a href="#audience-fit-cards">Why Join</a>
+      <a href="#inside-the-course">Course</a>
       <a href="/faq.html">FAQ</a>
       <button type="button" class="topnav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobilePanel">
         <span></span><span></span><span></span>
@@ -340,8 +342,8 @@
   </header>
   <div class="topnav-mobile-panel" id="navMobilePanel">
     <a href="#outcomes">Outcomes</a>
-    <a href="#inside-the-course">Course</a>
     <a href="#audience-fit-cards">Why Join</a>
+    <a href="#inside-the-course">Course</a>
     <a href="/faq.html">FAQ</a>
     <a href="https://whop.com/checkout/plan_G0hXojwo3WzJQ" class="topnav-cta">Start Learning</a>
   </div>
@@ -462,6 +464,29 @@
     </div>
   </section>
 
+  <!-- Audience & Fit -->
+  <section id="audience-fit-cards" class="section-pad bg-white">
+    <div class="wrap">
+      <h2 class="h2">Why Join</h2>
+      <p class="section-lead">From beginners to professionals, here's who's already inside Philo's Academy.</p>
+      <div class="cards">
+        <article class="card" style="--delay:.05s;">
+          <ul>
+            <li>Beginners building their foundation</li>
+            <li>ETF investors moving into stock-picking</li>
+            <li>Professionals sharpening their edge</li>
+            <li>Macro thinkers adding bottom-up conviction</li>
+            <li>Thematic investors expanding beyond one sector</li>
+            <li>Rebuilders regaining confidence after setbacks</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cta">
+        <button onclick="window.location.href='https://whop.com/checkout/plan_G0hXojwo3WzJQ';trackFormClick()" class="cta-button-large">Sign Up Now</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Results, Applied Section -->
   <section id="results-applied" class="section-pad bg-white">
     <div class="container">
@@ -511,29 +536,6 @@
     </div>
   </section>
 
-  <!-- Audience & Fit -->
-  <section id="audience-fit-cards" class="section-pad bg-cream">
-    <div class="wrap">
-      <h2 class="h2">Why Join</h2>
-      <p class="section-lead">From beginners to professionals, here's who's already inside Philo's Academy.</p>
-      <div class="cards">
-        <article class="card" style="--delay:.05s;">
-          <ul>
-            <li>Beginners building their foundation</li>
-            <li>ETF investors moving into stock-picking</li>
-            <li>Professionals sharpening their edge</li>
-            <li>Macro thinkers adding bottom-up conviction</li>
-            <li>Thematic investors expanding beyond one sector</li>
-            <li>Rebuilders regaining confidence after setbacks</li>
-          </ul>
-        </article>
-      </div>
-      <div class="cta">
-        <button onclick="window.location.href='https://whop.com/checkout/plan_G0hXojwo3WzJQ';trackFormClick()" class="cta-button-large">Sign Up Now</button>
-      </div>
-    </div>
-  </section>
-
   <!-- Corporate Packages Section -->
   <section id="corporate-packages" class="section-pad bg-white">
     <div class="container">
@@ -564,8 +566,8 @@
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="#outcomes">Outcomes</a>
-        <a href="#inside-the-course">Course</a>
         <a href="#audience-fit-cards">Why Join</a>
+        <a href="#inside-the-course">Course</a>
         <a href="/faq.html">FAQ</a>
       </div>
       <div class="footer-col">

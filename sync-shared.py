@@ -169,7 +169,7 @@ FOOTER_CSS = '''    footer{background:var(--cream);padding:clamp(52px,7vw,80px) 
     .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
     .footer-brand .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
     .footer-brand .mark img{height:36px;width:auto;display:block}
-    .footer-brand p{color:var(--ink);opacity:.85;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
+    .footer-brand p{color:var(--ink);font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
     .footer-col h5{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
     .footer-col a{display:block;color:var(--ink);opacity:.92;font-size:15px;text-decoration:none;margin-bottom:10px;transition:opacity .2s ease,color .2s ease}
     .footer-col a:hover{color:var(--brand);opacity:1}

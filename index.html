@@ -29,7 +29,7 @@
       --brand-hover:#E67A35;
       --ink:#2C3E4A;
       --cream:#FFF8E7;
-      --grey:#666;
+      --grey:rgba(44,62,74,.72);
     }
     *{margin:0;padding:0;box-sizing:border-box}
     /* overflow-x:hidden on body alone isn't always enough on iOS Safari to actually
@@ -159,7 +159,7 @@
     .tab-panels{max-width:640px;margin:0 auto;min-height:220px;text-align:left}
     .tab-panel{display:none}
     .tab-panel.active{display:block}
-    .tab-panel .part-label{font-size:.8rem;letter-spacing:.02em;color:#7A8A96;margin-bottom:6px}
+    .tab-panel .part-label{font-size:.8rem;letter-spacing:.02em;font-weight:700;color:var(--brand);margin-bottom:6px}
     .tab-panel h3{font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--ink);margin:4px 0 14px}
     .tab-panel ul{margin-left:18px}
     .tab-panel li{margin:8px 0;font-size:1rem;line-height:1.55}
@@ -216,15 +216,15 @@
       box-shadow:0 12px 28px rgba(255,140,66,.18);
     }
     #audience-fit-cards .eyebrow{
-      font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;margin:0 0 6px;
+      font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin:0 0 6px;
       font-weight:700;
     }
     #audience-fit-cards h3{
-      margin:0 0 10px;font-size:clamp(18px,2.4vw,24px);line-height:1.25;color:#2C3E4A;font-weight:700;
+      margin:0 0 10px;font-size:clamp(18px,2.4vw,24px);line-height:1.25;color:var(--ink);font-weight:700;
     }
-    #audience-fit-cards p{margin:0 0 8px;color:#374151;}
+    #audience-fit-cards p{margin:0 0 8px;color:var(--ink);opacity:.72;}
     #audience-fit-cards ul{margin:8px 0 0 0;padding:0;list-style:none;}
-    #audience-fit-cards li{margin:8px 0;padding-left:18px;position:relative;color:#2E3B44;line-height:1.45;}
+    #audience-fit-cards li{margin:8px 0;padding-left:18px;position:relative;color:var(--ink);line-height:1.45;}
     #audience-fit-cards li::before{
       content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#E8590C;
     }
@@ -239,7 +239,7 @@
     .transform-before{opacity:.6}
     .transform-after{font-weight:600}
     .transform-label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
-    .transform-before .transform-label{color:#99a3ab}
+    .transform-before .transform-label{color:var(--ink)}
     .transform-after .transform-label{color:var(--brand)}
     .transform-arrow{color:var(--brand);font-size:1.3rem;font-weight:700;line-height:1}
     @media(max-width:700px){
@@ -265,11 +265,11 @@
     .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
     .footer-brand .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px}
     .footer-brand .mark img{height:36px;width:auto;display:block}
-    .footer-brand p{color:#6b6156;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
+    .footer-brand p{color:var(--ink);opacity:.65;font-size:.92rem;line-height:1.5;max-width:32ch;margin:0}
     .footer-col h5{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0 0 14px}
-    .footer-col a{display:block;color:#4a4640;font-size:15px;text-decoration:none;margin-bottom:10px}
-    .footer-col a:hover{color:var(--brand)}
-    .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:#9a9186;font-size:13px;text-align:center}
+    .footer-col a{display:block;color:var(--ink);opacity:.72;font-size:15px;text-decoration:none;margin-bottom:10px;transition:opacity .2s ease,color .2s ease}
+    .footer-col a:hover{color:var(--brand);opacity:1}
+    .footer-legal{max-width:1080px;margin:clamp(40px,5vw,60px) auto 0;padding:24px clamp(20px,5vw,48px) 0;border-top:1px solid rgba(44,62,74,.12);color:var(--ink);opacity:.5;font-size:13px;text-align:center}
     @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
     /* SYNC:FOOTER:END */
 

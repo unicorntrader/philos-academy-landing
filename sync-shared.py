@@ -39,7 +39,7 @@ def nav_links(page):
     return (
         f'<a href="{course_href}">Outcomes</a>\n'
         f'      <a href="{inside_href}"{inside_c}>Course</a>\n'
-        f'      <a href="{fit_href}">Is This For You</a>\n'
+        f'      <a href="{fit_href}">Why Join</a>\n'
         f'      <a href="/faq.html"{faq_c}>FAQ</a>'
     )
 
@@ -80,7 +80,7 @@ def build_footer(page):
         <h5>Explore</h5>
         <a href="{course_href}">Outcomes</a>
         <a href="{inside_href}">Course</a>
-        <a href="{fit_href}">Is This For You</a>
+        <a href="{fit_href}">Why Join</a>
         <a href="/faq.html">FAQ</a>
       </div>
       <div class="footer-col">

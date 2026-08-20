@@ -599,7 +599,6 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('testimonials-container').innerHTML = html;
-        initTestimonialChips();
         if (window.initScrollReveal) window.initScrollReveal(document.getElementById('testimonials-container'));
       })
       .catch(error => console.error('Error loading testimonials:', error));
@@ -657,41 +656,6 @@
       }, { threshold: 0.4 });
       stats.forEach(function (el) { io.observe(el); });
     });
-
-    function initTestimonialChips(){
-      var container = document.getElementById('testimonials-container');
-      var chips = container.querySelectorAll('.testi-chip');
-      var panel = container.querySelector('#testi-panel');
-      if(!chips.length || !panel) return;
-      var panelStars = panel.querySelector('.testi-panel-stars');
-      var panelQuote = panel.querySelector('.testi-panel-quote');
-      var panelName = panel.querySelector('.testi-panel-name');
-      var panelDate = panel.querySelector('.testi-panel-date');
-
-      function activate(chip, userTriggered){
-        chips.forEach(function(c){ c.classList.remove('active'); });
-        chip.classList.add('active');
-        var fullText = chip.querySelector('.testi-full-text');
-        var stars = parseInt(chip.getAttribute('data-stars'), 10) || 5;
-        panelStars.textContent = '★'.repeat(stars);
-        panelQuote.textContent = fullText ? fullText.textContent : '';
-        panelName.textContent = chip.getAttribute('data-name') || '';
-        panelDate.textContent = chip.getAttribute('data-date') || '';
-        panel.classList.add('show');
-        if(userTriggered){
-          panel.classList.remove('pulse');
-          void panel.offsetWidth; // restart animation
-          panel.classList.add('pulse');
-          panel.scrollIntoView({behavior:'smooth', block:'center'});
-        }
-      }
-
-      chips.forEach(function(chip){
-        chip.addEventListener('click', function(){ activate(chip, true); });
-      });
-
-      activate(chips[0]);
-    }
 
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{

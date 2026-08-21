@@ -393,7 +393,7 @@
   </section>
 
   <!-- Stats band -->
-  <section class="stats-band bg-white">
+  <section class="stats-band">
     <div class="container">
       <h2 class="h2 h2--sm">By The Numbers</h2>
       <div class="stats-band-grid stagger">
@@ -405,7 +405,7 @@
   </section>
 
   <!-- Free Preview: intro video + free YouTube offer, one compact section -->
-  <section id="preview" class="section-pad bg-cream">
+  <section id="preview" class="section-pad bg-white">
     <div class="container">
       <h2 class="h2 h2--sm">See Inside the Academy</h2>
       <p class="section-lead">Free excerpts from modules and case studies, up on YouTube — see the teaching style before you decide.</p>
@@ -417,7 +417,7 @@
   </section>
 
   <!-- Outcomes / Staircase -->
-  <section id="outcomes" class="section-pad bg-white" aria-labelledby="result-title">
+  <section id="outcomes" class="section-pad bg-cream" aria-labelledby="result-title">
     <div class="container">
       <h2 id="result-title" class="h2">The Result</h2>
 
@@ -490,7 +490,7 @@
   </section>
 
   <!-- Audience & Fit -->
-  <section id="audience-fit-cards" class="section-pad bg-cream">
+  <section id="audience-fit-cards" class="section-pad bg-white">
     <div class="wrap">
       <h2 class="h2">Why Join</h2>
       <p class="section-lead">From beginners to professionals, here's who's already inside Philo's Academy.</p>
@@ -513,7 +513,7 @@
   </section>
 
   <!-- Results, Applied Section -->
-  <section id="results-applied" class="section-pad bg-white">
+  <section id="results-applied" class="section-pad bg-cream">
     <div class="container">
       <h2 class="h2">Results, Applied</h2>
       <p class="section-lead">Real transformations from students who went from lost to disciplined.</p>
@@ -551,7 +551,7 @@
   <div id="testimonials-container"></div>
 
   <!-- Inside The Course: modules, case studies, and workshops unified in one section -->
-  <section id="inside-the-course" class="section-pad bg-white">
+  <section id="inside-the-course" class="section-pad bg-cream">
     <div class="container">
       <h2 class="h2">Inside The Course</h2>
       <p class="section-lead">Real excerpts from every module, case studies applying the frameworks to real companies, and recordings from live workshops — everything you get access to inside Philo's Academy.</p>
@@ -562,7 +562,7 @@
   </section>
 
   <!-- Corporate Packages Section -->
-  <section id="corporate-packages" class="section-pad bg-cream">
+  <section id="corporate-packages" class="section-pad bg-white">
     <div class="container">
       <h2 class="h2">Corporate Packages</h2>
       <p class="section-lead">Education packages for in-house investment teams, family offices, and advisory firms</p>
@@ -634,7 +634,11 @@
         window.addEventListener('load', function(){
           var el = document.getElementById(targetId);
           if (el) {
-            var headerOffset = 82;
+            // Flush with the fixed nav's real height (66px), no extra buffer -- every
+            // section anchor target already has its own top padding via .section-pad,
+            // so a bigger offset just left a strip of the PREVIOUS section's background
+            // color visible above the target section instead of adding breathing room.
+            var headerOffset = 66;
             var targetY = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
             window.scrollTo(0, Math.max(0, targetY));
           }
@@ -716,8 +720,11 @@
           // Explicit offset instead of scrollIntoView -- same fixed-header issue as the
           // Outcomes tabs: scrollIntoView's own offset math doesn't reliably clear the
           // fixed header on mobile Safari, so section headings ended up a few px too
-          // high (partly under the header) after tapping a nav link.
-          const headerOffset = 82;
+          // high (partly under the header) after tapping a nav link. Flush with the
+          // nav's real height (66px), no extra buffer -- these targets are full
+          // section elements with their own top padding, so a bigger offset just
+          // showed a strip of the previous section's background color above them.
+          const headerOffset = 66;
           const targetY = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
           window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
         }

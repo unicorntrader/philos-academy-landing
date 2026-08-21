@@ -31,22 +31,22 @@ def cls(active):
 def nav_links(page):
     """page: 'home' | 'inside-the-course' | 'faq'"""
     is_home = page == 'home'
-    course_href = '#outcomes' if is_home else '/index.html#outcomes'
-    inside_href = '#inside-the-course' if is_home else '/modules.html'
-    fit_href = '#audience-fit-cards' if is_home else '/index.html#audience-fit-cards'
+    course_href = '#outcomes' if is_home else '/#outcomes'
+    inside_href = '#inside-the-course' if is_home else '/modules'
+    fit_href = '#audience-fit-cards' if is_home else '/#audience-fit-cards'
     inside_c = cls(page == 'inside-the-course')
     faq_c = cls(page == 'faq')
     return (
         f'<a href="{course_href}">Outcomes</a>\n'
         f'      <a href="{fit_href}">Why Join</a>\n'
         f'      <a href="{inside_href}"{inside_c}>Course</a>\n'
-        f'      <a href="/faq.html"{faq_c}>FAQ</a>'
+        f'      <a href="/faq"{faq_c}>FAQ</a>'
     )
 
 
 def build_header(page):
     is_home = page == 'home'
-    logo_href = '#top' if is_home else '/index.html#top'
+    logo_href = '#top' if is_home else '/#top'
     links = nav_links(page)
     mobile_links = links.replace('\n      ', '\n    ')
     return f'''<header class="topnav">
@@ -67,9 +67,9 @@ def build_header(page):
 
 def build_footer(page):
     is_home = page == 'home'
-    course_href = '#outcomes' if is_home else '/index.html#outcomes'
-    inside_href = '#inside-the-course' if is_home else '/modules.html'
-    fit_href = '#audience-fit-cards' if is_home else '/index.html#audience-fit-cards'
+    course_href = '#outcomes' if is_home else '/#outcomes'
+    inside_href = '#inside-the-course' if is_home else '/modules'
+    fit_href = '#audience-fit-cards' if is_home else '/#audience-fit-cards'
     return f'''<footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -81,7 +81,7 @@ def build_footer(page):
         <a href="{course_href}">Outcomes</a>
         <a href="{fit_href}">Why Join</a>
         <a href="{inside_href}">Course</a>
-        <a href="/faq.html">FAQ</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h5>Connect</h5>
@@ -91,9 +91,9 @@ def build_footer(page):
       </div>
       <div class="footer-col">
         <h5>Legal</h5>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
-        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
       </div>
     </div>
     <div class="footer-legal">

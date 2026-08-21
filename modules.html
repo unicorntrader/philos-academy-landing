@@ -33,7 +33,7 @@
       --grey:rgba(44,62,74,.85);
     }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden;padding-top:52px}
+    body{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
     .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
     .cta-button-large:hover{background:var(--brand-hover);border-color:var(--brand-hover);transform:translateY(-2px)}
@@ -66,12 +66,16 @@
     .page-header p.intro{max-width:640px;margin:0 auto;color:var(--ink);font-size:clamp(16px,2.2vw,20px)}
 
     /* Jump nav between the three sections on this combined page */
-    .content-jump{display:flex;justify-content:center;gap:clamp(16px,3vw,32px);flex-wrap:wrap;padding:18px clamp(20px,5vw,42px);background:#fff;border-bottom:2px solid var(--brand);position:sticky;top:52px;z-index:100}
+    .content-jump{display:flex;justify-content:center;gap:clamp(16px,3vw,32px);flex-wrap:wrap;padding:18px clamp(20px,5vw,42px);background:#fff;border-bottom:2px solid var(--brand);position:sticky;top:66px;z-index:100}
     .content-jump a{font-size:.9rem;font-weight:700;color:var(--ink);text-decoration:none}
     .content-jump a:hover{color:var(--brand)}
 
-    /* Sub-heading for each content type within the combined page */
-    .content-subhead{text-align:center;font-size:clamp(1.4rem,3vw + .5rem,2.25rem);font-weight:900;color:var(--ink);margin-bottom:36px;scroll-margin-top:110px}
+    /* Sub-heading for each content type within the combined page. Offset has to clear
+       BOTH the fixed topnav (66px) AND the sticky content-jump bar below it (~61px:
+       18px padding top/bottom + its own text line-height + 2px border) -- the old
+       110px only accounted for one of them, so headings landed partly under the
+       content-jump bar when you clicked a jump link. */
+    .content-subhead{text-align:center;font-size:clamp(1.4rem,3vw + .5rem,2.25rem);font-weight:900;color:var(--ink);margin-bottom:36px;scroll-margin-top:130px}
 
     /* Tweet grids -- shared by modules, case studies, and workshops */
     .tweets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1200px;margin:0 auto}

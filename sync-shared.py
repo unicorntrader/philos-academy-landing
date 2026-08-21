@@ -56,12 +56,12 @@ def build_header(page):
       <button type="button" class="topnav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobilePanel">
         <span></span><span></span><span></span>
       </button>
-      <a href="https://whop.com/checkout/plan_G0hXojwo3WzJQ" class="topnav-cta">Start Learning</a>
+      <a href="https://whop.com/checkout/plan_0HK95UIrhxTAU" class="topnav-cta">Start Learning</a>
     </nav>
   </header>
   <div class="topnav-mobile-panel" id="navMobilePanel">
     {mobile_links}
-    <a href="https://whop.com/checkout/plan_G0hXojwo3WzJQ" class="topnav-cta">Start Learning</a>
+    <a href="https://whop.com/checkout/plan_0HK95UIrhxTAU" class="topnav-cta">Start Learning</a>
   </div>'''
 
 

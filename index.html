@@ -264,16 +264,15 @@
     }
 
     /* Closing CTA band */
-    /* Still Have Questions: FAQ teaser right before the closing CTA, copied from
-       ct3000-landing's .faq-teaser (dark bg, outline button that inverts on hover)
-       using our own --ink instead of their navy and .cta-button-ghost instead of
-       introducing a separate .cta-outline class. */
-    .faq-teaser{background:var(--ink);text-align:center}
+    /* Still Have Questions: FAQ teaser right before the closing CTA, structure
+       copied from ct3000-landing's .faq-teaser (centered, narrow column, outline
+       button) but in this site's own cream/ink palette instead of their dark navy
+       band -- .cta-button-ghost needs no override here, its default brand-orange
+       styling already reads correctly on a light background. */
+    .faq-teaser{background:var(--cream);text-align:center}
     .faq-teaser .container{max-width:480px}
-    .faq-teaser h2{font-size:clamp(24px,3.2vw,32px);font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:10px}
-    .faq-teaser p{font-size:15px;font-weight:500;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:22px}
-    .faq-teaser .cta-button-ghost{border-color:rgba(255,255,255,.3);color:#fff}
-    .faq-teaser .cta-button-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+    .faq-teaser h2{font-size:clamp(24px,3.2vw,32px);font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:10px}
+    .faq-teaser p{font-size:15px;font-weight:500;color:var(--ink);line-height:1.6;margin-bottom:22px}
 
     .closing-cta{background:var(--brand);text-align:center;padding:clamp(56px,9vw,110px) 0}
     .closing-cta h2{color:#fff;font-size:clamp(30px,6vw,56px);font-weight:800;line-height:1.01;letter-spacing:-.03em;margin-bottom:16px}

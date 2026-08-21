@@ -615,10 +615,35 @@
 
   <!-- JS -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Load housekeeping: refresh always starts at the top, never mid-scroll
-    if (window.location.hash) history.replaceState(null, '', window.location.pathname);
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('load', () => window.scrollTo(0, 0));
+    // Load housekeeping: a refresh always starts at the top, never mid-scroll --
+    // but a real incoming navigation with a hash (e.g. a footer/FAQ link from
+    // another page landing on /#outcomes) needs to actually land on that
+    // section, with the fixed-header offset applied, same as the in-page click
+    // handler below. Distinguish the two via the Navigation Timing API instead
+    // of just checking for a hash: previously ANY hash got stripped and the
+    // page snapped to the top regardless of how you arrived, so cross-page
+    // anchor links (the whole "Explore" footer column, from faq.html/modules.html)
+    // never actually scrolled to their target at all.
+    (function(){
+      var navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      var isReload = navEntry && navEntry.type === 'reload';
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      if (window.location.hash && !isReload) {
+        var targetId = window.location.hash.slice(1);
+        window.scrollTo(0, 0); // pre-empt the browser's own unadjusted hash-jump so there's no flash to the wrong spot before the corrected scroll below runs
+        window.addEventListener('load', function(){
+          var el = document.getElementById(targetId);
+          if (el) {
+            var headerOffset = 82;
+            var targetY = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            window.scrollTo(0, Math.max(0, targetY));
+          }
+        });
+      } else {
+        if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+        window.addEventListener('load', () => window.scrollTo(0, 0));
+      }
+    })();
 
     fetch('/testimonials.html')
       .then(response => response.text())

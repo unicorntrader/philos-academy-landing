@@ -38,10 +38,10 @@
     html{overflow-x:hidden}
     body{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:var(--ink);background:var(--cream);overflow-x:hidden}
     .container{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
-    .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
-    .cta-button-large:hover{background:transparent;color:var(--brand);transform:translateY(-2px)}
+    .cta-button-large{background:var(--brand);color:#fff;padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:background .6s ease,color .6s ease,box-shadow .6s ease,transform .2s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit;box-shadow:0 16px 30px rgba(232,89,12,.3)}
+    .cta-button-large:hover{background:transparent;color:var(--brand);transform:translateY(-2px);box-shadow:none}
     .cta-button-large[disabled]{opacity:.7;cursor:not-allowed}
-    .cta-button-ghost{background:transparent;color:var(--brand);padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:all .25s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
+    .cta-button-ghost{background:transparent;color:var(--brand);padding:16px 38px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;transition:background .6s ease,color .6s ease,transform .2s ease;display:inline-block;border:2px solid var(--brand);cursor:pointer;font-family:inherit}
     .cta-button-ghost:hover{background:var(--brand);color:#fff;transform:translateY(-2px)}
 
     /* Fluid type scale, numbers matched to try-gather.co's measured production spec */
@@ -59,7 +59,7 @@
     .stagger.in > *:nth-child(5){transition-delay:.32s}
     .stagger.in > *:nth-child(6){transition-delay:.4s}
     @media (prefers-reduced-motion: reduce){
-      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
       .hero-scenery{display:none}
     }
     /* Safari's "Export as PDF" renders through the print engine, where 100vh has no
@@ -70,7 +70,7 @@
        so those elements would otherwise stay stuck at opacity:0) for print only. */
     @media print{
       .hero{min-height:auto!important}
-      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
       .hero-scenery{display:none}
     }
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
@@ -108,10 +108,12 @@
 
     /* Hero page-load reveal: headline, then subhead, then CTA, one after another (ct3000-landing timing) */
     @keyframes heroReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    .hero-inner h1, .hero-summary, .hero-ctas{opacity:0;animation:heroReveal .7s ease forwards}
+    .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram{opacity:0;animation:heroReveal .7s ease forwards}
     .hero-inner h1{animation-delay:.05s}
     .hero-summary{animation-delay:.25s}
     .hero-ctas{animation-delay:.45s}
+    .hero-diagram{animation-delay:.65s;margin-top:40px}
+    .hero-diagram svg{width:100%;height:auto;display:block}
 
     /* Hero scenery: a treeline with Philo the owl gliding past on a loop */
     .hero-scenery{position:absolute;left:0;right:0;bottom:0;height:140px;overflow:hidden;pointer-events:none;z-index:0}
@@ -161,6 +163,7 @@
       .hero-summary{max-width:36ch}
       .hero-ctas{width:100%}
       .hero-ctas .cta-button-large{width:100%;text-align:center}
+      .hero-diagram{display:none}
       .stats-band{padding-top:32px}
     }
     .stats-band-grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,32px);text-align:center}
@@ -189,12 +192,15 @@
     .tab-panel ul{max-width:520px;margin:0 auto;padding-left:22px;text-align:left}
     .tab-panel li{margin:12px 0;font-size:1.15rem;line-height:1.6}
     .tab-panel li::marker{color:var(--brand)}
+    .tab-panel-image{margin:26px auto 0;max-width:260px}
+    .tab-panel-image img{width:100%;height:auto;display:block;border-radius:16px;border:2px solid #f0e1c8}
 
     /* Restart on every switch so re-clicking a tab replays it too (see initOutcomesTabs) */
     .reveal-row{opacity:0;transform:translateY(9px);animation:tabRowReveal .22s ease forwards}
     .tab-panel.active .part-label.reveal-row,
     .tab-panel.active h3.reveal-row{animation-delay:0s}
     .tab-panel.active ul.reveal-row{animation-delay:.08s}
+    .tab-panel.active .tab-panel-image.reveal-row{animation-delay:.16s}
     @keyframes tabRowReveal{to{opacity:1;transform:translateY(0)}}
 
     @media (max-width:640px){
@@ -395,6 +401,108 @@
         <div class="hero-ctas" style="display:flex;justify-content:center;">
           <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
         </div>
+
+        <div class="hero-diagram">
+          <svg viewBox="0 0 680 170" role="img" aria-label="Illustration showing raw noise and data organizing step by step into a connected framework, ending in one highlighted path labeled edge">
+            <rect x="36" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <text x="92" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">NOISE</text>
+            <circle cx="92" cy="48" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="64" cy="73" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="120" cy="73" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="52" cy="113" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="83" cy="113" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="102" cy="113" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="133" cy="113" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="48" cy="45" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="133" cy="42" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="142" cy="70" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="45" cy="89" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="95" cy="89" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="130" cy="135" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="74" cy="139" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+            <circle cx="55" cy="135" r="3.2" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
+
+            <rect x="160" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <text x="216" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">DATA</text>
+            <circle cx="172" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="257" cy="42" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="266" cy="70" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="169" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="219" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="254" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="198" cy="139" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="179" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="216" cy="48" r="4.5" fill="#E8590C"/>
+            <circle cx="188" cy="73" r="4.5" fill="#2C3E4A"/>
+            <circle cx="244" cy="73" r="4.5" fill="#E8590C"/>
+            <circle cx="176" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="207" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="226" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="257" cy="113" r="4.5" fill="#E8590C"/>
+
+            <rect x="284" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <text x="340" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">PATTERNS</text>
+            <path d="M340,48 L312,73 M340,48 L368,73 M312,73 L300,113 M312,73 L331,113 M368,73 L350,113 M368,73 L381,113" fill="none" stroke="#2C3E4A" stroke-opacity=".5" stroke-width="1"/>
+            <circle cx="296" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="381" cy="42" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="390" cy="70" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="293" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="343" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="378" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="322" cy="139" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="303" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="340" cy="48" r="4.5" fill="#E8590C"/>
+            <circle cx="312" cy="73" r="4.5" fill="#2C3E4A"/>
+            <circle cx="368" cy="73" r="4.5" fill="#E8590C"/>
+            <circle cx="300" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="331" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="350" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="381" cy="113" r="4.5" fill="#E8590C"/>
+
+            <rect x="408" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <text x="464" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">INSIGHT</text>
+            <path d="M464,48 L436,73 M464,48 L492,73 M436,73 L424,113 M436,73 L455,113 M492,73 L474,113 M492,73 L505,113" fill="none" stroke="#2C3E4A" stroke-opacity=".5" stroke-width="1"/>
+            <circle cx="420" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="505" cy="42" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="514" cy="70" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="417" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="467" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="502" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="446" cy="139" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="427" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="464" cy="48" r="4.5" fill="#E8590C"/>
+            <circle cx="436" cy="73" r="4.5" fill="#2C3E4A"/>
+            <circle cx="492" cy="73" r="4.5" fill="#E8590C"/>
+            <circle cx="424" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="455" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="474" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="505" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="424" cy="113" r="7" fill="none" stroke="#E8590C" stroke-width="1.6"/>
+            <circle cx="505" cy="113" r="7" fill="none" stroke="#E8590C" stroke-width="1.6"/>
+
+            <rect x="532" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <text x="588" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#E8590C">EDGE</text>
+            <path d="M588,48 L560,73 M588,48 L616,73 M560,73 L548,113 M560,73 L579,113 M616,73 L598,113 M616,73 L629,113" fill="none" stroke="#2C3E4A" stroke-opacity=".5" stroke-width="1"/>
+            <path d="M548,113 L560,73 L588,48 L616,73 L629,113" fill="none" stroke="#E8590C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="544" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="629" cy="42" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="638" cy="70" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="541" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="591" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="626" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="570" cy="139" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="551" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="588" cy="48" r="4.5" fill="#E8590C"/>
+            <circle cx="560" cy="73" r="4.5" fill="#2C3E4A"/>
+            <circle cx="616" cy="73" r="4.5" fill="#E8590C"/>
+            <circle cx="548" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="579" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="598" cy="113" r="4.5" fill="#2C3E4A"/>
+            <circle cx="629" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="548" cy="113" r="7" fill="none" stroke="#E8590C" stroke-width="1.6"/>
+            <circle cx="629" cy="113" r="7" fill="none" stroke="#E8590C" stroke-width="1.6"/>
+          </svg>
+        </div>
       </div>
     </div>
 
@@ -463,6 +571,9 @@
             <li>Define your circle of competence and operate with rules.</li>
             <li>Shift from headline-reactive to calm, repeatable process.</li>
           </ul>
+          <div class="tab-panel-image reveal-row">
+            <img src="/looks-cheap.png" alt="A falling stock chart shaped like a knife, with speech bubbles repeating &quot;looks cheap&quot; on the way down — the value-trap warning.">
+          </div>
         </div>
         <div class="tab-panel" data-panel="analyst">
           <p class="part-label reveal-row">PART 2 — Advanced Investment Concepts</p>
@@ -473,6 +584,9 @@
             <li>Source ideas systematically; kill value traps fast.</li>
             <li>Map ranges of outcomes and size positions accordingly.</li>
           </ul>
+          <div class="tab-panel-image reveal-row">
+            <img src="/idea-funnel.png" alt="A funnel diagram narrowing from Sourcing to Filtering to Analysis to Investment.">
+          </div>
         </div>
         <div class="tab-panel" data-panel="strategy">
           <p class="part-label reveal-row">PART 3 — Mastery &amp; Strategy</p>

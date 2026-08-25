@@ -121,7 +121,7 @@
     .hero-panel:hover, .hero-panel:focus-visible{transform:scale(1.09);outline:none}
     .hero-panel:hover rect, .hero-panel:focus-visible rect{stroke:#E8590C}
     .hero-panel:hover .panel-edge, .hero-panel:focus-visible .panel-edge{stroke-opacity:1;stroke-width:2.2}
-    .hero-panel:hover .panel-thick, .hero-panel:focus-visible .panel-thick{stroke-width:4.2}
+    .hero-panel:hover .panel-thick, .hero-panel:focus-visible .panel-thick{stroke-width:4.6}
 
     /* Hero scenery: a treeline with Philo the owl gliding past on a loop */
     .hero-scenery{position:absolute;left:0;right:0;bottom:0;height:140px;overflow:hidden;pointer-events:none;z-index:0}
@@ -420,6 +420,16 @@
 
         <div class="hero-diagram">
           <svg viewBox="0 0 680 170" role="img" aria-label="Illustration showing raw noise and data organizing step by step into a connected framework, ending in one highlighted path labeled edge">
+            <defs>
+              <filter id="edgeGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="2.6" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
             <g class="hero-panel" tabindex="0" role="group" aria-label="Noise">
             <rect x="36" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
             <text x="92" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">NOISE</text>
@@ -508,15 +518,19 @@
             <rect x="532" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
             <text x="588" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#E8590C">EDGE</text>
             <path class="panel-edge" d="M588,48 L560,73 M588,48 L616,73 M560,73 L548,113 M560,73 L579,113 M616,73 L598,113 M616,73 L629,113" fill="none" stroke="#2C3E4A" stroke-opacity=".6" stroke-width="1.3"/>
-            <path class="panel-thick" d="M548,113 L560,73 L588,48 L616,73 L629,113" fill="none" stroke="#E8590C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="544" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="629" cy="42" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="638" cy="70" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="541" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="591" cy="89" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="626" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="570" cy="139" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
-            <circle cx="551" cy="135" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
+            <circle cx="544" cy="45" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="629" cy="42" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="638" cy="70" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="541" cy="89" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="591" cy="89" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="626" cy="135" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="570" cy="139" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <circle cx="551" cy="135" r="3.2" fill="#E8590C" fill-opacity=".55"/>
+            <g class="panel-thick-glow" filter="url(#edgeGlow)">
+              <path class="panel-thick" d="M548,113 L560,73 L588,48 L616,73 L629,113" fill="none" stroke="#E8590C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="548" cy="113" r="7.5" fill="none" stroke="#E8590C" stroke-width="2.2"/>
+              <circle cx="629" cy="113" r="7.5" fill="none" stroke="#E8590C" stroke-width="2.2"/>
+            </g>
             <circle cx="588" cy="48" r="4.5" fill="#E8590C"/>
             <circle cx="560" cy="73" r="4.5" fill="#2C3E4A"/>
             <circle cx="616" cy="73" r="4.5" fill="#E8590C"/>
@@ -524,8 +538,6 @@
             <circle cx="579" cy="113" r="4.5" fill="#E8590C"/>
             <circle cx="598" cy="113" r="4.5" fill="#2C3E4A"/>
             <circle cx="629" cy="113" r="4.5" fill="#E8590C"/>
-            <circle cx="548" cy="113" r="7" fill="none" stroke="#E8590C" stroke-width="1.6"/>
-            <circle cx="629" cy="113" r="7" fill="none" stroke="#E8590C" stroke-width="1.6"/>
             </g>
           </svg>
         </div>
@@ -662,7 +674,7 @@
           <span class="module-card-tag">Circle of Competence</span>
           <div class="swap-img">
             <img src="/circle-of-competence.png" alt="A red ring labeled What We Think We Know surrounding a smaller center labeled What We Know." class="swap-base">
-            <img src="/circle-of-competence-edge.png" alt="The same ring, now with a small circle labeled Unique Payoff pointing just outside the What We Know center." class="swap-hover">
+            <img src="/circle-of-competence-leverage.png" alt="The same idea as concentric rings: a red outer ring labeled What We Think We Know, a green ring labeled Expansion, and a white center labeled What We Know." class="swap-hover">
           </div>
           <p class="module-card-caption">What you actually understand is smaller than what you think you understand. Hover to see where the edge actually lives.</p>
         </div>
@@ -675,6 +687,16 @@
           <span class="module-card-tag">Investor Archetypes</span>
           <img src="/investor-archetypes.png" alt="Three investor archetypes: Rufus chasing FOMO alerts, Value Boi staring at a falling spreadsheet, and the Master-Investor.">
           <p class="module-card-caption">FOMO-chasing, spreadsheet-stuck, or actually seeing the picture — most investors get stuck somewhere on this path.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-tag">Management Quality</span>
+          <img src="/management-leverage.png" alt="A seesaw: bad management tips the business downward, good management tips it upward.">
+          <p class="module-card-caption">Same business, different management — it's the lever most investors never actually weigh.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-tag">Textbook Theory</span>
+          <img src="/textbook-theory.png" alt="An ice cube labeled Economics melting away in a hand, then gone entirely.">
+          <p class="module-card-caption">WACC, CAPM, efficient markets — clean on paper, and the first thing to melt once real markets get involved.</p>
         </div>
       </div>
     </div>

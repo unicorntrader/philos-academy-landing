@@ -231,8 +231,18 @@
     }
 
     /* === AUDIENCE & FIT (CARD FORMAT) === */
-    .module-strip{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;max-width:960px;margin:0 auto}
-    .module-card{background:#fff;border:2px solid #f0e1c8;border-radius:18px;padding:22px;width:280px;text-align:center}
+    .scroll-hint{text-align:center;font-size:.85rem;font-weight:600;color:rgba(44,62,74,.55);margin:0 0 20px}
+    .module-strip{
+      display:flex;gap:24px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scroll-snap-type:x mandatory;
+      margin:0 calc(-1 * clamp(20px,5vw,48px));
+      padding:4px clamp(20px,5vw,48px) 14px;
+      scroll-padding-left:clamp(20px,5vw,48px);
+      scroll-padding-right:clamp(20px,5vw,48px);
+    }
+    .module-strip::-webkit-scrollbar{display:none}
+    .module-strip{scrollbar-width:none}
+    .module-card{background:#fff;border:2px solid #f0e1c8;border-radius:18px;padding:22px;flex:0 0 280px;text-align:center;scroll-snap-align:start}
     .module-card-tag{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
     .module-card img{width:100%;height:auto;border-radius:12px;display:block;margin-bottom:14px}
     .module-card-caption{font-size:.92rem;color:var(--ink);line-height:1.5;margin:0}
@@ -240,7 +250,7 @@
     .swap-img img{margin-bottom:0}
     .swap-img .swap-hover{position:absolute;inset:0;opacity:0;transition:opacity .35s ease}
     .module-card:hover .swap-hover, .module-card:focus-within .swap-hover{opacity:1}
-    @media (max-width:640px){.module-card{width:100%;max-width:320px}}
+    @media (max-width:640px){.module-card{flex:0 0 82%;max-width:300px}}
 
     #audience-fit-cards .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
     #audience-fit-cards .cards{display:grid;gap:22px;}
@@ -517,7 +527,6 @@
             <g class="hero-panel" tabindex="0" role="group" aria-label="Edge">
             <rect x="532" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
             <text x="588" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#E8590C">EDGE</text>
-            <path class="panel-edge" d="M588,48 L560,73 M588,48 L616,73 M560,73 L548,113 M560,73 L579,113 M616,73 L598,113 M616,73 L629,113" fill="none" stroke="#2C3E4A" stroke-opacity=".6" stroke-width="1.3"/>
             <circle cx="544" cy="45" r="3.2" fill="#E8590C" fill-opacity=".55"/>
             <circle cx="629" cy="42" r="3.2" fill="#E8590C" fill-opacity=".55"/>
             <circle cx="638" cy="70" r="3.2" fill="#E8590C" fill-opacity=".55"/>
@@ -527,17 +536,15 @@
             <circle cx="570" cy="139" r="3.2" fill="#E8590C" fill-opacity=".55"/>
             <circle cx="551" cy="135" r="3.2" fill="#E8590C" fill-opacity=".55"/>
             <g class="panel-thick-glow" filter="url(#edgeGlow)">
-              <path class="panel-thick" d="M548,113 L560,73 L588,48 L616,73 L629,113" fill="none" stroke="#E8590C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="548" cy="113" r="7.5" fill="none" stroke="#E8590C" stroke-width="2.2"/>
-              <circle cx="629" cy="113" r="7.5" fill="none" stroke="#E8590C" stroke-width="2.2"/>
+              <path class="panel-thick" d="M588,52 L618,66 L625,98 L604,124 L572,124 L551,98 L558,66 Z" fill="none" stroke="#E8590C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
-            <circle cx="588" cy="48" r="4.5" fill="#E8590C"/>
-            <circle cx="560" cy="73" r="4.5" fill="#2C3E4A"/>
-            <circle cx="616" cy="73" r="4.5" fill="#E8590C"/>
-            <circle cx="548" cy="113" r="4.5" fill="#2C3E4A"/>
-            <circle cx="579" cy="113" r="4.5" fill="#E8590C"/>
-            <circle cx="598" cy="113" r="4.5" fill="#2C3E4A"/>
-            <circle cx="629" cy="113" r="4.5" fill="#E8590C"/>
+            <circle cx="588" cy="52" r="4.5" fill="#E8590C"/>
+            <circle cx="618" cy="66" r="4.5" fill="#2C3E4A"/>
+            <circle cx="625" cy="98" r="4.5" fill="#E8590C"/>
+            <circle cx="604" cy="124" r="4.5" fill="#2C3E4A"/>
+            <circle cx="572" cy="124" r="4.5" fill="#E8590C"/>
+            <circle cx="551" cy="98" r="4.5" fill="#2C3E4A"/>
+            <circle cx="558" cy="66" r="4.5" fill="#E8590C"/>
             </g>
           </svg>
         </div>
@@ -654,6 +661,7 @@
       <p class="eyebrow">Beyond The Numbers</p>
       <h2 class="h2 h2--sm">Some Of The Dimensions We Teach</h2>
       <p class="section-lead">Value traps, market structure, sourcing process, your own psychology — a few of the dimensions covered inside the course.</p>
+      <p class="scroll-hint">Scroll to see more &rarr;</p>
       <div class="module-strip stagger">
         <div class="module-card">
           <span class="module-card-tag">Value Traps</span>

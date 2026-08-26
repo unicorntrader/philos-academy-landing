@@ -78,6 +78,7 @@
     .section-lead{text-align:center;font-size:clamp(16px,2.2vw,20px);color:var(--ink);max-width:44ch;margin:0 auto 40px;line-height:1.48}
     .bg-white{background:#fff}
     .bg-cream{background:var(--cream)}
+    .section-shell{background:#fff;border-radius:clamp(20px,3vw,32px);box-shadow:0 18px 50px rgba(20,26,26,.06);padding:clamp(32px,5vw,56px) clamp(24px,4vw,48px);max-width:900px;margin:0 auto}
 
     /* Hero: full viewport height minus the fixed nav, exactly like ct3000-landing/Gather.
        Capped with clamp() instead of a bare min-height:100vh -- Safari's "Export as PDF"
@@ -571,13 +572,15 @@
   </section>
 
   <!-- Free Preview: intro video + free YouTube offer, one compact section -->
-  <section id="preview" class="section-pad bg-white">
+  <section id="preview" class="section-pad bg-cream">
     <div class="container">
-      <h2 class="h2 h2--sm">See Inside the Academy</h2>
-      <p class="section-lead">Free excerpts from modules and case studies, up on YouTube — see the teaching style before you decide.</p>
+      <div class="section-shell">
+        <h2 class="h2 h2--sm">See Inside the Academy</h2>
+        <p class="section-lead">Free excerpts from modules and case studies, up on YouTube — see the teaching style before you decide.</p>
 
-      <div style="text-align:center;">
-        <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Free Modules on YouTube</a>
+        <div style="text-align:center;">
+          <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Free Modules on YouTube</a>
+        </div>
       </div>
     </div>
   </section>
@@ -712,24 +715,26 @@
   </section>
 
   <!-- Audience & Fit -->
-  <section id="audience-fit-cards" class="section-pad bg-white">
+  <section id="audience-fit-cards" class="section-pad bg-cream">
     <div class="wrap">
-      <h2 class="h2">Why Join</h2>
-      <p class="section-lead">From beginners to professionals, here's who's already inside Philo's Academy.</p>
-      <div class="cards">
-        <article class="card" style="--delay:.05s;">
-          <ul>
-            <li>Beginners building their foundation</li>
-            <li>ETF investors moving into stock-picking</li>
-            <li>Professionals sharpening their edge</li>
-            <li>Macro thinkers adding bottom-up conviction</li>
-            <li>Thematic investors expanding beyond one sector</li>
-            <li>Rebuilders regaining confidence after setbacks</li>
-          </ul>
-        </article>
-      </div>
-      <div class="cta">
-        <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
+      <div class="section-shell">
+        <h2 class="h2">Why Join</h2>
+        <p class="section-lead">From beginners to professionals, here's who's already inside Philo's Academy.</p>
+        <div class="cards">
+          <article class="card" style="--delay:.05s;">
+            <ul>
+              <li>Beginners building their foundation</li>
+              <li>ETF investors moving into stock-picking</li>
+              <li>Professionals sharpening their edge</li>
+              <li>Macro thinkers adding bottom-up conviction</li>
+              <li>Thematic investors expanding beyond one sector</li>
+              <li>Rebuilders regaining confidence after setbacks</li>
+            </ul>
+          </article>
+        </div>
+        <div class="cta">
+          <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
+        </div>
       </div>
     </div>
   </section>
@@ -775,21 +780,25 @@
   <!-- Inside The Course: modules, case studies, and workshops unified in one section -->
   <section id="inside-the-course" class="section-pad bg-cream">
     <div class="container">
-      <h2 class="h2">Inside The Course</h2>
-      <p class="section-lead">Real excerpts from every module, case studies applying the frameworks to real companies, and recordings from live workshops — everything you get access to inside Philo's Academy.</p>
-      <div style="text-align:center;">
-        <a href="/modules" class="cta-button-large">See Everything Inside &rarr;</a>
+      <div class="section-shell">
+        <h2 class="h2">Inside The Course</h2>
+        <p class="section-lead">Real excerpts from every module, case studies applying the frameworks to real companies, and recordings from live workshops — everything you get access to inside Philo's Academy.</p>
+        <div style="text-align:center;">
+          <a href="/modules" class="cta-button-large">See Everything Inside &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Corporate Packages Section -->
-  <section id="corporate-packages" class="section-pad bg-white">
+  <section id="corporate-packages" class="section-pad bg-cream">
     <div class="container">
-      <h2 class="h2">Corporate Packages</h2>
-      <p class="section-lead">Education packages for in-house investment teams, family offices, and advisory firms</p>
-      <div style="text-align:center;">
-        <a href="mailto:thinker@philoinvestor.com?subject=Corporate%20Package%20Inquiry%20-%20Philo's%20Academy&amp;body=Hi,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20corporate%20packages%20for%20Philo's%20Academy.%0D%0A%0D%0ACompany/Organization:%0D%0ATeam%20Size:%0D%0ASpecific%20Needs:%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you." class="cta-button-large">Inquire About Corporate Training</a>
+      <div class="section-shell">
+        <h2 class="h2">Corporate Packages</h2>
+        <p class="section-lead">Education packages for in-house investment teams, family offices, and advisory firms</p>
+        <div style="text-align:center;">
+          <a href="mailto:thinker@philoinvestor.com?subject=Corporate%20Package%20Inquiry%20-%20Philo's%20Academy&amp;body=Hi,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20corporate%20packages%20for%20Philo's%20Academy.%0D%0A%0D%0ACompany/Organization:%0D%0ATeam%20Size:%0D%0ASpecific%20Needs:%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you." class="cta-button-large">Inquire About Corporate Training</a>
+        </div>
       </div>
     </div>
   </section>

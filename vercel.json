@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/library",
+      "destination": "https://www.philoinvestor.com/philos-library/",
+      "permanent": false
+    }
+  ]
 }

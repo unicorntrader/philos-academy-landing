@@ -59,7 +59,7 @@
     .stagger.in > *:nth-child(5){transition-delay:.32s}
     .stagger.in > *:nth-child(6){transition-delay:.4s}
     @media (prefers-reduced-motion: reduce){
-      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram, .hero-note, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
       .hero-scenery{display:none}
     }
     /* Safari's "Export as PDF" renders through the print engine, where 100vh has no
@@ -70,7 +70,7 @@
        so those elements would otherwise stay stuck at opacity:0) for print only. */
     @media print{
       .hero{min-height:auto!important}
-      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+      .h2, .reveal, .stagger > *, .hero-inner h1, .hero-summary, .hero-ctas, .hero-diagram, .hero-note, .card, .reveal-row{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
       .hero-scenery{display:none}
     }
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
@@ -113,6 +113,7 @@
     .hero-inner h1{animation-delay:.05s}
     .hero-summary{animation-delay:.25s}
     .hero-ctas{animation-delay:.45s}
+    .hero-note{font-size:14px;font-weight:500;color:var(--grey);margin:14px auto 0;text-align:center;opacity:0;animation:heroReveal .7s ease .55s forwards}
     .hero-diagram{animation-delay:.65s;margin-top:40px}
     .hero-diagram svg{width:100%;height:auto;display:block;overflow:visible}
     .hero-panel{transform-box:fill-box;transform-origin:center;transition:transform .25s ease;cursor:default}
@@ -315,6 +316,8 @@
     .closing-cta p{color:rgba(255,255,255,.9);font-size:clamp(16px,2.2vw,20px);font-weight:500;letter-spacing:-.01em;max-width:50ch;margin:0 auto 32px;line-height:1.48}
     .closing-cta .cta-button-ghost{border-color:#fff;color:#fff}
     .closing-cta .cta-button-ghost:hover{background:#fff;color:var(--brand)}
+    .closing-cta .closing-note{font-size:15px;margin:22px auto 0;max-width:none}
+    .closing-cta .closing-note a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
     /* SYNC:FOOTER:START -- kept in sync across pages by sync-shared.py, edit there */
     footer{background:var(--cream);padding:clamp(52px,7vw,80px) 0 clamp(28px,4vw,40px);border-top:2px solid var(--brand)}
@@ -433,6 +436,7 @@
         <div class="hero-ctas" style="display:flex;justify-content:center;">
           <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
         </div>
+        <p class="hero-note">Self-paced &middot; On demand &middot; No experience needed</p>
 
         <div class="hero-diagram">
           <svg viewBox="0 0 680 170" role="img" aria-label="Illustration showing raw noise and data organizing step by step into a connected framework, ending in one highlighted path labeled edge">
@@ -832,6 +836,7 @@
       <h2>Ready to master investing?</h2>
       <p>Join Philo's Academy and build an investment framework that actually works.</p>
       <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-ghost">Start Learning &rarr;</button>
+      <p class="closing-note">Not ready yet? <a href="/library">Read Philo's free library first &rarr;</a></p>
     </div>
   </section>
 

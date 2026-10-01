@@ -338,6 +338,22 @@
     @media (max-width:700px){.footer-inner{grid-template-columns:1fr 1fr}}
     /* SYNC:FOOTER:END */
 
+    /* Email capture (posts to a Google Form, see EMAIL_FORM config in the script) */
+    .signup{margin:44px auto 0;padding-top:40px;border-top:1px solid rgba(44,62,74,.12);text-align:center;max-width:560px}
+    .signup h3{font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:10px}
+    .signup p{font-size:16px;font-weight:500;line-height:1.55;margin-bottom:22px}
+    .signup-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .signup-row input[type=email]{flex:1 1 240px;min-width:0;padding:15px 22px;border-radius:999px;border:2px solid rgba(44,62,74,.18);font:inherit;font-size:1rem;color:var(--ink);background:#fff;outline:none;transition:border-color .2s ease}
+    .signup-row input[type=email]:focus{border-color:var(--brand)}
+    .signup-row .cta-button-large{flex:0 0 auto}
+    .signup-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .signup-note{font-size:13px!important;opacity:.7;margin:14px 0 0!important}
+    .signup-note a{color:inherit;text-underline-offset:2px}
+    .signup-msg{font-weight:600;margin:16px 0 0!important}
+    .signup-msg[hidden]{display:none}
+    .signup-msg.is-error{color:#C0392B}
+    @media (max-width:480px){.signup-row .cta-button-large{width:100%}}
+
     /* Responsive: type now scales fluidly via clamp() in .h2/.hero-inner h1, no jump needed */
     @media (max-width:768px){
       .course-details{font-size:1rem;padding:0 10px}
@@ -593,6 +609,20 @@
         <div style="text-align:center;">
           <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Free Modules on YouTube</a>
         </div>
+
+        <form class="signup" id="signupForm" novalidate>
+          <h3>Get the course skeleton + 2 free modules</h3>
+          <p>Drop your email and we'll send you the full course outline and two complete modules. You'll also hear first about new content and offers from Philo's Academy.</p>
+          <div class="signup-row">
+            <label for="signupEmail" class="signup-hp">Email address</label>
+            <input type="email" id="signupEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <button type="submit" class="cta-button-large">Send Me the Modules</button>
+          </div>
+          <!-- Honeypot: humans never see or fill this -->
+          <div class="signup-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+          <p class="signup-msg" id="signupMsg" role="status" hidden></p>
+          <p class="signup-note">No spam. Unsubscribe anytime. See our <a href="/privacy">privacy policy</a>.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -1006,6 +1036,51 @@
         plausible('CheckoutClick');
       }
     }
+
+    // Email capture -> Google Form. Fill these in from the form's prefilled link
+    // (Form > ⋮ > Get pre-filled link): FORM_ID is the long id in the URL,
+    // EMAIL_ENTRY is the "entry.123456789" param for the email question.
+    var EMAIL_FORM = {
+      FORM_ID: 'REPLACE_WITH_FORM_ID',
+      EMAIL_ENTRY: 'entry.REPLACE_WITH_ENTRY_ID'
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('signupForm');
+      if (!form) return;
+      var input = document.getElementById('signupEmail');
+      var msg = document.getElementById('signupMsg');
+      var btn = form.querySelector('button[type=submit]');
+      function show(text, isError) {
+        msg.textContent = text;
+        msg.classList.toggle('is-error', !!isError);
+        msg.hidden = false;
+      }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = input.value.trim();
+        if (form.website.value) return; // bot
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          show('Please enter a valid email address.', true);
+          input.focus();
+          return;
+        }
+        var body = new URLSearchParams();
+        body.append(EMAIL_FORM.EMAIL_ENTRY, email);
+        btn.disabled = true;
+        // Google Forms sends no CORS headers, so the response is opaque: a
+        // resolved fetch means the request went out, which is the best we get.
+        fetch('https://docs.google.com/forms/d/e/' + EMAIL_FORM.FORM_ID + '/formResponse', {
+          method: 'POST', mode: 'no-cors', body: body
+        }).then(function () {
+          form.querySelector('.signup-row').style.display = 'none';
+          show("You're in! Check your inbox for the course skeleton and your 2 free modules.");
+          if (typeof plausible !== 'undefined') plausible('EmailSignup');
+        }).catch(function () {
+          btn.disabled = false;
+          show('Something went wrong. Please try again in a moment.', true);
+        });
+      });
+    });
 
     // Mobile burger menu
     document.addEventListener('DOMContentLoaded', function () {

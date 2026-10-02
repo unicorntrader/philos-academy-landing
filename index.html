@@ -32,6 +32,7 @@
       --cream:#FFF8E7;
       --grey:rgba(44,62,74,.85);
       --navy:#22313B;
+      --line:#f0e1c8;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     /* overflow-x:hidden on body alone isn't always enough on iOS Safari to actually
@@ -77,16 +78,23 @@
     .h2--sm{font-size:clamp(28px,5.5vw,52px)}
     .eyebrow{text-align:center;font-size:clamp(12px,1.5vw,15px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
     .section-lead{text-align:center;font-size:clamp(16px,2.2vw,20px);color:var(--ink);max-width:44ch;margin:0 auto 40px;line-height:1.48}
-    .bg-white{background:#fff}
-    .bg-cream{background:var(--cream)}
-    .bg-white .section-shell{background:var(--cream)}
-    /* Navy is used sparingly to break the light rhythm. Re-pointing --ink to cream
-       flips every var(--ink) text light; white cards inside keep dark text. */
-    .bg-navy{background:var(--navy);--ink:#FFF8E7;color:var(--ink)}
-    .bg-navy .section-shell{background:none;box-shadow:none}
+    /* ===== Colour conventions (see CLAUDE.md) =====
+       Every section picks ONE background; its containers follow automatically:
+         section bg     ->  big container (.section-shell)   small cards
+         .bg-cream      ->  white                            white + warm border
+         .bg-white      ->  cream                            white + warm border
+         .bg-navy       ->  none (content sits on navy)      white + warm border, dark text
+       Navy is the accent surface: at most ~2 per page, never two in a row.
+       Orange (--brand) is for buttons, eyebrows and highlights only, never a section bg
+       except the closing CTA. */
+    .bg-cream{background:var(--cream);--surface:#fff}
+    .bg-white{background:#fff;--surface:var(--cream)}
+    .bg-navy{background:var(--navy);--surface:transparent;--ink:#FFF8E7;color:var(--ink)}
+    .bg-navy .section-shell{box-shadow:none}
     .bg-navy .section-lead{color:rgba(255,248,231,.85)}
+    /* Cards stay white everywhere, so on navy they switch --ink back to dark */
     .bg-navy .module-card,.bg-navy .transform-row,.bg-navy .tab-btn{--ink:#2C3E4A;color:var(--ink)}
-    .section-shell{background:#fff;border-radius:clamp(20px,3vw,32px);box-shadow:0 18px 50px rgba(20,26,26,.06);padding:clamp(32px,5vw,56px) clamp(24px,4vw,48px);max-width:900px;margin:0 auto}
+    .section-shell{background:var(--surface,#fff);border-radius:clamp(20px,3vw,32px);box-shadow:0 18px 50px rgba(20,26,26,.06);padding:clamp(32px,5vw,56px) clamp(24px,4vw,48px);max-width:900px;margin:0 auto}
 
     /* Hero: full viewport height minus the fixed nav, exactly like ct3000-landing/Gather.
        Capped with clamp() instead of a bare min-height:100vh -- Safari's "Export as PDF"
@@ -194,7 +202,7 @@
 
     /* Outcomes: clickable tabs (icon + label), one panel switches below — copied from ct3000-landing's feature-tabs */
     .tab-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:28px 0 44px;scroll-margin-top:82px}
-    .tab-btn{display:flex;flex-direction:column;align-items:center;gap:0;background:#fff;border:2px solid #f0e1c8;border-radius:16px;padding:18px;width:170px;cursor:pointer;transition:border-color .2s ease;font-family:inherit}
+    .tab-btn{display:flex;flex-direction:column;align-items:center;gap:0;background:#fff;border:2px solid var(--line);border-radius:16px;padding:18px;width:170px;cursor:pointer;transition:border-color .2s ease;font-family:inherit}
     .tab-btn-icon{width:100%;height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:#fff;border-radius:10px}
     .tab-btn-icon img{max-width:78%;max-height:78%;object-fit:contain;display:block}
     .tab-btn span:last-child{font-size:14px;font-weight:700;color:var(--ink)}
@@ -252,10 +260,10 @@
     }
     .module-strip::-webkit-scrollbar{display:none}
     .module-strip{scrollbar-width:none}
-    .module-card{background:#fff;border:2px solid #f0e1c8;border-radius:18px;padding:22px;flex:0 0 280px;text-align:center;scroll-snap-align:start;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,opacity .6s ease}
+    .module-card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:22px;flex:0 0 280px;text-align:center;scroll-snap-align:start;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,opacity .6s ease}
     .module-card:hover, .module-card:focus-within{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(44,62,74,.28)}
     .module-card-tag{display:block;font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:16px}
-    .module-card img{width:100%;height:196px;object-fit:contain;object-position:center;background:#fff;border:1px solid #f0e1c8;border-radius:12px;padding:14px;box-sizing:border-box;display:block;margin-bottom:20px;transition:transform .35s ease}
+    .module-card img{width:100%;height:196px;object-fit:contain;object-position:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;box-sizing:border-box;display:block;margin-bottom:20px;transition:transform .35s ease}
     .module-card:hover img, .module-card:focus-within img{transform:scale(1.05)}
     .module-card-caption{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:.85rem;font-weight:500;color:#1f2d37;line-height:1.4;margin:0;max-width:24ch;margin-left:auto;margin-right:auto}
     .swap-img{position:relative;margin-bottom:20px}
@@ -288,7 +296,7 @@
 
     /* Results, Applied: before/after comparison cards */
     .transform-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-    .transform-row{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;background:#fff;border:2px solid #f0e1c8;border-radius:14px;padding:20px 26px;transition:border-color .2s ease}
+    .transform-row{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;padding:20px 26px;transition:border-color .2s ease}
     .transform-row:hover{border-color:var(--brand)}
     .transform-before,.transform-after{font-size:.95rem;line-height:1.5;color:var(--ink)}
     .transform-before{opacity:.75}
@@ -484,7 +492,7 @@
               </filter>
             </defs>
             <g class="hero-panel" tabindex="0" role="group" aria-label="Noise">
-            <rect x="36" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <rect x="36" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="var(--line)" stroke-width="2"/>
             <text x="92" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">NOISE</text>
             <circle cx="92" cy="48" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
             <circle cx="64" cy="73" r="4.5" fill="none" stroke="#2C3E4A" stroke-width="1.4"/>
@@ -504,7 +512,7 @@
             </g>
 
             <g class="hero-panel" tabindex="0" role="group" aria-label="Data">
-            <rect x="160" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <rect x="160" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="var(--line)" stroke-width="2"/>
             <text x="216" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">DATA</text>
             <circle cx="172" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
             <circle cx="257" cy="42" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
@@ -524,7 +532,7 @@
             </g>
 
             <g class="hero-panel" tabindex="0" role="group" aria-label="Patterns">
-            <rect x="284" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <rect x="284" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="var(--line)" stroke-width="2"/>
             <text x="340" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">PATTERNS</text>
             <path class="panel-edge" d="M340,48 L312,73 M340,48 L368,73 M312,73 L300,113 M312,73 L331,113 M368,73 L350,113 M368,73 L381,113" fill="none" stroke="#2C3E4A" stroke-opacity=".6" stroke-width="1.3"/>
             <circle cx="296" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
@@ -545,7 +553,7 @@
             </g>
 
             <g class="hero-panel" tabindex="0" role="group" aria-label="Insight">
-            <rect x="408" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <rect x="408" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="var(--line)" stroke-width="2"/>
             <text x="464" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#2C3E4A">INSIGHT</text>
             <path class="panel-edge" d="M464,48 L436,73 M464,48 L492,73 M436,73 L424,113 M436,73 L455,113 M492,73 L474,113 M492,73 L505,113" fill="none" stroke="#2C3E4A" stroke-opacity=".6" stroke-width="1.3"/>
             <circle cx="420" cy="45" r="3.2" fill="#2C3E4A" fill-opacity=".28"/>
@@ -568,7 +576,7 @@
             </g>
 
             <g class="hero-panel" tabindex="0" role="group" aria-label="Edge">
-            <rect x="532" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="#f0e1c8" stroke-width="2"/>
+            <rect x="532" y="26" width="112" height="132" rx="12" fill="#ffffff" stroke="var(--line)" stroke-width="2"/>
             <text x="588" y="18" text-anchor="middle" font-size="11" font-weight="800" letter-spacing=".5" fill="#E8590C">EDGE</text>
             <circle cx="544" cy="45" r="3.2" fill="#E8590C" fill-opacity=".55"/>
             <circle cx="629" cy="42" r="3.2" fill="#E8590C" fill-opacity=".55"/>

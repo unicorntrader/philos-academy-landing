@@ -358,6 +358,7 @@
     .signup{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(20px,4vw,48px);align-items:center;max-width:960px;margin:0 auto}
     .signup h2,.signup h3{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px;color:#fff}
     .signup p{font-size:16px;font-weight:500;line-height:1.5;color:rgba(255,255,255,.85)}
+    .signup .signup-lead{font-size:clamp(17px,2vw,20px);line-height:1.45;color:#fff}
     .signup-row{display:flex;gap:10px;flex-wrap:wrap}
     .signup-row input[type=email]{flex:1 1 220px;min-width:0;padding:15px 22px;border-radius:999px;border:2px solid transparent;font:inherit;font-size:1rem;color:var(--ink);background:#fff;outline:none;transition:border-color .2s ease}
     .signup-row input[type=email]:focus{border-color:var(--brand)}
@@ -614,8 +615,7 @@
     <div class="container">
       <form class="signup" id="signupForm" novalidate>
         <div class="signup-copy">
-          <h2 id="signup-title">Take your time.</h2>
-          <p>Explore the course below, and leave your email so we can keep you posted on new material, course updates, live workshops and the occasional offer.</p>
+          <p id="signup-title" class="signup-lead">Explore the course below, and leave your email so we can keep you posted on new material, course updates, live workshops and the occasional offer.</p>
         </div>
         <div class="signup-action">
           <div class="signup-row">

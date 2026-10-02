@@ -1072,8 +1072,11 @@
         fetch('https://docs.google.com/forms/d/e/' + EMAIL_FORM.FORM_ID + '/formResponse', {
           method: 'POST', mode: 'no-cors', body: body
         }).then(function () {
-          form.querySelector('.signup-row').style.display = 'none';
-          show("You're in! Check your inbox for the course skeleton and your 2 free modules.");
+          // Swap the whole form for a clean success state; hiding just the
+          // input row left a ghost of the button's shadow/hover paint behind.
+          form.innerHTML = '<h3>You\'re in! &#127881;</h3>' +
+            '<p>Check your inbox for the course skeleton and your 2 free modules. ' +
+            'If you don\'t see it in a few minutes, check your spam or promotions folder.</p>';
           if (typeof plausible !== 'undefined') plausible('EmailSignup');
         }).catch(function () {
           btn.disabled = false;

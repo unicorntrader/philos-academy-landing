@@ -611,12 +611,12 @@
         </div>
 
         <form class="signup" id="signupForm" novalidate>
-          <h3>Get the course skeleton + 2 free modules</h3>
-          <p>Drop your email and we'll send you the full course outline and two complete modules. You'll also hear first about new content and offers from Philo's Academy.</p>
+          <h3>Get Philo's best free material first</h3>
+          <p>Join the list for free modules, real-world case studies and offers from Philo, straight to your inbox.</p>
           <div class="signup-row">
             <label for="signupEmail" class="signup-hp">Email address</label>
             <input type="email" id="signupEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
-            <button type="submit" class="cta-button-large">Send Me the Modules</button>
+            <button type="submit" class="cta-button-large">Join the List</button>
           </div>
           <!-- Honeypot: humans never see or fill this -->
           <div class="signup-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
@@ -1075,8 +1075,10 @@
           // Swap the whole form for a clean success state; hiding just the
           // input row left a ghost of the button's shadow/hover paint behind.
           form.innerHTML = '<h3>You\'re in! &#127881;</h3>' +
-            '<p>Check your inbox for the course skeleton and your 2 free modules. ' +
-            'If you don\'t see it in a few minutes, check your spam or promotions folder.</p>';
+            '<p>We\'ll email you when new free modules and case studies drop. ' +
+            'While you wait, watch the free modules already on YouTube.</p>' +
+            '<a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" ' +
+            'class="cta-button-ghost">Watch on YouTube &rarr;</a>';
           if (typeof plausible !== 'undefined') plausible('EmailSignup');
         }).catch(function () {
           btn.disabled = false;

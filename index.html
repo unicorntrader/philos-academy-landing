@@ -614,14 +614,14 @@
     <div class="container">
       <form class="signup" id="signupForm" novalidate>
         <div class="signup-copy">
-          <h2 id="signup-title">Get Philo's best free material first</h2>
-          <p>Join the list for free modules, real-world case studies and offers from Philo's Academy, straight to your inbox.</p>
+          <h2 id="signup-title">Not ready to enrol yet?</h2>
+          <p>Leave your email and we'll keep you posted on new material, updates to the course, live workshops and the occasional offer.</p>
         </div>
         <div class="signup-action">
           <div class="signup-row">
             <label for="signupEmail" class="signup-hp">Email address</label>
             <input type="email" id="signupEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
-            <button type="submit" class="cta-button-large">Join the List</button>
+            <button type="submit" class="cta-button-large">Keep Me Posted</button>
           </div>
           <!-- Honeypot: humans never see or fill this -->
           <div class="signup-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
@@ -1105,9 +1105,9 @@
         }).then(function () {
           // Swap the whole form for a clean success state; hiding just the
           // input row left a ghost of the button's shadow/hover paint behind.
-          form.innerHTML = '<div class="signup-done"><h3>You\'re in! &#127881;</h3>' +
-            '<p>We\'ll email you when new free modules and case studies drop. ' +
-            'While you wait, watch the free modules already on YouTube.</p>' +
+          form.innerHTML = '<div class="signup-done"><h3>You\'re on the list.</h3>' +
+            '<p>Thank you, we\'ll keep you posted. ' +
+            'In the meantime, the free modules are on YouTube.</p>' +
             '<a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" ' +
             'class="cta-button-ghost">Watch on YouTube &rarr;</a></div>';
           if (typeof plausible !== 'undefined') plausible('EmailSignup');

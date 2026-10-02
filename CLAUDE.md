@@ -24,3 +24,10 @@ Rules:
 - Orange (`--brand`) is for buttons, eyebrows and highlights. The only orange section is
   the closing CTA.
 - No dark container on a dark section, no cream container on a cream section.
+
+## Copy
+
+- Use the user's wording verbatim. Never reword copy they have written or approved,
+  even when changing something next to it.
+- When asked for copy options, give them, then wait for a pick. Don't stack follow-up
+  questions.

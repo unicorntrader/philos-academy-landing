@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Philo's Academy - Learn Investing. Better.</title>
@@ -478,7 +477,7 @@
         <p class="hero-summary">Build an investment framework with real results.</p>
 
         <div class="hero-ctas" style="display:flex;justify-content:center;">
-          <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
+          <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU'" class="cta-button-large">Start Learning &rarr;</button>
         </div>
         <p class="hero-note"><span>Self-paced</span> &middot; <span>20-minute video modules</span></p>
 
@@ -654,7 +653,7 @@
         <p class="section-lead">Free excerpts from modules and case studies, up on YouTube. See the teaching style before you decide.</p>
 
         <div style="text-align:center;">
-          <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" onclick="plausible && plausible('YouTubeClick')" class="cta-button-large" style="text-decoration:none;">Watch Free Modules on YouTube</a>
+          <a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" class="cta-button-large" style="text-decoration:none;">Watch Free Modules on YouTube</a>
         </div>
       </div>
     </div>
@@ -729,7 +728,7 @@
       </div>
 
       <div class="steps-cta">
-        <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
+        <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU'" class="cta-button-large">Start Learning &rarr;</button>
       </div>
     </div>
   </section>
@@ -818,7 +817,7 @@
           </article>
         </div>
         <div class="cta">
-          <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
+          <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU'" class="cta-button-large">Start Learning &rarr;</button>
         </div>
       </div>
     </div>
@@ -854,7 +853,7 @@
       </div>
 
       <div style="text-align:center; margin-top:48px;">
-        <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-large">Start Learning &rarr;</button>
+        <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU'" class="cta-button-large">Start Learning &rarr;</button>
       </div>
     </div>
   </section>
@@ -907,7 +906,7 @@
     <div class="container">
       <h2>Ready to master investing?</h2>
       <p>Join Philo's Academy and build an investment framework that actually works.</p>
-      <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-ghost">Start Learning &rarr;</button>
+      <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU'" class="cta-button-ghost">Start Learning &rarr;</button>
       <p class="closing-note">Not ready yet? <a href="/library">Read Philo's Library first &rarr;</a></p>
     </div>
   </section>
@@ -1064,11 +1063,6 @@
       });
     });
 
-    window.trackFormClick = function() {
-      if (typeof plausible !== 'undefined') {
-        plausible('CheckoutClick');
-      }
-    }
 
     // Email capture -> Google Form. Fill these in from the form's prefilled link
     // (Form > ⋮ > Get pre-filled link): FORM_ID is the long id in the URL,
@@ -1112,7 +1106,6 @@
             'In the meantime, the free modules are on YouTube.</p>' +
             '<a href="https://youtube.com/@philos_academy?sub_confirmation=1" target="_blank" rel="noopener" ' +
             'class="cta-button-ghost">Watch on YouTube &rarr;</a></div>';
-          if (typeof plausible !== 'undefined') plausible('EmailSignup');
         }).catch(function () {
           btn.disabled = false;
           show('Something went wrong. Please try again in a moment.', true);

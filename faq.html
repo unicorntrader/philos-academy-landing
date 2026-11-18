@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script defer data-domain="philomastery.com" src="https://plausible.io/js/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ - Philo's Academy</title>
@@ -286,7 +285,7 @@
     <div class="container">
       <h2>Ready to master investing?</h2>
       <p>Join Philo's Academy and build an investment framework that actually works.</p>
-      <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU';trackFormClick()" class="cta-button-ghost">Start Learning &rarr;</button>
+      <button onclick="window.location.href='https://whop.com/checkout/plan_0HK95UIrhxTAU'" class="cta-button-ghost">Start Learning &rarr;</button>
     </div>
   </section>
 
@@ -329,11 +328,6 @@
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.addEventListener('load', () => window.scrollTo(0, 0));
 
-    window.trackFormClick = function() {
-      if (typeof plausible !== 'undefined') {
-        plausible('CheckoutClick');
-      }
-    }
 
     // Mobile burger menu
     document.addEventListener('DOMContentLoaded', function () {

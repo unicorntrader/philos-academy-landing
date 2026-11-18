@@ -40,7 +40,8 @@ def nav_links(page):
         f'<a href="{course_href}">Outcomes</a>\n'
         f'      <a href="{fit_href}">Why Join</a>\n'
         f'      <a href="{inside_href}"{inside_c}>Course</a>\n'
-        f'      <a href="/faq"{faq_c}>FAQ</a>'
+        f'      <a href="/faq"{faq_c}>FAQ</a>\n'
+        f'      <a href="/library">Library</a>'
     )
 
 
@@ -89,6 +90,7 @@ def build_footer(page):
         <a href="https://x.com/philoinvestor" target="_blank" rel="noopener">@philoinvestor</a>
         <a href="https://youtube.com/@philos_academy" target="_blank" rel="noopener">YouTube</a>
         <a href="https://philoinvestor.com" target="_blank" rel="noopener">Philoinvestor</a>
+        <a href="/library">Library</a>
       </div>
       <div class="footer-col">
         <h5>Legal</h5>
